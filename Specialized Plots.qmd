@@ -1,0 +1,287 @@
+---
+title: "Specialized Plot"
+author: "Dan Swart, Trustee"
+editor: 
+  markdown: 
+    wrap: 72
+---
+
+
+<br> <br> <br>
+
+INTERACTIVE PLOTLY LINE CHART
+
+Standardized Scores for All Subjects at Achievement Level 'Approaches, or Higher, for the Years Ended 1995-2022
+
+```{r echo=FALSE, warning=FALSE, message=FALSE, fig.width=8, fig.height=6}
+
+# CREATE A SINGLE PLOT_LY PLOT
+# SUITABLE FOR RENDERING IN QUARTO BOOK FORMAT
+
+# Load Libraries
+
+library(tidyverse)
+library(qicharts2)
+library(haven)
+library(readxl)
+library(skimr)
+library(visdat)
+library(gghighlight)
+library(dplyr)
+library(stringr)
+library(ggtext)
+library(gganimate)
+library(ggplot2)
+library(purrr)
+library(scales)
+library(ggrepel)
+library(glue)
+library(plotly)
+library(htmlwidgets)
+library(readr)
+
+
+# Load SCUC scorecard data for 1995-2022
+
+df2 <- read_csv(file = here::here("data",
+                                  "SCUC Snapshots 1995 to 2022-LONG.csv")
+                )
+
+# Filter for desired book section
+plotly_df <- df2 %>% 
+  filter(section == "standardized_scores") %>% 
+  filter(grouping == "All Subjects") %>% 
+  filter(grade == "all") %>% 
+  filter(level_achieved == 'approaches_or_above')
+
+df_group <- plotly_df
+
+# Set y axis scale
+y_min <- min(df_group$value, 
+             na.rm = TRUE
+             )
+y_max <- max(df_group$value, 
+             na.rm = TRUE
+             )
+y_range <- y_max - y_min
+max_y_range <- y_range + .20
+expansion_factor <- ifelse(y_range < max_y_range,
+                           max_y_range - y_range, 
+                           0
+                           )
+y_expand <- y_max + expansion_factor
+
+# Specify titles, etc.
+title <- paste0(df_group$section,
+                " for ",
+                df_group$grouping, 
+                ", for Grades - ", 
+                df_group$grade,
+                ", <br>",
+                " at Achievement Level - ",
+                df_group$level_achieved,
+                ",",
+                "<br> for the Years Ended ", 
+                       paste(min(df_group$year),
+                             " - ",
+                             max(df_group$year)
+                             )
+                )
+
+y_axis_label <- c(df_group$grouping[1])
+  
+
+caption <- ""
+
+# Calculate the median value
+median_value <- median(df_group$value,
+                       na.rm = TRUE
+                       )
+
+# Create the plot_ly plot
+plot_ly(data = df_group, 
+        x = ~year, 
+        y = ~value, 
+        type = 'scatter', 
+        mode = 'lines+markers',
+        text = ~paste('Year: ', 
+                      year,
+                      '<br>Value: ', 
+                      value
+                      )
+        ) %>%
+  layout(title = list(text = title, 
+                      font = list(family = "Arial", 
+                                  size = 20, 
+                                  color = "black"), 
+                      x = 0.5
+                      ),
+         xaxis = list(title = "Academic Year-Ended",
+                      tickangle = 45,
+                      titlefont = list(family = "Arial", 
+                                       size = 16, 
+                                       color = "black")
+                      ),
+         yaxis = list(title = y_axis_label, 
+                      titlefont = list(family = "Arial", 
+                                       size = 16, 
+                                       color = "black")
+                      ),
+         margin = list(t = 100),  # Set top margin to 100 pixels
+         showlegend = FALSE,
+         annotations = list(
+           list(x = max(df_group$year), 
+                y = (median_value + (0.03 * y_range)
+                     ),
+                xref = 'x', 
+                yref = 'y', 
+                text = paste("Median: ",
+                             median_value), 
+                font = list(family = "Arial", 
+                            size = 12, 
+                            color = "black"), 
+                showarrow = FALSE),
+           list(x = 0.5, 
+                y = -0.3, 
+                xref = 'paper', 
+                yref = 'paper', 
+                text = caption, 
+                font = list(family = "Arial", 
+                            size = 14, 
+                            color = "black"), 
+                showarrow = FALSE)
+         )
+         ) %>%
+  # Add a horizontal line for the median
+  add_trace(y = rep(median_value,
+                    nrow(df_group)
+                    ),
+            type = 'scatter',
+            mode = 'lines',
+            line = list(color = 'red', 
+                        dash = 'dash'
+                        ),
+            showlegend = FALSE)
+
+# print(plot)
+
+# PRINT A SINGLE PLOT_LY PLOT
+
+```
+
+<br> <br> <br>
+
+
+ANIMATED BAR CHART COMPARING MALE/FEMALE STAAR SCORES IN 1996 BY GRADE LEVEL
+
+FROM CHATGPT
+
+```{r echo=FALSE, warning=FALSE, message=FALSE, fig.width=8, fig.height=6}
+
+library(tidyverse)
+library(gganimate)
+
+# Read data
+df1 <- read_csv(file = here::here("data",
+                                  "TEST SCUC 2004 TEA TAKS Data Grades 3-11.csv")
+                )
+
+# Perform data manipulation
+avgbycategory <- df1 %>%
+  filter(category != "All") %>%
+  mutate(grade_factor = as.factor(grade
+                                  )
+         ) %>% 
+  select(category,
+         grade_factor,
+         subject, 
+         value
+         ) %>%
+  group_by(category, 
+           grade_factor, 
+           subject
+           ) %>% 
+  summarise(mean_value = mean(value, 
+                              na.rm = TRUE)
+            )
+
+# Specify desired categories, metric, subjects, and grades
+desired_categories <- c("Male",
+                        "Female"
+                        )
+desired_subjects <- c("All")
+desired_grades <- c("3", 
+                    "4",
+                    "5",
+                    "6", 
+                    "7",
+                    "8", 
+                    "9",
+                    "10", 
+                    "11"
+                    )
+
+# Filter data
+dfplot <- avgbycategory %>%
+  filter((category %in% desired_categories) &
+           (subject %in% desired_subjects) &
+           (grade_factor %in% desired_grades))
+
+# Create ggplot with animation
+malefemale <- ggplot(dfplot,
+                     aes(
+                       x = grade_factor, 
+                       y = mean_value, 
+                       fill = category
+                     )
+                     ) +
+  geom_col(position = "dodge") +
+  geom_text(aes(label = round(mean_value, 1)
+                ), 
+            vjust = -0.5, 
+            position = position_dodge(width = 0.9), 
+            size = 10, # Increase label size
+            fontface = "bold") +
+  transition_states(grade_factor, 
+                    transition_length = 5, 
+                    state_length = 5, 
+                    wrap = FALSE
+                    ) +
+  shadow_mark() +
+  labs(x = "Grade", 
+       y = "Mean Value", 
+       fill = "Category"
+       ) +
+  theme(
+    axis.text.x = element_text(size = 20), # Increase x-axis text size
+    axis.text.y = element_text(size = 20), # Increase y-axis text size
+    plot.title = element_text(size = 20, hjust = 0.5), # Set title size and position
+    plot.subtitle = element_text(size = 20,
+                                 hjust = 0.5
+                                 ), # Set subtitle size and position
+    plot.caption = element_text(size = 20,
+                                hjust = 0.5) # Set caption size and position
+  ) +
+  ggtitle("Title") + # Add title
+  labs(subtitle = "Subtitle", 
+       caption = "Caption") # Add subtitle and caption
+
+malefemale
+
+
+# # Animate the plot
+# animate(malefemale,
+#         nframes = 300, 
+#         fps = 30, 
+#         duration = 28, 
+#         end_pause = 400, 
+#         width = 1200,
+#         height = 800,
+#         rewind = FALSE)
+
+
+```
+
+
+
+

@@ -1,0 +1,10 @@
+# Students {#sec-students-intro .unnumbered}
+
+```{r}
+#| results: "asis"
+#| echo: false
+
+```
+
+Our goal in this part of the book is students
+

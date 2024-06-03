@@ -1,0 +1,124 @@
+project:
+  type: book
+  execute-dir: project  # Set directory to 'project'
+toc: true
+number-sections: false
+bibliography: references.bib  
+highlight-style: pygments
+
+book:
+  title: "The Amazing Story of 28 Years of Growth & Accomplishment at SCUC-ISD"
+  subtitle: "As Told with 154 Plots"
+  author: "Dan Swart, Trustee, Seat 6"
+  date: "6/1/2024"
+  reader-mode: true
+  search: true
+  downloads: [pdf, docx, epub]
+  
+  page-footer:
+    left: |
+      This book was written by Dan Swart, Trustee 6, SCUC-ISD
+    right: |
+      This book was built with <a href="https://quarto.org/">Quarto</a>.
+  cover-image: unique-1-yellow-locker.jpg
+  favicon: unique-1-yellow-locker.jpg
+  
+  chapters:
+    - index.qmd
+
+    # preface-2e.qmd
+    - intro.qmd
+
+    - part: district_perform_intro.qmd
+      chapters:
+        - district_perform.qmd
+
+    - part: student_demographics_intro.qmd
+      chapters:
+        - student_demo.qmd
+ 
+    - part: standardized_scores_intro.qmd
+      chapters:
+        - STAAR Scores by Subject.qmd
+        - STAAR Scores by Student Grouping.qmd
+        - sat_act.qmd
+ 
+    - part: personnel_intro.qmd
+      chapters:
+        - teachers.qmd
+        - staff.qmd
+  
+    - part: finances_intro.qmd
+      chapters:
+       - taxes_and_revenues.qmd
+       - expenses.qmd
+  
+    - summary.qmd
+  
+    - references.qmd
+  
+  
+format:
+  html:
+    css: [swart-20240104.css, tachyons.min.css, r-colors.css]
+    theme: 
+      - cosmo
+    grid:
+      sidebar-width: 500px  # Increase this value to make the sidebar wider
+      body-width: 700px     # Decrease this value to make the main content area smaller
+      margin-width: 500px
+    max-width: 2400px # Increase this value to make the overall page wider
+    fontsize: 14pt # Adjust this value to increase or decrease the base font sizeself-contained: true
+    embed-resources: false
+    html-math-method: katex
+    callout-appearance: simple
+   
+  pdf:
+    documentclass: scrreprt
+    include-in-header: preamble.tex
+    classoption: 16pt
+    includes:
+      in_header: latex/preamble.tex
+      before_body: latex/before_body.tex
+      after_body: latex/after_body.tex
+      colorlinks: true
+    fontsize: 12pt 
+    fontfamily: palatino
+    margin-left: 10mm
+    margin-right: 10mm
+    before_body: latex/before_body.tex
+    after_body: latex/after_body.tex
+    keep_tex: true
+    dev: "cairo_pdf"
+    latex_engine: xelatex
+    citation_package: natbib
+    pandoc_args: ["--top-level-division=chapter", "--lua-filter=latex/sidebar.lua"]
+    quote_footer: ["\\hspace*{\\fill} ", ""]
+    toc_unnumbered: false
+    number_sections: true
+    header-includes:
+    - \usepackage{geometry}
+    - \geometry{top=1.00in,left=.50in,bottom=1.00in,right=.50in}
+    - \setlength\parindent{0.25in}
+    - \usepackage{xcolor}
+    - \usepackage{tcolorbox}
+    - \usepackage{ragged2e}
+    - \usepackage{hyperref}
+    - \usepackage{float}
+    - \hypersetup{colorlinks=true, linkcolor=MidnightBlue, urlcolor=BlueViolet, citecolor=BrickRed}
+    - \urlstyle{same}
+    - \graphicspath{{pbc}{img}}
+    - \usepackage{caption}
+    - \captionsetup[figure]{font=Large}
+    - \captionsetup{font=Large}
+    - \usepackage{longtable}
+    - \usepackage{placeins}
+linestretch: 1
+fontsize: 18pt
+knitr:
+  opts_chunk:
+    echo: false
+    error: false
+    warning: false
+    message: false
+ 

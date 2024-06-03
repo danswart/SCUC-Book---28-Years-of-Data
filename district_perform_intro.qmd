@@ -1,0 +1,13 @@
+# District Performance {#sec-district-perform-intro .unnumbered}
+
+```{r}
+#| results: "asis"
+#| echo: false
+
+```
+
+Our goal in this part of the book is district performance.
+
+
+
+
