@@ -2,28 +2,27 @@
 
 This book tells the amazing story of the growth and accomplishments of the SCUC-ISD over the past 28 years, as illustrated through 154 plots and charts.
 
-<!-- ::: callout-caution -->
+The book is house at:
 
-<!-- YELLOW BOX Example of a **.callout-caution** block. -->
+https://danswart.quarto.pub/scuc28yearsofdata/expenses.html
 
-<!-- ::: -->
 
-<!-- ::: callout-important -->
+<!-- My Quarto Pub site: -->
 
-<!-- RED BOX Example of a **.callout-important** block. -->
+<!-- https://quartopub.com/sites/f2b9bd70-85b1-4b19-9670-f8fa66542c74 -->
 
-<!-- ::: -->
+<!-- Settings -->
+<!-- Title -->
+<!-- The Amazing Story of 28 Years of Growth & Accomplishment at SCUC-ISD -->
 
-<!-- ::: callout-tip -->
+<!-- Identifier -->
+<!-- f2b9bd70-85b1-4b19-9670-f8fa66542c74 -->
 
-<!-- GREEN BOX Example of a **.callout-tip** block. -->
+<!-- Last updated -->
+<!-- 7 seconds ago -->
 
-<!-- ::: -->
+<!-- Slug -->
+<!-- scuc28yearsofdata -->
 
-<!-- ::: callout-warning -->
-
-<!-- ORANGE BOX Example of a **.callout-warning** block. -->
-
-<!-- ::: -->
-
-<!--#  -->
+<!-- Options -->
+<!-- Default site -->
