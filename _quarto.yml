@@ -77,7 +77,7 @@ format:
     callout-appearance: simple
    
   pdf:
-    documentclass: scrreprt
+    documentclass: scrbook  
     include-in-header: preamble.tex
     classoption: 16pt
     includes:
