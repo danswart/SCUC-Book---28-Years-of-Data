@@ -1,0 +1,183 @@
+---
+title: "SCUC Multiple Interactive Plotly Plots"
+author: "Dan Swart, Trustee"
+---
+
+DOES THIS CONTAIN THE OLD CHART GENERATION FUNCTION???
+
+MULTIPLE INTERACTIVE PLOTLY PLOTS - DOES NOT WORK YET!!!!!
+
+INTERACTIVE PLOTS
+
+```{r results='asis', echo=FALSE, warning=FALSE, message=FALSE}
+
+#  THIS IS A FUNCTION TO MAKE MULTIPLE PLOTLY PLOTS
+
+# Load Libraries
+
+library(tidyverse)
+library(qicharts2)
+library(haven)
+library(readxl)
+library(skimr)
+library(visdat)
+library(gghighlight)
+library(dplyr)
+library(stringr)
+library(ggtext)
+library(gganimate)
+library(ggplot2)
+library(purrr)
+library(scales)
+library(ggrepel)
+library(glue)
+library(plotly)
+library(htmlwidgets)
+
+# Load SCUC scorecard data for 1995-2022
+df2 <- read_csv(file = here::here("data", "SCUC Snapshots 1995 to 2022-LONG.csv"), show_col_types = FALSE)
+
+
+# Define a custom label formatting function
+custom_label_func <- function(x) {
+  if (any(abs(x[!is.na(x)]) >= 1e6)) {
+    return(format(x, big.mark = ",", scientific = FALSE))
+  } else {
+    return(format(x, big.mark = ","))
+  }
+}
+
+# Define the function with arguments for desired parameters
+generate_run_chart <- function(df_group, desired_years, desired_grades) {
+  if (nrow(df_group) > 1) {
+    group_category <- unique(df_group$grouping)
+    group_grade <- unique(df_group$grade)
+
+    y_min <- min(df_group$value,
+                 na.rm = TRUE
+                 )
+    y_max <- max(df_group$value,
+                 na.rm = TRUE
+                 )
+    y_range <- y_max - y_min
+    max_y_range <- y_range + .20
+    expansion_factor <- ifelse(y_range < max_y_range,
+                               max_y_range - y_range,
+                               0)
+    y_expand <- y_max + expansion_factor
+
+    title <- paste0(group_category,
+                    ", for Grades - ",
+                    group_grade,
+                    ", <br>",
+                    "for the Years Ended ",
+                    paste(min(desired_years),
+                          " - ",
+                          max(desired_years)
+                          )
+                    )
+
+# Calculate the median value
+    median_value <- median(df_group$value, na.rm = TRUE)
+
+# Create the plotly plot
+    plot <- plot_ly(data = df_group,
+                    x = ~year,
+                    y = ~value,
+                    type = 'scatter',
+                    mode = 'lines+markers',
+                    text = ~paste('Year: ',
+                                  year,
+                                  '<br>Value: ',
+                                  value)
+                    ) %>%
+      layout(title = list(text = title,
+                          font = list(family = "Arial",
+                                      size = 20,
+                                      color = "black"),
+                          x = 0.5),
+             xaxis = list(title = "Academic Year-Ended",
+                          tickangle = 45,
+                          titlefont = list(family = "Arial",
+                                           size = 16,
+                                           color = "black")
+                          ),
+             yaxis = list(title = group_category,
+                          titlefont = list(family = "Arial",
+                                           size = 16,
+                                           color = "black")
+                          ),
+             margin = list(t = 100),  # Set top margin to 100 pixels
+             showlegend = FALSE,
+             annotations = list(
+               list(x = max(df_group$year),
+                    y = (median_value + (0.03 * y_range)),
+                    xref = 'x',
+                    yref = 'y',
+                    text = paste("Median: ",
+                                 median_value),
+                    font = list(family = "Arial",
+                                size = 12,
+                                color = "black"),
+                    showarrow = FALSE)
+             )) %>%
+# Add a horizontal line for the median
+      add_trace(y = rep(median_value, nrow(df_group)),
+                type = 'scatter',
+                mode = 'lines',
+                line = list(color = 'red', dash = 'dash'),
+                showlegend = FALSE)
+
+# Return the plotly object
+    return(plot)
+
+  } else {
+ # Return NULL for groups with only one observation
+    return(NULL)
+  }
+}
+
+
+# Define the custom order for the grouping column
+custom_order <- c("Total Students in District",
+                  "Total Number of Schools",
+                  "Attendance Rate",
+                  "Annual Graduate Count",
+                  "Annual RHSP-DAP-FHSP-E-FHSP-DLA Graduate Count",
+                  "4-Year Longitudinal Graduation Rate",
+                  "5-Year Longitudinal Graduation Rate",
+                  "6-Year Longitudinal Graduation Rate",
+                  "Exit-Level Cumulative Pass Rate",
+                  "Completion Rate",
+                  "Annual Dropout Rate",
+                  "Annual Dropout Rate Gr 9-12",
+                  "Four-year Dropout Rate")
+
+# Convert the grouping column to a factor with custom levels
+df2$grouping <- factor(df2$grouping, levels = custom_order)
+
+# Filter and group the data frame
+desired_section_df <- df2 %>% filter(section == desired_section)
+df2plot_grouped <- desired_section_df %>%
+  group_by(grouping, grade, level_achieved) %>%
+  group_split()
+
+# Apply the function with desired parameters for each category
+plots <- map(df2plot_grouped, generate_run_chart, desired_years = unique(desired_section_df$year), desired_grades = unique(desired_section_df$grade))
+
+
+# Loop through list file and print to html on render
+plots |>
+  purrr::map(\(x) knitr::knit_child(text = c("```{r}", "#| echo: false", "x", "```"), envir = environment(), quiet = TRUE)) |>
+  unlist() |>
+  cat(sep = "")
+
+
+# To print each plot inside RStudio
+for (plot in plots) {
+ print(plot)
+ }
+
+#   THIS IS A FUNCTION TO MAKE MULTIPLE PLOTLY PLOTS
+
+```
