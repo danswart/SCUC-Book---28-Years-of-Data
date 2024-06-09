@@ -588,4 +588,25 @@ knitr::include_graphics("gif/student-composition-racing-bar.mp4")
 #                                     margin = margin(1.0, 0, 0.5, 0, "lines"
 #                                                     )
 #                                     ),
-#       
+#         strip.text = element_text(# family = "Roboto",
+#                                   color = "orange",
+#                                   size = rel(1.1),
+#                                   face = "bold",
+#                                   margin = margin(2, 0, 0.5, 0, "lines")),
+#         axis.text = element_text(color = "black"),
+#         panel.background = element_rect(fill = "white", color = NA),
+#         plot.background = element_rect(fill = "white", color = NA),
+#         panel.grid = element_blank()
+#     )
+# 
+# 
+# # Print the plot
+# print(plot_E)
+# 
+# # Stop recording
+# gg_stop_recording()
+
+
+
+```
+
