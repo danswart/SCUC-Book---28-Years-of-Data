@@ -1,0 +1,253 @@
+---
+title: "STAAR Scores by Subject"
+author: "Dan Swart, Trustee, Seat 6"
+editor: 
+  markdown: 
+    wrap: 72
+---
+
+Let your eyes wander over these plots and get a sense of the growth and
+development of the district over the last 28 years. Using just your eyes
+you will gain an appreciation for the accomplishments and growth of the
+district.
+
+::: only-html
+::: ac
+Enjoy!
+:::
+:::
+
+::: only-pdf
+```{=tex}
+\begin{center}
+Enjoy!
+\end{center}
+```
+:::
+
+\clearpage
+
+## Level Achieved:  Approaches and Higher
+
+### All Subjects Combined
+
+
+
+Comment:
+
+![](png_Standardized_Scores/Standardized_ScoresAllSubjectsscoreAllApproaches_or_Above19952022.png)
+
+\clearpage
+
+<br><br><br>
+
+
+### Reading/ELA
+
+Comment:
+
+![](png_Standardized_Scores/Standardized_ScoresReading-ELAscoreAllApproaches_or_Above19952022.png)
+
+
+
+<br><br><br>
+
+\clearpage
+
+### Writing
+
+Comment:
+
+![](png_Standardized_Scores/Standardized_ScoresWritingscoreAllApproaches_or_Above19952022.png)
+
+\clearpage
+
+<br><br><br>
+
+### Mathematics
+
+Comment:
+
+![](png_Standardized_Scores/Standardized_ScoresMathematicsscoreAllApproaches_or_Above19952022.png)
+
+\clearpage
+
+### Science
+
+Comment:
+
+![](png_Standardized_Scores/Standardized_ScoresSciencescoreAllApproaches_or_Above19952022.png)
+
+\clearpage
+
+### Social Studies
+
+Comment:
+
+![](png_Standardized_Scores/Standardized_ScoresSocialStudiesscoreAllApproaches_or_Above19952022.png)
+
+
+\clearpage
+
+## Level Achieved: Failing
+
+
+
+### All Subjects Combined
+
+Comment:
+
+![](png_Standardized_Scores/Standardized_ScoresAllSubjectsscoreAllFailing19952022.png)
+
+\clearpage
+
+### Reading/ELA
+
+Comment:
+
+![](png_Standardized_Scores/Standardized_ScoresReading-ELAscoreAllFailing19952022.png)
+
+\clearpage
+
+### Writing
+
+Comment:
+
+![](png_Standardized_Scores/Standardized_ScoresWritingscoreAllFailing19952022.png)
+
+\clearpage
+
+### Mathematics
+
+Comment:
+
+![](png_Standardized_Scores/Standardized_ScoresMathematicsscoreAllFailing19952022.png)
+
+\clearpage
+
+### Science
+
+Comment:
+
+![](png_Standardized_Scores/Standardized_ScoresSciencescoreAllFailing19952022.png)
+
+\clearpage
+
+### Social Studies
+
+Comment:
+
+![](png_Standardized_Scores/Standardized_ScoresSocialStudiesscoreAllFailing19952022.png)
+
+
+\clearpage
+
+
+## Level Achieved: Meets or Above
+
+
+### All Subjects Combined
+
+Comment:
+
+![](png_Standardized_Scores/Standardized_ScoresAllSubjectsscoreAllMeets_or_Above19952022.png)
+
+\clearpage
+
+### Reading/ELA
+
+Comment:
+
+![](png_Standardized_Scores/Standardized_ScoresReading-ELAscoreAllMeets_or_Above19952022.png)
+
+\clearpage
+
+### Writing
+
+Comment:
+
+![](png_Standardized_Scores/Standardized_ScoresWritingscoreAllMeets_or_Above19952022.png)
+
+\clearpage
+
+### Mathematics
+
+Comment:
+
+![](png_Standardized_Scores/Standardized_ScoresMathematicsscoreAllMeets_or_Above19952022.png)
+
+\clearpage
+
+### Science
+
+Comment:
+
+![](png_Standardized_Scores/Standardized_ScoresSciencescoreAllMeets_or_Above19952022.png)
+
+\clearpage
+
+### Social Studies
+
+Comment:
+
+![](png_Standardized_Scores/Standardized_ScoresSocialStudiesscoreAllMeets_or_Above19952022.png)
+
+
+\clearpage
+
+## Level Achieved: Masters
+
+### All Subjects Combined
+
+Comment:
+
+
+
+![](png_Standardized_Scores/Standardized_ScoresAllSubjectsscoreAllMasters19952022.png)
+
+
+\clearpage
+
+### Reading/ELA
+
+Comment:
+
+![](png_Standardized_Scores/Standardized_ScoresReading-ELAscoreAllMasters19952022.png)
+
+
+\clearpage
+
+### Writing
+
+Comment:
+
+![](png_Standardized_Scores/Standardized_ScoresWritingscoreAllMasters19952022.png)
+
+
+\clearpage
+
+### Mathematics
+
+Comment:
+
+![](png_Standardized_Scores/Standardized_ScoresMathematicsscoreAllMasters19952022.png)
+
+
+\clearpage
+
+### Science
+
+Comment:
+
+![](png_Standardized_Scores/Standardized_ScoresSciencescoreAllMasters19952022.png)
+
+
+\clearpage
+
+### Social Studies
+
+Comment:
+
+![](png_Standardized_Scores/Standardized_ScoresSocialStudiesscoreAllMasters19952022.png)
+
+

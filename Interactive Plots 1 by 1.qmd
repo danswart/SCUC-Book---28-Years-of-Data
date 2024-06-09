@@ -1,0 +1,2247 @@
+---
+title: "Plotly Plots 1 by 1"
+author: "Dan Swart, Trustee"
+editor: 
+  markdown: 
+    wrap: 72
+---
+
+
+PLOTLY PLOTS ONE BY ONE
+
+<b>Total Students in District
+
+Comments:</b>
+Here is an embedded PNG image
+
+![](Total Students in District.png)
+
+
+```{r echo=FALSE, warning=FALSE, message=FALSE, fig.width=6, fig.height=4}
+
+
+# CREATE A SINGLE PLOT_LY PLOT
+# SUITABLE FOR RENDERING IN QUARTO BOOK FORMAT
+
+# Load Libraries
+
+library(tidyverse)
+library(qicharts2)
+library(haven)
+library(readxl)
+library(skimr)
+library(visdat)
+library(gghighlight)
+library(dplyr)
+library(stringr)
+library(ggtext)
+library(gganimate)
+library(ggplot2)
+library(purrr)
+library(scales)
+library(ggrepel)
+library(glue)
+library(plotly)
+library(htmlwidgets)
+library(webshot2)
+library(readr)
+
+
+# Load SCUC scorecard data for 1995-2022
+
+df2 <- read_csv(file = here::here("data",
+                                  "SCUC Snapshots 1995 to 2022-LONG.csv")
+                )
+
+
+desired_section <- "District_Perform"
+desired_groupings <- "Total Students in District"
+desired_grades <- "All"
+
+# Filter for desired book section
+plotly_df <- df2 %>% 
+  filter(section == desired_section) %>% 
+  filter(grouping == desired_groupings) %>% 
+  filter(grade == desired_grades)
+
+# Rename plot object
+df_group <- plotly_df
+
+# Set y axis scale
+y_min <- min(df_group$value, 
+             na.rm = TRUE
+             )
+y_max <- max(df_group$value,
+             na.rm = TRUE
+             )
+y_range <- y_max - y_min
+max_y_range <- y_range + .20
+expansion_factor <- ifelse(y_range < max_y_range,
+                           max_y_range - y_range,
+                           0
+                           )
+y_expand <- y_max + expansion_factor
+
+# Specify titles, etc.
+title <- paste0(df_group$grouping, 
+                ", for Grades - ", 
+                df_group$grade,
+                ", <br>",
+                paste0("for the Years Ended ", 
+                       paste(min(df_group$year),
+                             " - ",
+                             max(df_group$year)
+                             )
+                       )
+                )
+
+y_axis_label <- c(df_group$grouping[1])
+  
+
+caption <- "The centerline shown is the Median of the data"
+
+# Calculate the median value
+median_value <- median(df_group$value,
+                       na.rm = TRUE
+                       )
+
+# Create the plot_ly plot
+p <- plot_ly(data = df_group, 
+        x = ~year, 
+        y = ~value, 
+        type = 'scatter', 
+        mode = 'lines+markers',
+        text = ~paste('Year: ', 
+                      year,
+                      '<br>Value: ', 
+                      value
+                      )
+        ) %>%
+  layout(title = list(text = title, 
+                      font = list(family = "Arial", 
+                                  size = 20, 
+                                  color = "black"
+                                  ), 
+                      x = 0.5
+                      ),
+         xaxis = list(title = "Academic Year-Ended",
+                      tickangle = 45,
+                      titlefont = list(family = "Arial", 
+                                       size = 16, 
+                                       color = "black"
+                                       )
+                      ),
+         yaxis = list(title = y_axis_label, 
+                      titlefont = list(family = "Arial", 
+                                       size = 16, 
+                                       color = "black"
+                                       )
+                      ),
+         margin = list(t = 100),  # Set top margin to 100 pixels
+         showlegend = FALSE,
+         annotations = list(
+           list(x = max(df_group$year), 
+                y = (median_value + (0.03 * y_range)
+                     ),
+                xref = 'x', 
+                yref = 'y', 
+                text = paste("Median: ",
+                             median_value
+                             ), 
+                font = list(family = "Arial", 
+                            size = 12, 
+                            color = "black"
+                            ), 
+                showarrow = FALSE
+                ),
+           list(x = 0.5, 
+                y = -0.3, 
+                xref = 'paper', 
+                yref = 'paper', 
+                text = caption, 
+                font = list(family = "Arial", 
+                            size = 14, 
+                            color = "black"
+                            ), 
+                showarrow = FALSE
+                )
+         )
+         ) %>%
+  # Add a horizontal line for the median
+  add_trace(y = rep(median_value,
+                    nrow(df_group)
+                    ),
+            type = 'scatter',
+            mode = 'lines',
+            line = list(color = 'red', 
+                        dash = 'dash'
+                        ),
+            showlegend = FALSE
+            )
+
+
+
+# Save the plot as an interactive and a static image
+
+htmlwidgets::saveWidget(widget = p, 
+                        file = "Total Students in District.html", 
+                        selfcontained = TRUE
+                        )
+
+webshot(url = "Total Students in District.html", 
+        file = "Total Students in District.png", 
+        delay = 1, 
+        zoom = 4, 
+        vheight = 500
+        )
+
+
+# PRINT A SINGLE PLOT_LY PLOT
+
+```
+
+
+<br> <br> <br>
+
+<b>Total Numnber of Schools
+
+Comments:</b>
+Here is an embedded PNG image:
+
+![](Total Number of Schools.png)
+
+
+```{r echo=FALSE, warning=FALSE, message=FALSE, fig.width=6, fig.height=4}
+
+# CREATE A SINGLE PLOT_LY PLOT
+# SUITABLE FOR RENDERING IN QUARTO BOOK FORMAT
+
+# Load Libraries
+
+library(tidyverse)
+library(qicharts2)
+library(haven)
+library(readxl)
+library(skimr)
+library(visdat)
+library(gghighlight)
+library(dplyr)
+library(stringr)
+library(ggtext)
+library(gganimate)
+library(ggplot2)
+library(purrr)
+library(scales)
+library(ggrepel)
+library(glue)
+library(plotly)
+library(htmlwidgets)
+library(webshot2)
+
+
+
+# Load SCUC scorecard data for 1995-2022
+
+df2 <- read_csv(file = here::here("data",
+                                  "SCUC Snapshots 1995 to 2022-LONG.csv")
+                )
+
+desired_section <- "District_Perform"
+desired_groupings <- "Total Number of Schools"
+desired_grades <- "All"
+
+# Filter for desired book section
+plotly_df <- df2 %>% 
+  filter(section == desired_section) %>% 
+  filter(grouping == desired_groupings) %>% 
+  filter(grade == desired_grades)
+
+# Rename data frame
+df_group <- plotly_df
+
+# Set y axis scale
+y_min <- min(df_group$value, 
+             na.rm = TRUE
+             )
+y_max <- max(df_group$value,
+             na.rm = TRUE
+             )
+y_range <- y_max - y_min
+max_y_range <- y_range + .20
+expansion_factor <- ifelse(y_range < max_y_range,
+                           max_y_range - y_range,
+                           0
+                           )
+y_expand <- y_max + expansion_factor
+
+# Specify titles, etc.
+title <- paste0(df_group$grouping, 
+                ", for Grades - ", 
+                df_group$grade,
+                ", <br>",
+                paste0("for the Years Ended ", 
+                       paste(min(df_group$year),
+                             " - ",
+                             max(df_group$year)
+                             )
+                       )
+                )
+
+y_axis_label <- c(df_group$grouping[1])
+  
+
+caption <- "The centerline shown is the Median of the data"
+
+# Calculate the median value
+median_value <- median(df_group$value,
+                       na.rm = TRUE
+                       )
+
+# Create the plot_ly plot
+p <- plot_ly(data = df_group, 
+        x = ~year, 
+        y = ~value, 
+        type = 'scatter', 
+        mode = 'lines+markers',
+        text = ~paste('Year: ', 
+                      year,
+                      '<br>Value: ', 
+                      value
+                      )
+        ) %>%
+  layout(title = list(text = title, 
+                      font = list(family = "Arial", 
+                                  size = 20, 
+                                  color = "black"
+                                  ), 
+                      x = 0.5
+                      ),
+         xaxis = list(title = "Academic Year-Ended",
+                      tickangle = 45,
+                      titlefont = list(family = "Arial", 
+                                       size = 16, 
+                                       color = "black"
+                                       )
+                      ),
+         yaxis = list(title = y_axis_label, 
+                      titlefont = list(family = "Arial", 
+                                       size = 16, 
+                                       color = "black"
+                                       )
+                      ),
+         margin = list(t = 100),  # Set top margin to 100 pixels
+         showlegend = FALSE,
+         annotations = list(
+           list(x = max(df_group$year), 
+                y = (median_value + (0.03 * y_range)
+                     ),
+                xref = 'x', 
+                yref = 'y', 
+                text = paste("Median: ",
+                             median_value
+                             ), 
+                font = list(family = "Arial", 
+                            size = 12, 
+                            color = "black"
+                            ), 
+                showarrow = FALSE
+                ),
+           list(x = 0.5, 
+                y = -0.3, 
+                xref = 'paper', 
+                yref = 'paper', 
+                text = caption, 
+                font = list(family = "Arial", 
+                            size = 14, 
+                            color = "black"
+                            ), 
+                showarrow = FALSE
+                )
+         )
+         ) %>%
+  # Add a horizontal line for the median
+  add_trace(y = rep(median_value,
+                    nrow(df_group)
+                    ),
+            type = 'scatter',
+            mode = 'lines',
+            line = list(color = 'red', 
+                        dash = 'dash'
+                        ),
+            showlegend = FALSE
+            )
+
+
+# Save the plot as an interactive and a static image
+
+htmlwidgets::saveWidget(widget = p, file = "Total Number of Schools.html", selfcontained = TRUE)
+
+webshot(url = "Total Number of Schools.html", file = "Total Number of Schools.png", delay = 1, zoom = 4, vheight = 500)
+
+
+# print(plot)
+
+# PRINT A SINGLE PLOT_LY PLOT
+
+```
+
+<br> <br> <br>
+
+<b>Attendance Rate
+
+Comments:</b>
+![](Attendance Rate.png)
+
+
+```{r echo=FALSE, warning=FALSE, message=FALSE}
+
+# CREATE A SINGLE PLOT_LY PLOT
+# SUITABLE FOR RENDERING IN QUARTO BOOK FORMAT
+
+# Load Libraries
+
+library(tidyverse)
+library(qicharts2)
+library(haven)
+library(readxl)
+library(skimr)
+library(visdat)
+library(gghighlight)
+library(dplyr)
+library(stringr)
+library(ggtext)
+library(gganimate)
+library(ggplot2)
+library(purrr)
+library(scales)
+library(ggrepel)
+library(glue)
+library(plotly)
+library(htmlwidgets)
+
+
+# Load SCUC scorecard data for 1995-2022
+
+df2 <- read_csv(file = here::here("data",
+                                  "SCUC Snapshots 1995 to 2022-LONG.csv")
+                )
+
+desired_section <- "District_Perform"
+desired_groupings <- "Attendance Rate"
+desired_grades <- "All"
+
+# Filter for desired book section
+plotly_df <- df2 %>% 
+  filter(section == desired_section) %>% 
+  filter(grouping == desired_groupings) %>% 
+  filter(grade == desired_grades)
+
+# Rename df
+df_group <- plotly_df
+
+# Set y axis scale
+y_min <- min(df_group$value, na.rm = TRUE)
+y_max <- max(df_group$value, na.rm = TRUE)
+y_range <- y_max - y_min
+max_y_range <- y_range + .20
+expansion_factor <- ifelse(y_range < max_y_range, 
+                           max_y_range - y_range,
+                           0
+                           )
+y_expand <- y_max + expansion_factor
+
+# Specify titles, etc.
+title <- paste0(df_group$grouping, 
+                ", for Grades - ", 
+                df_group$grade,
+                ", <br>",
+                paste0("for the Years Ended ", 
+                       paste(min(df_group$year),
+                             " - ",
+                             max(df_group$year)
+                             )
+                       )
+                )
+
+y_axis_label <- c(df_group$grouping[1])
+  
+
+caption <- "The centerline shown is the Median of the data"
+
+# Calculate the median value
+median_value <- median(df_group$value, 
+                       na.rm = TRUE
+                       )
+
+# Create the plot_ly plot
+p <- plot_ly(data = df_group, 
+        x = ~year, 
+        y = ~value, 
+        type = 'scatter', 
+        mode = 'lines+markers',
+        text = ~paste('Year: ', 
+                      year,
+                      '<br>Value: ', 
+                      value
+                      )
+        ) %>%
+  layout(title = list(text = title, 
+                      font = list(family = "Arial", 
+                                  size = 20, 
+                                  color = "black"
+                                  ), 
+                      x = 0.5
+                      ),
+         xaxis = list(title = "Academic Year-Ended",
+                      tickangle = 45,
+                      titlefont = list(family = "Arial", 
+                                       size = 16, 
+                                       color = "black"
+                                       )
+                      ),
+         yaxis = list(title = y_axis_label, 
+                      titlefont = list(family = "Arial", 
+                                       size = 16, 
+                                       color = "black"
+                                       )
+                      ),
+         margin = list(t = 100),  # Set top margin to 100 pixels
+         showlegend = FALSE,
+         annotations = list(
+           list(x = max(df_group$year), 
+                y = (median_value + (0.03 * y_range)
+                     ),
+                xref = 'x', 
+                yref = 'y', 
+                text = paste("Median: ",
+                             median_value
+                             ), 
+                font = list(family = "Arial", 
+                            size = 12, 
+                            color = "black"
+                            ), 
+                showarrow = FALSE
+                ),
+           list(x = 0.5, 
+                y = -0.3, 
+                xref = 'paper', 
+                yref = 'paper', 
+                text = caption, 
+                font = list(family = "Arial", 
+                            size = 14, 
+                            color = "black"
+                            ), 
+                showarrow = FALSE
+                )
+         )
+         ) %>%
+  # Add a horizontal line for the median
+  add_trace(y = rep(median_value,
+                    nrow(df_group)
+                    ),
+            type = 'scatter',
+            mode = 'lines',
+            line = list(color = 'red', 
+                        dash = 'dash'
+                        ),
+            showlegend = FALSE
+            )
+
+# Save the plot as an interactive and a static image
+
+htmlwidgets::saveWidget(widget = p, file = "Attendance Rate.html", selfcontained = TRUE)
+
+webshot(url = "Attendance Rate.html", file = "Attendance Rate.png", delay = 1, zoom = 4, vheight = 500)
+
+# print(plot)
+
+# PRINT A SINGLE PLOT_LY PLOT
+
+```
+
+<br> <br> <br>
+
+<b>Annual Graduate Count
+
+Comments:</b>
+
+
+![](Annual Graduate Count.png)
+
+
+```{r echo=FALSE, warning=FALSE, message=FALSE}
+
+# CREATE A SINGLE PLOT_LY PLOT
+# SUITABLE FOR RENDERING IN QUARTO BOOK FORMAT
+
+# Load Libraries
+
+library(tidyverse)
+library(qicharts2)
+library(haven)
+library(readxl)
+library(skimr)
+library(visdat)
+library(gghighlight)
+library(dplyr)
+library(stringr)
+library(ggtext)
+library(gganimate)
+library(ggplot2)
+library(purrr)
+library(scales)
+library(ggrepel)
+library(glue)
+library(plotly)
+library(htmlwidgets)
+
+
+# Load SCUC scorecard data for 1995-2022
+
+df2 <- read_csv(file = here::here("data",
+                                  "SCUC Snapshots 1995 to 2022-LONG.csv")
+                )
+
+
+desired_section <- "District_Perform"
+desired_groupings <- "Annual Graduate Count"
+desired_grades <- "All"
+
+# Filter for desired book section
+plotly_df <- df2 %>% 
+  filter(section == desired_section) %>% 
+  filter(grouping == desired_groupings) %>% 
+  filter(grade == desired_grades)
+
+# Rename df
+df_group <- plotly_df
+
+# Set y axis scale
+y_min <- min(df_group$value,
+             na.rm = TRUE
+             )
+y_max <- max(df_group$value, 
+             na.rm = TRUE
+             )
+y_range <- y_max - y_min
+max_y_range <- y_range + .20
+expansion_factor <- ifelse(y_range < max_y_range,
+                           max_y_range - y_range,
+                           0
+                           )
+y_expand <- y_max + expansion_factor
+
+# Specify titles, etc.
+title <- paste0(df_group$grouping, 
+                ", for Grades - ", 
+                df_group$grade,
+                ", <br>",
+                paste0("for the Years Ended ", 
+                       paste(min(df_group$year),
+                             " - ",
+                             max(df_group$year)
+                             )
+                       )
+                )
+
+y_axis_label <- c(df_group$grouping[1])
+  
+
+caption <- "The centerline shown is the Median of the data"
+
+# Calculate the median value
+median_value <- median(df_group$value,
+                       na.rm = TRUE
+                       )
+
+# Create the plot_ly plot
+p <- plot_ly(data = df_group, 
+        x = ~year, 
+        y = ~value, 
+        type = 'scatter', 
+        mode = 'lines+markers',
+        text = ~paste('Year: ', 
+                      year,
+                      '<br>Value: ', 
+                      value
+                      )
+        ) %>%
+  layout(title = list(text = title, 
+                      font = list(family = "Arial", 
+                                  size = 20, 
+                                  color = "black"
+                                  ), 
+                      x = 0.5
+                      ),
+         xaxis = list(title = "Academic Year-Ended",
+                      tickangle = 45,
+                      titlefont = list(family = "Arial", 
+                                       size = 16, 
+                                       color = "black"
+                                       )
+                      ),
+         yaxis = list(title = y_axis_label, 
+                      titlefont = list(family = "Arial", 
+                                       size = 16, 
+                                       color = "black"
+                                       )
+                      ),
+         margin = list(t = 100),  # Set top margin to 100 pixels
+         showlegend = FALSE,
+         annotations = list(
+           list(x = max(df_group$year), 
+                y = (median_value + (0.03 * y_range)
+                     ),
+                xref = 'x', 
+                yref = 'y', 
+                text = paste("Median: ",
+                             median_value
+                             ), 
+                font = list(family = "Arial", 
+                            size = 12, 
+                            color = "black"
+                            ), 
+                showarrow = FALSE
+                ),
+           list(x = 0.5, 
+                y = -0.3, 
+                xref = 'paper', 
+                yref = 'paper', 
+                text = caption, 
+                font = list(family = "Arial", 
+                            size = 14, 
+                            color = "black"
+                            ), 
+                showarrow = FALSE
+                )
+         )
+         ) %>%
+  # Add a horizontal line for the median
+  add_trace(y = rep(median_value,
+                    nrow(df_group)
+                    ),
+            type = 'scatter',
+            mode = 'lines',
+            line = list(color = 'red', 
+                        dash = 'dash'
+                        ),
+            showlegend = FALSE
+            )
+
+
+# Save the plot as an interactive and a static image
+
+htmlwidgets::saveWidget(widget = p, file = "Annual Graduate Count.html", selfcontained = TRUE)
+
+webshot(url = "Annual Graduate Count.html", file = "Annual Graduate Count.png", delay = 1, zoom = 4, vheight = 500)
+
+
+# print(plot)
+
+# PRINT A SINGLE PLOT_LY PLOT
+
+```
+
+<br> <br> <br>
+
+<b>Annual Graduate Count
+
+Comments:</b>
+
+
+![](Annual RHSP-DAP-FHSP-E-FHSP-DLA Graduate Count.png)
+
+
+
+```{r echo=FALSE, warning=FALSE, message=FALSE}
+
+# CREATE A SINGLE PLOT_LY PLOT
+# SUITABLE FOR RENDERING IN QUARTO BOOK FORMAT
+
+# Load Libraries
+
+library(tidyverse)
+library(qicharts2)
+library(haven)
+library(readxl)
+library(skimr)
+library(visdat)
+library(gghighlight)
+library(dplyr)
+library(stringr)
+library(ggtext)
+library(gganimate)
+library(ggplot2)
+library(purrr)
+library(scales)
+library(ggrepel)
+library(glue)
+library(plotly)
+library(htmlwidgets)
+
+
+# Load SCUC scorecard data for 1995-2022
+
+df2 <- read_csv(file = here::here("data",
+                                  "SCUC Snapshots 1995 to 2022-LONG.csv")
+                )
+
+desired_section <- "District_Perform"
+desired_groupings <- "Annual RHSP-DAP-FHSP-E-FHSP-DLA Graduate Count"
+desired_grades <- "All"
+
+# Filter for desired book section
+plotly_df <- df2 %>% 
+  filter(section == desired_section) %>% 
+  filter(grouping == desired_groupings) %>% 
+  filter(grade == desired_grades)
+
+# Rename df
+df_group <- plotly_df
+
+# Set y axis scale
+y_min <- min(df_group$value,
+             na.rm = TRUE
+             )
+y_max <- max(df_group$value,
+             na.rm = TRUE
+             )
+y_range <- y_max - y_min
+max_y_range <- y_range + .20
+expansion_factor <- ifelse(y_range < max_y_range,
+                           max_y_range - y_range,
+                           0
+                           )
+y_expand <- y_max + expansion_factor
+
+# Specify titles, etc.
+title <- paste0(df_group$grouping, 
+                ", for Grades - ", 
+                df_group$grade,
+                ", <br>",
+                paste0("for the Years Ended ", 
+                       paste(min(df_group$year),
+                             " - ",
+                             max(df_group$year)
+                             )
+                       )
+                )
+
+y_axis_label <- c(df_group$grouping[1])
+  
+
+caption <- "The centerline shown is the Median of the data"
+
+# Calculate the median value
+median_value <- median(df_group$value,
+                       na.rm = TRUE
+                       )
+
+# Create the plot_ly plot
+plot_ly(data = df_group, 
+        x = ~year, 
+        y = ~value, 
+        type = 'scatter', 
+        mode = 'lines+markers',
+        text = ~paste('Year: ', 
+                      year,
+                      '<br>Value: ', 
+                      value
+                      )
+        ) %>%
+  layout(title = list(text = title, 
+                      font = list(family = "Arial", 
+                                  size = 20, 
+                                  color = "black"
+                                  ), 
+                      x = 0.5
+                      ),
+         xaxis = list(title = "Academic Year-Ended",
+                      tickangle = 45,
+                      titlefont = list(family = "Arial", 
+                                       size = 16, 
+                                       color = "black"
+                                       )
+                      ),
+         yaxis = list(title = y_axis_label, 
+                      titlefont = list(family = "Arial", 
+                                       size = 16, 
+                                       color = "black"
+                                       )
+                      ),
+         margin = list(t = 100),  # Set top margin to 100 pixels
+         showlegend = FALSE,
+         annotations = list(
+           list(x = max(df_group$year), 
+                y = (median_value + (0.03 * y_range)
+                     ),
+                xref = 'x', 
+                yref = 'y', 
+                text = paste("Median: ",
+                             median_value
+                             ), 
+                font = list(family = "Arial", 
+                            size = 12, 
+                            color = "black"
+                            ), 
+                showarrow = FALSE
+                ),
+           list(x = 0.5, 
+                y = -0.3, 
+                xref = 'paper', 
+                yref = 'paper', 
+                text = caption, 
+                font = list(family = "Arial", 
+                            size = 14, 
+                            color = "black"
+                            ), 
+                showarrow = FALSE
+                )
+         )
+         ) %>%
+  # Add a horizontal line for the median
+  add_trace(y = rep(median_value,
+                    nrow(df_group)
+                    ),
+            type = 'scatter',
+            mode = 'lines',
+            line = list(color = 'red', 
+                        dash = 'dash'
+                        ),
+            showlegend = FALSE
+            )
+
+
+# Save the plot as an interactive and a static image
+
+htmlwidgets::saveWidget(widget = p, file = "Annual RHSP-DAP-FHSP-E-FHSP-DLA Graduate Count.html", selfcontained = TRUE)
+
+webshot(url = "Annual RHSP-DAP-FHSP-E-FHSP-DLA Graduate Count.html", file = "Annual RHSP-DAP-FHSP-E-FHSP-DLA Graduate Count.png", delay = 1, zoom = 4, vheight = 500)
+
+# print(plot)
+
+# PRINT A SINGLE PLOT_LY PLOT
+
+```
+
+<br> <br> <br>
+
+<b>Annual Graduate Count
+
+Comments:</b>
+
+
+![](4-Year Longitudinal Graduation Rate.png)
+
+
+
+```{r echo=FALSE, warning=FALSE, message=FALSE}
+
+# CREATE A SINGLE PLOT_LY PLOT
+# SUITABLE FOR RENDERING IN QUARTO BOOK FORMAT
+
+# Load Libraries
+
+library(tidyverse)
+library(qicharts2)
+library(haven)
+library(readxl)
+library(skimr)
+library(visdat)
+library(gghighlight)
+library(dplyr)
+library(stringr)
+library(ggtext)
+library(gganimate)
+library(ggplot2)
+library(purrr)
+library(scales)
+library(ggrepel)
+library(glue)
+library(plotly)
+library(htmlwidgets)
+
+
+# Load SCUC scorecard data for 1995-2022
+
+df2 <- read_csv(file = here::here("data",
+                                  "SCUC Snapshots 1995 to 2022-LONG.csv")
+                )
+
+desired_section <- "District_Perform"
+desired_groupings <- "4-Year Longitudinal Graduation Rate"
+desired_grades <- "All"
+
+# Filter for desired book section
+plotly_df <- df2 %>% 
+  filter(section == desired_section) %>% 
+  filter(grouping == desired_groupings) %>% 
+  filter(grade == desired_grades)
+
+# Rename df
+df_group <- plotly_df
+
+# Set y axis scale
+y_min <- min(df_group$value, 
+             na.rm = TRUE
+             )
+y_max <- max(df_group$value, 
+             na.rm = TRUE
+             )
+y_range <- y_max - y_min
+max_y_range <- y_range + .20
+expansion_factor <- ifelse(y_range < max_y_range,
+                           max_y_range - y_range,
+                           0
+                           )
+y_expand <- y_max + expansion_factor
+
+# Specify titles, etc.
+title <- paste0(df_group$grouping, 
+                ", for Grades - ", 
+                df_group$grade,
+                ", <br>",
+                paste0("for the Years Ended ", 
+                       paste(min(df_group$year),
+                             " - ",
+                             max(df_group$year)
+                             )
+                       )
+                )
+
+y_axis_label <- c(df_group$grouping[1])
+  
+
+caption <- "The centerline shown is the Median of the data"
+
+# Calculate the median value
+median_value <- median(df_group$value,
+                       na.rm = TRUE
+                       )
+
+# Create the plot_ly plot
+p <- plot_ly(data = df_group, 
+        x = ~year, 
+        y = ~value, 
+        type = 'scatter', 
+        mode = 'lines+markers',
+        text = ~paste('Year: ', 
+                      year,
+                      '<br>Value: ', 
+                      value
+                      )
+        ) %>%
+  layout(title = list(text = title, 
+                      font = list(family = "Arial", 
+                                  size = 20, 
+                                  color = "black"
+                                  ), 
+                      x = 0.5
+                      ),
+         xaxis = list(title = "Academic Year-Ended",
+                      tickangle = 45,
+                      titlefont = list(family = "Arial", 
+                                       size = 16, 
+                                       color = "black"
+                                       )
+                      ),
+         yaxis = list(title = y_axis_label, 
+                      titlefont = list(family = "Arial", 
+                                       size = 16, 
+                                       color = "black"
+                                       )
+                      ),
+         margin = list(t = 100),  # Set top margin to 100 pixels
+         showlegend = FALSE,
+         annotations = list(
+           list(x = max(df_group$year), 
+                y = (median_value + (0.03 * y_range)
+                     ),
+                xref = 'x', 
+                yref = 'y', 
+                text = paste("Median: ",
+                             median_value
+                             ), 
+                font = list(family = "Arial", 
+                            size = 12, 
+                            color = "black"
+                            ), 
+                showarrow = FALSE
+                ),
+           list(x = 0.5, 
+                y = -0.3, 
+                xref = 'paper', 
+                yref = 'paper', 
+                text = caption, 
+                font = list(family = "Arial", 
+                            size = 14, 
+                            color = "black"
+                            ), 
+                showarrow = FALSE
+                )
+         )
+         ) %>%
+  # Add a horizontal line for the median
+  add_trace(y = rep(median_value,
+                    nrow(df_group)
+                    ),
+            type = 'scatter',
+            mode = 'lines',
+            line = list(color = 'red', 
+                        dash = 'dash'
+                        ),
+            showlegend = FALSE
+            )
+
+# Save the plot as an interactive and a static image
+
+htmlwidgets::saveWidget(widget = p, file = "4-Year Longitudinal Graduation Rate.html", selfcontained = TRUE)
+
+webshot(url = "4-Year Longitudinal Graduation Rate.html", file = "4-Year Longitudinal Graduation Rate.png", 
+        delay = 1, 
+        zoom = 4, 
+        vheight = 500)
+
+
+# Save the plot as an interactive and a static image
+
+htmlwidgets::saveWidget(widget = p, file = "4-Year Longitudinal Graduation Rate.html", selfcontained = TRUE)
+
+webshot(url = "4-Year Longitudinal Graduation Rate.html", file = "4-Year Longitudinal Graduation Rate.png", delay = 1, zoom = 4, vheight = 500)
+
+
+# print(plot)
+
+# PRINT A SINGLE PLOT_LY PLOT
+
+```
+
+<br> <br> <br>
+
+5-Year Longitudinal Graduation Rate
+
+Comments:
+
+
+```{r echo=FALSE, warning=FALSE, message=FALSE}
+
+# CREATE A SINGLE PLOT_LY PLOT
+# SUITABLE FOR RENDERING IN QUARTO BOOK FORMAT
+
+# Load Libraries
+
+library(tidyverse)
+library(qicharts2)
+library(haven)
+library(readxl)
+library(skimr)
+library(visdat)
+library(gghighlight)
+library(dplyr)
+library(stringr)
+library(ggtext)
+library(gganimate)
+library(ggplot2)
+library(purrr)
+library(scales)
+library(ggrepel)
+library(glue)
+library(plotly)
+library(htmlwidgets)
+
+
+# Load SCUC scorecard data for 1995-2022
+
+df2 <- read_csv(file = here::here("data",
+                                  "SCUC Snapshots 1995 to 2022-LONG.csv")
+                )
+
+desired_section <- "District_Perform"
+desired_groupings <- "5-Year Longitudinal Graduation Rate"
+desired_grades <- "All"
+
+# Filter for desired book section
+plotly_df <- df2 %>% 
+  filter(section == desired_section) %>% 
+  filter(grouping == desired_groupings) %>% 
+  filter(grade == desired_grades)
+
+# Rename df
+df_group <- plotly_df
+
+# Set y axis scale
+y_min <- min(df_group$value, na.rm = TRUE)
+y_max <- max(df_group$value, na.rm = TRUE)
+y_range <- y_max - y_min
+max_y_range <- y_range + .20
+expansion_factor <- ifelse(y_range < max_y_range, max_y_range - y_range, 0)
+y_expand <- y_max + expansion_factor
+
+# Specify titles, etc.
+title <- paste0(df_group$grouping, 
+                ", for Grades - ", 
+                df_group$grade,
+                ", <br>",
+                paste0("for the Years Ended ", 
+                       paste(min(df_group$year),
+                             " - ",
+                             max(df_group$year)))
+                )
+
+y_axis_label <- c(df_group$grouping[1])
+  
+
+caption <- "The centerline shown is the Median of the data"
+
+# Calculate the median value
+median_value <- median(df_group$value, na.rm = TRUE)
+
+# Create the plot_ly plot
+plot_ly(data = df_group, 
+        x = ~year, 
+        y = ~value, 
+        type = 'scatter', 
+        mode = 'lines+markers',
+        text = ~paste('Year: ', 
+                      year,
+                      '<br>Value: ', 
+                      value)
+        ) %>%
+  layout(title = list(text = title, 
+                      font = list(family = "Arial", 
+                                  size = 20, 
+                                  color = "black"), 
+                      x = 0.5),
+         xaxis = list(title = "Academic Year-Ended",
+                      tickangle = 45,
+                      titlefont = list(family = "Arial", 
+                                       size = 16, 
+                                       color = "black")
+                      ),
+         yaxis = list(title = y_axis_label, 
+                      titlefont = list(family = "Arial", 
+                                       size = 16, 
+                                       color = "black")
+                      ),
+         margin = list(t = 100),  # Set top margin to 100 pixels
+         showlegend = FALSE,
+         annotations = list(
+           list(x = max(df_group$year), 
+                y = (median_value + (0.03 * y_range)),
+                xref = 'x', 
+                yref = 'y', 
+                text = paste("Median: ",
+                             median_value), 
+                font = list(family = "Arial", 
+                            size = 12, 
+                            color = "black"), 
+                showarrow = FALSE),
+           list(x = 0.5, 
+                y = -0.3, 
+                xref = 'paper', 
+                yref = 'paper', 
+                text = caption, 
+                font = list(family = "Arial", 
+                            size = 14, 
+                            color = "black"), 
+                showarrow = FALSE)
+         )) %>%
+  # Add a horizontal line for the median
+  add_trace(y = rep(median_value,
+                    nrow(df_group)),
+            type = 'scatter',
+            mode = 'lines',
+            line = list(color = 'red', 
+                        dash = 'dash'),
+            showlegend = FALSE)
+
+# print(plot)
+
+# PRINT A SINGLE PLOT_LY PLOT
+
+```
+
+<br> <br> <br>
+
+6-Year Longitudinal Graduation Rate
+
+Comments:
+
+
+```{r echo=FALSE, warning=FALSE, message=FALSE}
+
+# CREATE A SINGLE PLOT_LY PLOT
+# SUITABLE FOR RENDERING IN QUARTO BOOK FORMAT
+
+# Load Libraries
+
+library(tidyverse)
+library(qicharts2)
+library(haven)
+library(readxl)
+library(skimr)
+library(visdat)
+library(gghighlight)
+library(dplyr)
+library(stringr)
+library(ggtext)
+library(gganimate)
+library(ggplot2)
+library(purrr)
+library(scales)
+library(ggrepel)
+library(glue)
+library(plotly)
+library(htmlwidgets)
+
+
+# Load SCUC scorecard data for 1995-2022
+
+df2 <- read_csv(file = here::here("data",
+                                  "SCUC Snapshots 1995 to 2022-LONG.csv")
+                )
+
+desired_section <- "District_Perform"
+desired_groupings <- "6-Year Longitudinal Graduation Rate"
+desired_grades <- "All"
+
+# Filter for desired book section
+plotly_df <- df2 %>% 
+  filter(section == desired_section) %>% 
+  filter(grouping == desired_groupings) %>% 
+  filter(grade == desired_grades)
+
+# Rename df
+df_group <- plotly_df
+
+# Set y axis scale
+y_min <- min(df_group$value, na.rm = TRUE)
+y_max <- max(df_group$value, na.rm = TRUE)
+y_range <- y_max - y_min
+max_y_range <- y_range + .20
+expansion_factor <- ifelse(y_range < max_y_range, max_y_range - y_range, 0)
+y_expand <- y_max + expansion_factor
+
+# Specify titles, etc.
+title <- paste0(df_group$grouping, 
+                ", for Grades - ", 
+                df_group$grade,
+                ", <br>",
+                paste0("for the Years Ended ", 
+                       paste(min(df_group$year),
+                             " - ",
+                             max(df_group$year)))
+                )
+
+y_axis_label <- c(df_group$grouping[1])
+  
+
+caption <- "The centerline shown is the Median of the data"
+
+# Calculate the median value
+median_value <- median(df_group$value, na.rm = TRUE)
+
+# Create the plot_ly plot
+plot_ly(data = df_group, 
+        x = ~year, 
+        y = ~value, 
+        type = 'scatter', 
+        mode = 'lines+markers',
+        text = ~paste('Year: ', 
+                      year,
+                      '<br>Value: ', 
+                      value)
+        ) %>%
+  layout(title = list(text = title, 
+                      font = list(family = "Arial", 
+                                  size = 20, 
+                                  color = "black"), 
+                      x = 0.5),
+         xaxis = list(title = "Academic Year-Ended",
+                      tickangle = 45,
+                      titlefont = list(family = "Arial", 
+                                       size = 16, 
+                                       color = "black")
+                      ),
+         yaxis = list(title = y_axis_label, 
+                      titlefont = list(family = "Arial", 
+                                       size = 16, 
+                                       color = "black")
+                      ),
+         margin = list(t = 100),  # Set top margin to 100 pixels
+         showlegend = FALSE,
+         annotations = list(
+           list(x = max(df_group$year), 
+                y = (median_value + (0.03 * y_range)),
+                xref = 'x', 
+                yref = 'y', 
+                text = paste("Median: ",
+                             median_value), 
+                font = list(family = "Arial", 
+                            size = 12, 
+                            color = "black"), 
+                showarrow = FALSE),
+           list(x = 0.5, 
+                y = -0.3, 
+                xref = 'paper', 
+                yref = 'paper', 
+                text = caption, 
+                font = list(family = "Arial", 
+                            size = 14, 
+                            color = "black"), 
+                showarrow = FALSE)
+         )) %>%
+  # Add a horizontal line for the median
+  add_trace(y = rep(median_value,
+                    nrow(df_group)),
+            type = 'scatter',
+            mode = 'lines',
+            line = list(color = 'red', 
+                        dash = 'dash'),
+            showlegend = FALSE)
+
+# print(plot)
+
+# PRINT A SINGLE PLOT_LY PLOT
+
+```
+
+<br> <br> <br>
+
+Completion Rate
+
+Comments:
+
+
+```{r echo=FALSE, warning=FALSE, message=FALSE}
+
+# CREATE A SINGLE PLOT_LY PLOT
+# SUITABLE FOR RENDERING IN QUARTO BOOK FORMAT
+
+# Load Libraries
+
+library(tidyverse)
+library(qicharts2)
+library(haven)
+library(readxl)
+library(skimr)
+library(visdat)
+library(gghighlight)
+library(dplyr)
+library(stringr)
+library(ggtext)
+library(gganimate)
+library(ggplot2)
+library(purrr)
+library(scales)
+library(ggrepel)
+library(glue)
+library(plotly)
+library(htmlwidgets)
+
+
+# Load SCUC scorecard data for 1995-2022
+
+df2 <- read_csv(file = here::here("data",
+                                  "SCUC Snapshots 1995 to 2022-LONG.csv")
+                )
+
+desired_section <- "District_Perform"
+desired_groupings <- "Completion Rate"
+desired_grades <- "All"
+
+# Filter for desired book section
+plotly_df <- df2 %>% 
+  filter(section == desired_section) %>% 
+  filter(grouping == desired_groupings) %>% 
+  filter(grade == desired_grades)
+
+# Rename df
+df_group <- plotly_df
+
+# Set y axis scale
+y_min <- min(df_group$value, na.rm = TRUE)
+y_max <- max(df_group$value, na.rm = TRUE)
+y_range <- y_max - y_min
+max_y_range <- y_range + .20
+expansion_factor <- ifelse(y_range < max_y_range, max_y_range - y_range, 0)
+y_expand <- y_max + expansion_factor
+
+# Specify titles, etc.
+title <- paste0(df_group$grouping, 
+                ", for Grades - ", 
+                df_group$grade,
+                ", <br>",
+                paste0("for the Years Ended ", 
+                       paste(min(df_group$year),
+                             " - ",
+                             max(df_group$year)))
+                )
+
+y_axis_label <- c(df_group$grouping[1])
+  
+
+caption <- "The centerline shown is the Median of the data"
+
+# Calculate the median value
+median_value <- median(df_group$value, na.rm = TRUE)
+
+# Create the plot_ly plot
+plot_ly(data = df_group, 
+        x = ~year, 
+        y = ~value, 
+        type = 'scatter', 
+        mode = 'lines+markers',
+        text = ~paste('Year: ', 
+                      year,
+                      '<br>Value: ', 
+                      value)
+        ) %>%
+  layout(title = list(text = title, 
+                      font = list(family = "Arial", 
+                                  size = 20, 
+                                  color = "black"), 
+                      x = 0.5),
+         xaxis = list(title = "Academic Year-Ended",
+                      tickangle = 45,
+                      titlefont = list(family = "Arial", 
+                                       size = 16, 
+                                       color = "black")
+                      ),
+         yaxis = list(title = y_axis_label, 
+                      titlefont = list(family = "Arial", 
+                                       size = 16, 
+                                       color = "black")
+                      ),
+         margin = list(t = 100),  # Set top margin to 100 pixels
+         showlegend = FALSE,
+         annotations = list(
+           list(x = max(df_group$year), 
+                y = (median_value + (0.03 * y_range)),
+                xref = 'x', 
+                yref = 'y', 
+                text = paste("Median: ",
+                             median_value), 
+                font = list(family = "Arial", 
+                            size = 12, 
+                            color = "black"), 
+                showarrow = FALSE),
+           list(x = 0.5, 
+                y = -0.3, 
+                xref = 'paper', 
+                yref = 'paper', 
+                text = caption, 
+                font = list(family = "Arial", 
+                            size = 14, 
+                            color = "black"), 
+                showarrow = FALSE)
+         )) %>%
+  # Add a horizontal line for the median
+  add_trace(y = rep(median_value,
+                    nrow(df_group)),
+            type = 'scatter',
+            mode = 'lines',
+            line = list(color = 'red', 
+                        dash = 'dash'),
+            showlegend = FALSE)
+
+# print(plot)
+
+# PRINT A SINGLE PLOT_LY PLOT
+
+```
+
+<br> <br> <br>
+
+<b>Annual Dropout Rate
+
+Comments:<b>
+
+
+
+
+```{r echo=FALSE, warning=FALSE, message=FALSE}
+
+# CREATE A SINGLE PLOT_LY PLOT
+# SUITABLE FOR RENDERING IN QUARTO BOOK FORMAT
+
+# Load Libraries
+
+library(tidyverse)
+library(qicharts2)
+library(haven)
+library(readxl)
+library(skimr)
+library(visdat)
+library(gghighlight)
+library(dplyr)
+library(stringr)
+library(ggtext)
+library(gganimate)
+library(ggplot2)
+library(purrr)
+library(scales)
+library(ggrepel)
+library(glue)
+library(plotly)
+library(htmlwidgets)
+
+
+# Load SCUC scorecard data for 1995-2022
+
+df2 <- read_csv(file = here::here("data",
+                                  "SCUC Snapshots 1995 to 2022-LONG.csv")
+                )
+
+desired_section <- "District_Perform"
+desired_groupings <- "Annual Dropout Rate"
+desired_grades <- "All"
+
+# Filter for desired book section
+plotly_df <- df2 %>% 
+  filter(section == desired_section) %>% 
+  filter(grouping == desired_groupings) %>% 
+  filter(grade == desired_grades)
+
+# Rename df
+df_group <- plotly_df
+
+# Set y axis scale
+y_min <- min(df_group$value, na.rm = TRUE)
+y_max <- max(df_group$value, na.rm = TRUE)
+y_range <- y_max - y_min
+max_y_range <- y_range + .20
+expansion_factor <- ifelse(y_range < max_y_range, max_y_range - y_range, 0)
+y_expand <- y_max + expansion_factor
+
+# Specify titles, etc.
+title <- paste0(df_group$grouping, 
+                ", for Grades - ", 
+                df_group$grade,
+                ", <br>",
+                paste0("for the Years Ended ", 
+                       paste(min(df_group$year),
+                             " - ",
+                             max(df_group$year)))
+                )
+
+y_axis_label <- c(df_group$grouping[1])
+  
+
+caption <- "The centerline shown is the Median of the data"
+
+# Calculate the median value
+median_value <- median(df_group$value, na.rm = TRUE)
+
+# Create the plot_ly plot
+plot_ly(data = df_group, 
+        x = ~year, 
+        y = ~value, 
+        type = 'scatter', 
+        mode = 'lines+markers',
+        text = ~paste('Year: ', 
+                      year,
+                      '<br>Value: ', 
+                      value)
+        ) %>%
+  layout(title = list(text = title, 
+                      font = list(family = "Arial", 
+                                  size = 20, 
+                                  color = "black"), 
+                      x = 0.5),
+         xaxis = list(title = "Academic Year-Ended",
+                      tickangle = 45,
+                      titlefont = list(family = "Arial", 
+                                       size = 16, 
+                                       color = "black")
+                      ),
+         yaxis = list(title = y_axis_label, 
+                      titlefont = list(family = "Arial", 
+                                       size = 16, 
+                                       color = "black")
+                      ),
+         margin = list(t = 100),  # Set top margin to 100 pixels
+         showlegend = FALSE,
+         annotations = list(
+           list(x = max(df_group$year), 
+                y = (median_value + (0.03 * y_range)),
+                xref = 'x', 
+                yref = 'y', 
+                text = paste("Median: ",
+                             median_value), 
+                font = list(family = "Arial", 
+                            size = 12, 
+                            color = "black"), 
+                showarrow = FALSE),
+           list(x = 0.5, 
+                y = -0.3, 
+                xref = 'paper', 
+                yref = 'paper', 
+                text = caption, 
+                font = list(family = "Arial", 
+                            size = 14, 
+                            color = "black"), 
+                showarrow = FALSE)
+         )) %>%
+  # Add a horizontal line for the median
+  add_trace(y = rep(median_value,
+                    nrow(df_group)),
+            type = 'scatter',
+            mode = 'lines',
+            line = list(color = 'red', 
+                        dash = 'dash'),
+            showlegend = FALSE)
+
+# print(plot)
+
+# PRINT A SINGLE PLOT_LY PLOT
+
+```
+
+<br> <br> <br>
+
+Annual Dropout Rate Gr 9-12
+
+Comments:
+
+
+```{r echo=FALSE, warning=FALSE, message=FALSE}
+
+# CREATE A SINGLE PLOT_LY PLOT
+# SUITABLE FOR RENDERING IN QUARTO BOOK FORMAT
+
+# Load Libraries
+
+library(tidyverse)
+library(qicharts2)
+library(haven)
+library(readxl)
+library(skimr)
+library(visdat)
+library(gghighlight)
+library(dplyr)
+library(stringr)
+library(ggtext)
+library(gganimate)
+library(ggplot2)
+library(purrr)
+library(scales)
+library(ggrepel)
+library(glue)
+library(plotly)
+library(htmlwidgets)
+
+
+# Load SCUC scorecard data for 1995-2022
+
+df2 <- read_csv(file = here::here("data",
+                                  "SCUC Snapshots 1995 to 2022-LONG.csv")
+                )
+
+desired_section <- "District_Perform"
+desired_groupings <- "Annual Dropout Rate Gr 9-12"
+desired_grades <- "All"
+
+# Filter for desired book section
+plotly_df <- df2 %>% 
+  filter(section == desired_section) %>% 
+  filter(grouping == desired_groupings) %>% 
+  filter(grade == desired_grades)
+
+# Rename df
+df_group <- plotly_df
+
+# Set y axis scale
+y_min <- min(df_group$value, na.rm = TRUE)
+y_max <- max(df_group$value, na.rm = TRUE)
+y_range <- y_max - y_min
+max_y_range <- y_range + .20
+expansion_factor <- ifelse(y_range < max_y_range, max_y_range - y_range, 0)
+y_expand <- y_max + expansion_factor
+
+# Specify titles, etc.
+title <- paste0(df_group$grouping, 
+                ", for Grades - ", 
+                df_group$grade,
+                ", <br>",
+                paste0("for the Years Ended ", 
+                       paste(min(df_group$year),
+                             " - ",
+                             max(df_group$year)))
+                )
+
+y_axis_label <- c(df_group$grouping[1])
+  
+
+caption <- "The centerline shown is the Median of the data"
+
+# Calculate the median value
+median_value <- median(df_group$value, na.rm = TRUE)
+
+# Create the plot_ly plot
+plot_ly(data = df_group, 
+        x = ~year, 
+        y = ~value, 
+        type = 'scatter', 
+        mode = 'lines+markers',
+        text = ~paste('Year: ', 
+                      year,
+                      '<br>Value: ', 
+                      value)
+        ) %>%
+  layout(title = list(text = title, 
+                      font = list(family = "Arial", 
+                                  size = 20, 
+                                  color = "black"), 
+                      x = 0.5),
+         xaxis = list(title = "Academic Year-Ended",
+                      tickangle = 45,
+                      titlefont = list(family = "Arial", 
+                                       size = 16, 
+                                       color = "black")
+                      ),
+         yaxis = list(title = y_axis_label, 
+                      titlefont = list(family = "Arial", 
+                                       size = 16, 
+                                       color = "black")
+                      ),
+         margin = list(t = 100),  # Set top margin to 100 pixels
+         showlegend = FALSE,
+         annotations = list(
+           list(x = max(df_group$year), 
+                y = (median_value + (0.03 * y_range)),
+                xref = 'x', 
+                yref = 'y', 
+                text = paste("Median: ",
+                             median_value), 
+                font = list(family = "Arial", 
+                            size = 12, 
+                            color = "black"), 
+                showarrow = FALSE),
+           list(x = 0.5, 
+                y = -0.3, 
+                xref = 'paper', 
+                yref = 'paper', 
+                text = caption, 
+                font = list(family = "Arial", 
+                            size = 14, 
+                            color = "black"), 
+                showarrow = FALSE)
+         )) %>%
+  # Add a horizontal line for the median
+  add_trace(y = rep(median_value,
+                    nrow(df_group)),
+            type = 'scatter',
+            mode = 'lines',
+            line = list(color = 'red', 
+                        dash = 'dash'),
+            showlegend = FALSE)
+
+# print(plot)
+
+# PRINT A SINGLE PLOT_LY PLOT
+
+```
+
+<br> <br> <br>
+
+
+<b>Four-year Dropout Rate
+
+Comments:</b>
+Here is an embedded PNG image:
+
+![](TFour-year Dropout Rate.png)
+
+
+```{r echo=FALSE, warning=FALSE, message=FALSE}
+
+# CREATE A SINGLE PLOT_LY PLOT
+# SUITABLE FOR RENDERING IN QUARTO BOOK FORMAT
+
+# Load Libraries
+
+library(tidyverse)
+library(qicharts2)
+library(haven)
+library(readxl)
+library(skimr)
+library(visdat)
+library(gghighlight)
+library(dplyr)
+library(stringr)
+library(ggtext)
+library(gganimate)
+library(ggplot2)
+library(purrr)
+library(scales)
+library(ggrepel)
+library(glue)
+library(plotly)
+library(htmlwidgets)
+
+
+# Load SCUC scorecard data for 1995-2022
+
+df2 <- read_csv(file = here::here("data",
+                                  "SCUC Snapshots 1995 to 2022-LONG.csv")
+                )
+
+desired_section <- "District_Perform"
+desired_groupings <- "Four-year Dropout Rate"
+desired_grades <- "All"
+
+# Filter for desired book section
+plotly_df <- df2 %>% 
+  filter(section == desired_section) %>% 
+  filter(grouping == desired_groupings) %>% 
+  filter(grade == desired_grades)
+
+# Rename df
+df_group <- plotly_df
+
+# Set y axis scale
+y_min <- min(df_group$value, na.rm = TRUE)
+y_max <- max(df_group$value, na.rm = TRUE)
+y_range <- y_max - y_min
+max_y_range <- y_range + .20
+expansion_factor <- ifelse(y_range < max_y_range, max_y_range - y_range, 0)
+y_expand <- y_max + expansion_factor
+
+# Specify titles, etc.
+title <- paste0(df_group$grouping, 
+                ", for Grades - ", 
+                df_group$grade,
+                ", <br>",
+                paste0("for the Years Ended ", 
+                       paste(min(df_group$year),
+                             " - ",
+                             max(df_group$year)))
+                )
+
+y_axis_label <- c(df_group$grouping[1])
+  
+
+caption <- "The centerline shown is the Median of the data"
+
+# Calculate the median value
+median_value <- median(df_group$value, na.rm = TRUE)
+
+# Create the plot_ly plot
+plot_ly(data = df_group, 
+        x = ~year, 
+        y = ~value, 
+        type = 'scatter', 
+        mode = 'lines+markers',
+        text = ~paste('Year: ', 
+                      year,
+                      '<br>Value: ', 
+                      value)
+        ) %>%
+  layout(title = list(text = title, 
+                      font = list(family = "Arial", 
+                                  size = 20, 
+                                  color = "black"), 
+                      x = 0.5),
+         xaxis = list(title = "Academic Year-Ended",
+                      tickangle = 45,
+                      titlefont = list(family = "Arial", 
+                                       size = 16, 
+                                       color = "black")
+                      ),
+         yaxis = list(title = y_axis_label, 
+                      titlefont = list(family = "Arial", 
+                                       size = 16, 
+                                       color = "black")
+                      ),
+         margin = list(t = 100),  # Set top margin to 100 pixels
+         showlegend = FALSE,
+         annotations = list(
+           list(x = max(df_group$year), 
+                y = (median_value + (0.03 * y_range)),
+                xref = 'x', 
+                yref = 'y', 
+                text = paste("Median: ",
+                             median_value), 
+                font = list(family = "Arial", 
+                            size = 12, 
+                            color = "black"), 
+                showarrow = FALSE),
+           list(x = 0.5, 
+                y = -0.3, 
+                xref = 'paper', 
+                yref = 'paper', 
+                text = caption, 
+                font = list(family = "Arial", 
+                            size = 14, 
+                            color = "black"), 
+                showarrow = FALSE)
+         )) %>%
+  # Add a horizontal line for the median
+  add_trace(y = rep(median_value,
+                    nrow(df_group)),
+            type = 'scatter',
+            mode = 'lines',
+            line = list(color = 'red', 
+                        dash = 'dash'),
+            showlegend = FALSE)
+
+# print(plot)
+
+# PRINT A SINGLE PLOT_LY PLOT
+
+```
+
+<br> <br> <br>
+
+
+<!-- MULTIPLE INTERACTIVE PLOTLY PLOTS - THIS DOES NOT WORK YET!!!!! -->
+
+<!-- INTERACTIVE PLOTS  -->
+
+```{r results='asis', echo=FALSE, warning=FALSE, message=FALSE}
+# 
+# #  THIS IS A FUNCTION TO MAKE MULTIPLE PLOTLY PLOTS
+# 
+# # Load Libraries
+# 
+# library(tidyverse)
+# library(qicharts2)
+# library(haven)
+# library(readxl)
+# library(skimr)
+# library(visdat)
+# library(gghighlight)
+# library(dplyr)
+# library(stringr)
+# library(ggtext)
+# library(gganimate)
+# library(ggplot2)
+# library(purrr)
+# library(scales)
+# library(ggrepel)
+# library(glue)
+# library(plotly)
+# library(htmlwidgets)
+# 
+# $ Load SCUC scorecard data for 1995-2022
+# df2 <- read_csv(file = here::here("data", "SCUC Snapshots 1995 to 2022-LONG.csv"), show_col_types = FALSE)
+# 
+# 
+# # Define a custom label formatting function
+# custom_label_func <- function(x) {
+#   if (any(abs(x[!is.na(x)]) >= 1e6)) {
+#     return(format(x, big.mark = ",", scientific = FALSE))
+#   } else {
+#     return(format(x, big.mark = ","))
+#   }
+# }
+# 
+# # Define the function with arguments for desired parameters
+# generate_run_chart <- function(df_group, desired_years, desired_grades) {
+#   if (nrow(df_group) > 1) {
+#     group_category <- unique(df_group$grouping)
+#     group_grade <- unique(df_group$grade)
+#     
+#     y_min <- min(df_group$value, 
+#                  na.rm = TRUE
+#                  )
+#     y_max <- max(df_group$value, 
+#                  na.rm = TRUE
+#                  )
+#     y_range <- y_max - y_min
+#     max_y_range <- y_range + .20
+#     expansion_factor <- ifelse(y_range < max_y_range,
+#                                max_y_range - y_range,
+#                                0)
+#     y_expand <- y_max + expansion_factor
+#     
+#     title <- paste0(group_category,
+#                     ", for Grades - ", 
+#                     group_grade, 
+#                     ", <br>",
+#                     "for the Years Ended ",
+#                     paste(min(desired_years), 
+#                           " - ",
+#                           max(desired_years)
+#                           )
+#                     )
+#     
+# # Calculate the median value
+#     median_value <- median(df_group$value, na.rm = TRUE)
+#     
+# # Create the plotly plot
+#     plot <- plot_ly(data = df_group, 
+#                     x = ~year, 
+#                     y = ~value, 
+#                     type = 'scatter', 
+#                     mode = 'lines+markers',
+#                     text = ~paste('Year: ', 
+#                                   year, 
+#                                   '<br>Value: ', 
+#                                   value)
+#                     ) %>%
+#       layout(title = list(text = title, 
+#                           font = list(family = "Arial", 
+#                                       size = 20, 
+#                                       color = "black"), 
+#                           x = 0.5),
+#              xaxis = list(title = "Academic Year-Ended", 
+#                           tickangle = 45,
+#                           titlefont = list(family = "Arial", 
+#                                            size = 16, 
+#                                            color = "black")
+#                           ),
+#              yaxis = list(title = group_category, 
+#                           titlefont = list(family = "Arial", 
+#                                            size = 16, 
+#                                            color = "black")
+#                           ),
+#              margin = list(t = 100),  # Set top margin to 100 pixels
+#              showlegend = FALSE,
+#              annotations = list(
+#                list(x = max(df_group$year), 
+#                     y = (median_value + (0.03 * y_range)), 
+#                     xref = 'x', 
+#                     yref = 'y', 
+#                     text = paste("Median: ",
+#                                  median_value), 
+#                     font = list(family = "Arial",
+#                                 size = 12, 
+#                                 color = "black"), 
+#                     showarrow = FALSE)
+#              )) %>%
+# # Add a horizontal line for the median
+#       add_trace(y = rep(median_value, nrow(df_group)),
+#                 type = 'scatter',
+#                 mode = 'lines',
+#                 line = list(color = 'red', dash = 'dash'),
+#                 showlegend = FALSE)
+#     
+# # Return the plotly object
+#     return(plot)
+#     
+#   } else {
+#  # Return NULL for groups with only one observation
+#     return(NULL)
+#   }
+# }
+# 
+# 
+# # Define the custom order for the grouping column
+# custom_order <- c("Total Students in District", 
+#                   "Total Number of Schools",
+#                   "Attendance Rate",
+#                   "Annual Graduate Count",
+#                   "Annual RHSP-DAP-FHSP-E-FHSP-DLA Graduate Count",
+#                   "4-Year Longitudinal Graduation Rate",
+#                   "5-Year Longitudinal Graduation Rate",
+#                   "6-Year Longitudinal Graduation Rate",
+#                   "Exit-Level Cumulative Pass Rate",
+#                   "Completion Rate",
+#                   "Annual Dropout Rate",
+#                   "Annual Dropout Rate Gr 9-12",
+#                   "Four-year Dropout Rate")
+# 
+# # Convert the grouping column to a factor with custom levels
+# df2$grouping <- factor(df2$grouping, levels = custom_order)
+# 
+# # Filter and group the data frame
+# desired_section_df <- df2 %>% filter(section == desired_section)
+# df2plot_grouped <- desired_section_df %>% 
+#   group_by(grouping, grade, level_achieved) %>% 
+#   group_split()
+# 
+# # Apply the function with desired parameters for each category
+# plots <- map(df2plot_grouped, generate_run_chart, desired_years = unique(desired_section_df$year), desired_grades = unique(desired_section_df$grade))
+# 
+# 
+# # Loop through list file and print to html on render 
+# plots |>
+#   purrr::map(\(x) knitr::knit_child(text = c("```{r}", "#| echo: false", "x", "```"), envir = environment(), quiet = TRUE)) |>
+#   unlist() |>
+#   cat(sep = "<br><br><br><br><br><br>")
+# 
+# 
+# # To print each plot inside RStudio
+# for (plot in plots) {
+#  print(plot)
+#  }
+# 
+#   THIS IS A FUNCTION TO MAKE MULTIPLE PLOTLY PLOTS
+
+```
+
+<br> <br> <br>
+
+```{r echo=FALSE, warning=FALSE, message=FALSE}
+
+# Insert an interactive map
+
+# library(leaflet)
+# leaflet() %>%
+#    addTiles() %>%
+#    addMarkers(lng = 174.768, lat = -36.852,
+#               popup = "The birthplace of R"
+#               )
+
+```
+
+
+
+```{r echo = FALSE, message = FALSE, warning = FALSE}
+
+# # Filter for book section
+# district_perform <- df2 %>% 
+#   filter(section == desired_section)
+# 
+# # Specify desired categories from df1
+# desired_groupings <- c("Total Number of Schools")
+# 
+# # Specify desired years 
+# desired_years <- 1995:2022
+# 
+# # Specify desired level of achievement
+# # desired_level <- c("approaches_above")
+# 
+# # Specify desired grade_factor level
+# # desired_grades <- c("3", "4", "5", "6", "7", "8", "9", "10", "11")
+# 
+# # Filter rows in the modified df1 data frame
+# 
+# dfplot <- district_perform %>%
+#   filter((grouping %in% desired_groupings) &
+#          (year %in% desired_years)
+#          )
+# 
+# p <- ggplot(dfplot, aes(x = year, y = value)) +
+#   geom_col(fill = 'dodgerblue', color = "black", position = "dodge", width = 1) +
+#   geom_text(aes(label = value), 
+#             position = position_stack(vjust = 1.1), 
+#             size = 10, 
+#             color = "black", 
+#             fontface = 'bold') +
+#   transition_states(year, 
+#                     transition_length = 1, 
+#                     state_length = 5, 
+#                     wrap = FALSE) +
+#   shadow_mark() +
+#   enter_grow() +
+#   labs(x = "Academic Year-End", y = "Number of Schools") +
+#   ggtitle("The Number of Campuses have Steadily Grown") +
+#   labs(subtitle = "Year: {closest_state}") +
+#   scale_x_continuous(breaks = seq(1995, 2022, by = 1)) +
+#   theme(legend.position = "none", 
+#         axis.text.x = element_text(angle = 90, hjust = 1, size = 20), 
+#         plot.title = element_text(size = 20, face = "bold"),  # Increased font size and made title bold
+#         plot.subtitle = element_text(size = 20, face = "bold"),  # Increased font size and made subtitle bold
+#         plot.width = 20, plot.height = 10)
+# 
+# # Animate the plot
+# anim <- gganimate::animate(p, nframes = 500, width = 2000, height = 1000, units = "px", fps = 30)
+# 
+# # Show the animation
+# anim
+
+```
+
