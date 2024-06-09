@@ -1,9 +1,0 @@
-# Standardized Scores {#sec-standardized-scores-intro .unnumbered}
-
-```{r}
-#| results: "asis"
-#| echo: false
-
-```
-
-Our goal in this part of the book is standardized scores

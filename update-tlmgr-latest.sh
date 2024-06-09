@@ -3,5 +3,5 @@
 <title>307 Temporary Redirect</title>
 </head><body>
 <h1>Temporary Redirect</h1>
-<p>The document has moved <a href="https://ctan.math.utah.edu/ctan/tex-archive/systems/texlive/tlnet/update-tlmgr-latest.sh">here</a>.</p>
+<p>The document has moved <a href="https://mirrors.rit.edu/CTAN/systems/texlive/tlnet/update-tlmgr-latest.sh">here</a>.</p>
 </body></html>

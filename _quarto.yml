@@ -8,13 +8,31 @@ highlight-style: pygments
 
 book:
   title: "The Amazing Story of 28 Years of Growth & Accomplishment at SCUC-ISD"
-  subtitle: "As Told with 152 Plots"
+  subtitle: "152 Plots Compiled from 4,255 Observations"
   author: "Dan Swart, Trustee, Seat 6"
-  date: "6/4/2024"
+  date: "today"
   reader-mode: true
   search: true
   downloads: [pdf, docx, epub]
-  
+  description: A compilation of 28 years of TEA data for the SCUC-ISD.
+  keyword: Schertz, Cibolo, Universal City, ISD, performance, run chart, history
+  url: https://danswart.quarto.pub/scuc28yearsofdata/
+  sidebar: 
+    search: true
+    collapse-level: 3
+    pinned: true
+  repo-url: https://github.com/danswart/SCUC-Book---28-Years-of-Data
+  # repo-subdir: _book
+  # repo-branch: master
+  repo-actions: [edit, issue, source]
+  sharing: [twitter, facebook, linkedin]
+  image: unique-1-yellow-locker.jpg
+  comments:
+   giscus:
+     repo: danswart/SCUC-Book---28-Years-of-Data
+  open-graph:
+    image: https://github.com/danswart/SCUC-Book---28-Years-of-Data/unique-1-yellow-locker.jpg
+    description: A compilation of 28 years of TEA data for the SCUC-ISD.
   page-footer:
     left: |
       This book was written by Dan Swart, Trustee 6, SCUC-ISD
@@ -32,26 +50,26 @@ book:
     
     - intro.qmd
  
-    - part: district_perform_intro.qmd
+    - part: "District Performance"
       chapters:
         - district_perform.qmd
 
-    - part: student_demographics_intro.qmd
+    - part: "Students"
       chapters:
         - student_demo.qmd
  
-    - part: standardized_scores_intro.qmd
+    - part: "Standardized Scores"
       chapters:
         - STAAR Scores by Subject.qmd
         - STAAR Scores by Student Grouping.qmd
         - sat_act.qmd
  
-    - part: personnel_intro.qmd
+    - part: "Personnel"
       chapters:
         - teachers.qmd
         - staff.qmd
   
-    - part: finances_intro.qmd
+    - part: "Finances"
       chapters:
        - taxes_and_revenues.qmd
        - expenses.qmd
@@ -81,7 +99,7 @@ format:
     include-in-header: preamble.tex
     classoption: 16pt
     includes:
-      in_header: dsheader.tex ## latex/preamble.tex
+      in_header: latex/preamble.tex
       before_body: latex/before_body.tex
       after_body: latex/after_body.tex
       colorlinks: true
