@@ -141,4 +141,5 @@ knitr:
     echo: false
     error: false
     warning: false
-    
+    message: false
+ 

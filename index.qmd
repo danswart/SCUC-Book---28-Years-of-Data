@@ -28,4 +28,29 @@ If 4th graders can do it; so can we all!
 The online book is available at:
 
 
-https://danswart.quarto.pub/s
+https://danswart.quarto.pub/scuc28yearsofdata/
+
+
+
+
+
+
+<!-- My Quarto Pub site: -->
+
+<!-- https://quartopub.com/sites/f2b9bd70-85b1-4b19-9670-f8fa66542c74 -->
+
+<!-- Settings -->
+<!-- Title -->
+<!-- The Amazing Story of 28 Years of Growth & Accomplishment at SCUC-ISD -->
+
+<!-- Identifier -->
+<!-- f2b9bd70-85b1-4b19-9670-f8fa66542c74 -->
+
+<!-- Last updated -->
+<!-- 7 seconds ago -->
+
+<!-- Slug -->
+<!-- scuc28yearsofdata -->
+
+<!-- Options -->
+<!-- Default site -->

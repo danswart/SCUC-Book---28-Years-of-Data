@@ -225,4 +225,62 @@ Comment:
 
 \clearpage
 
-## Level Achieved: Mas
+## Level Achieved: Masters
+
+
+### Students Classified as White
+
+
+
+Comment:
+
+![](png_Standardized_Scores/Standardized_ScoresWhitescoreAllMasters19952022.png)
+
+\clearpage
+
+### Students Classified as Hispanic
+
+Comment:
+
+![](png_Standardized_Scores/Standardized_ScoresHispanicscoreAllMasters19952022.png)
+
+\clearpage
+
+### Students Classified as African American
+
+Comment:
+
+![](png_Standardized_Scores/Standardized_ScoresAfricanAmericanscoreAllMasters19952022.png)
+
+\clearpage
+
+### Students Classified as American Indian
+
+Comment:
+
+![](png_Standardized_Scores/Standardized_ScoresAmericanIndianscoreAllMasters19952022.png)
+
+\clearpage
+
+### Students Classified as Asian
+
+Comment:
+
+![](png_Standardized_Scores/Standardized_ScoresAsianscoreAllMasters19952022.png)
+
+\clearpage
+
+### Students Classified as Pacific Islander
+
+Comment:
+
+![](png_Standardized_Scores/Standardized_ScoresPacificIslanderscoreAllMasters19952022.png)
+
+\clearpage
+
+### Students Classified as 2 or More Races
+
+Comment:
+
+![](png_Standardized_Scores/Standardized_Scores2orMoreRacesscoreAllMasters19952022.png)
+

@@ -231,4 +231,19 @@
     "href": "summary.html",
     "title": "Summary",
     "section": "",
-    "t
+    "text": "In summary, this chapter has no content whatsoever.\n\n\n[1] 2",
+    "crumbs": [
+      "<span class='chapter-number'>11</span>  <span class='chapter-title'>Summary</span>"
+    ]
+  },
+  {
+    "objectID": "references.html",
+    "href": "references.html",
+    "title": "References",
+    "section": "",
+    "text": "Author, A. 2023. “Example Article.” Journal of\nExamples 1: 1–10.",
+    "crumbs": [
+      "References"
+    ]
+  }
+]
