@@ -1,0 +1,234 @@
+[
+  {
+    "objectID": "index.html",
+    "href": "index.html",
+    "title": "The Amazing Story of 28 Years of Growth & Accomplishment at SCUC-ISD",
+    "section": "",
+    "text": "Preface\nTHIS VERSION IS A DRAFT FOR DISTRIBUTION TO REVIEWERS ONLY. \nWhile being a reference work, this book also chronicles the amazing story of the growth and accomplishments of the SCUC-ISD over the past 28 years. More than 152 charts visually illustrate the steady improvement of students, teachers, administration and facilities even as successive challenges arose. The demographics of the district changed; the legislative environment changed; the district continues to become stronger.\nOver the 28-year span, successive boards and superintendents navigated myriad challenges while raising most standardized scores, addressing staffing needs, and constructing new schools all while maintaining favorable student-teacher ratios, balancing administrative costs with instructional resources, and building adequate financial reserves. All without the so-called ‘good governance’ rubrik so popular in today’s academic circles.\nA note about the accompanying run charts. A run chart is a simple plot of observations (results of some process) sequentially over time. The longer the time plotted the more informative the plot becomes. They are the starting point to gain predictive insight into instructional and administrative practices.\nThe centerline is the median; the point where half the points lie above the line and half below it. It is not the average, and except under specific circumstances it is not a predictor of future results. It simply helps your eye understand the overall shape of the results. Sometimes Upward is the ‘good’ direction, sometimes Downward is the ‘good’ direction. Decide which direction is ‘good’ for any metric and see how the district has fared in that area.\nIn case you’re worried about understanding run charts, here’s a photo of a run chart created by 4th graders at Leander ISD with magic markers and newsprint. This simple chart enabled students to dramatically reduce the number of ‘loss of control’ incidents during the day. The chart tells this story simply, and clearly.\n\nIf 4th graders can do it; so can we all!\nThe online book is available at:\nhttps://danswart.quarto.pub/scuc28yearsofdata/",
+    "crumbs": [
+      "Preface"
+    ]
+  },
+  {
+    "objectID": "reviewer_notes.html",
+    "href": "reviewer_notes.html",
+    "title": "Note to Reviewers",
+    "section": "",
+    "text": "If you are helping to review this book, please keep the following in mind:\nConsider anything that might make the book more useful, such as:\nCan the title be improved?\nCan the chapters have better names?\nIs there a better order for the chapters?\nIs it clear which direction on the chart is ‘good’ and which direction is the ‘bad’ direction?\nAre there any charts that would be better seen as a group?\nVerify some of your beliefs. For instance, if you feel attendence has been dropping, find that run chart and verify that the data supports that conclusion. Likewise, say you feel that SpEd takes up more of the student body than ever before. Check out the plot that covers the relative segments of the student body.\nNOTE: I will never produce a chart, or group of charts, that invite the reader to compare performance by skin color or ethnic group. That is a VERY BAD, and VERY DESTRUCTIVE thing to do. There are technical, moral and ethical objections to classifying performance by skin color or heredity.\nYou may find it easier to review the book in pdf or Word format. There is a download button on the left side of the screen where you can download a version of the book more convenient for you.\nThere is currently very little narrative - on purpose. My notions should not influence your review of the information.\nThat being said, my general observation is that whenever an upward trend signifies improvement, the District shows an upward trend. Whenever a downward trend signifies improvement, the District shows a downward trend. Over time, most metrics become stable - which make them predictable and the process can be seen as reliable. This observation inspired the superlatives found in the title.\nPlease make notes, make corrections, or otherwise let me know your ideas for improving this book.\nThank you for taking the time to collaborate with me on the project!\nDan",
+    "crumbs": [
+      "Note to Reviewers"
+    ]
+  },
+  {
+    "objectID": "how_to_use.html",
+    "href": "how_to_use.html",
+    "title": "How to Use This Book",
+    "section": "",
+    "text": "I felt compelled to make this information available to our district. It’s the only way to justify the obscene amount of time required to wrangle the data from the TEA website and compile that data into plots that are useful for planning and governance.\nThe charts are the starting point for defining goals and improvement efforts that have practical meaning - not the jargon or euphemisms that are currently en vogue.\nEach chart tells a real story about real things. Taken together they tell a story of how one school district met the challenges successive school boards faced. The time frames involved provide the context needed to understand the outputs of the systems of learning in our District.\nAll categories and definitions are those of the Texas Education Agency and not of the author.\nThere are a LOT of charts contained in these chapters. I suggest that you browse the Table of Contents and start with a chapter, or topic, you are particularly interested in and move outward from there. To view them in order might invite a nap!\nSome may be interested in scholastic performance, some in financial performance, some in general demographic information, some in budgetary matters.\nThe Table of Contents has links to the various chapters. Once you are in a Chapter, the sidebar on the right side has links to the various charts within the chapter.\nNearly all the plots are run charts. The exact numbers are not as important as gaining the overall range of values and any trends present in the measurements. Is it trending up, down, or stable at a given level? Is an upward trend good news, or bad?\nOnce you find a chart, or group of charts, that represent an area you feel might be important for district improvement further analysis and study can guide you more precisely.",
+    "crumbs": [
+      "How to Use This Book"
+    ]
+  },
+  {
+    "objectID": "intro.html",
+    "href": "intro.html",
+    "title": "Introduction",
+    "section": "",
+    "text": "“My aim here is to contribute something to the improvement of learning in our school district; or any school district. My goal is to build a collabrative community helping each other find better and better ways of using data to guide, improve and govern their systems of learning.\nI look forward to the day when everyone at every level is comfortable thinking of ways to improve, trying the changes on a small scale, and plotting the results to see if the changes worked. This method encourages the study of different ideas of learning and administration (inputs) and their impact on the results observed (outputs) at the local level.\nThe important question is never, “Did a method work somewhere?” but always “Does it work here (and why)?”\nThose interested in using data to help improve learning in their district please feel free to contact me.”\n\n\n— Dan Swart\n\n\n\n\nA WORD ABOUT THE DATA\nThe Texas Education Agency defines, and often re-defines the metrics and categories supplied. When a new metric is introduced you will see measurements begin in the year introduced. Measurements cease when discontinued by TEA. No Standardized Scores were issued for the year 2020 and, accordingly, some charts show a gap for that year.\nThis book was created from Quarto and executable code.\nA citation (Author 2023).   \n\n\n\n\nAuthor, A. 2023. “Example Article.” Journal of Examples 1: 1–10.",
+    "crumbs": [
+      "<span class='chapter-number'>1</span>  <span class='chapter-title'>Introduction</span>"
+    ]
+  },
+  {
+    "objectID": "district_perform.html",
+    "href": "district_perform.html",
+    "title": "Growth, Attendance, Attrition",
+    "section": "",
+    "text": "Let your eyes wander over these plots and get a sense of the growth and development of the district over the last 28 years. Using just your eyes you will gain an appreciation for the accomplishments and growth of the district.\n  \nEnjoy!\n\n\n\n\n\n\n\n\nComment: \n\n\nComment: \n\n\nComment: \n\n\nComment: \n\n\nComment: \n\n\nComment: \n \nComment: \n \nComment: \n \nComment: \n \nComment: \n \nComment: \n \nComment: \n \nComment:",
+    "crumbs": [
+      "District Performance",
+      "<span class='chapter-number'>2</span>  <span class='chapter-title'>Growth, Attendance, Attrition</span>"
+    ]
+  },
+  {
+    "objectID": "student_demo.html",
+    "href": "student_demo.html",
+    "title": "Changes in Composition",
+    "section": "",
+    "text": "Let your eyes wander over these plots and get a sense of the growth and development of the district over the last 28 years. Using just your eyes you will gain an appreciation for the accomplishments and growth of the district.\n  \nEnjoy!\n \n\n\n\n\nVideo\n\n\n\n\nComment: For those who prefer static charts   \n\nComment:",
+    "crumbs": [
+      "Students",
+      "<span class='chapter-number'>3</span>  <span class='chapter-title'>Changes in Composition</span>"
+    ]
+  },
+  {
+    "objectID": "STAAR Scores by Subject.html",
+    "href": "STAAR Scores by Subject.html",
+    "title": "STAAR Scores by Subject",
+    "section": "",
+    "text": "Level Achieved: Approaches and Higher",
+    "crumbs": [
+      "Standardized Scores",
+      "<span class='chapter-number'>4</span>  <span class='chapter-title'>STAAR Scores by Subject</span>"
+    ]
+  },
+  {
+    "objectID": "STAAR Scores by Subject.html#level-achieved-approaches-and-higher",
+    "href": "STAAR Scores by Subject.html#level-achieved-approaches-and-higher",
+    "title": "STAAR Scores by Subject",
+    "section": "",
+    "text": "All Subjects Combined\nComment:\n\n\n\n\nReading/ELA\nComment:\n\n\n\n\nWriting\nComment:\n\n\n\n\nMathematics\nComment:\n\n\n\nScience\nComment:\n\n\n\nSocial Studies\nComment:",
+    "crumbs": [
+      "Standardized Scores",
+      "<span class='chapter-number'>4</span>  <span class='chapter-title'>STAAR Scores by Subject</span>"
+    ]
+  },
+  {
+    "objectID": "STAAR Scores by Subject.html#level-achieved-failing",
+    "href": "STAAR Scores by Subject.html#level-achieved-failing",
+    "title": "STAAR Scores by Subject",
+    "section": "Level Achieved: Failing",
+    "text": "Level Achieved: Failing\n\nAll Subjects Combined\nComment:\n\n\n\nReading/ELA\nComment:\n\n\n\nWriting\nComment:\n\n\n\nMathematics\nComment:\n\n\n\nScience\nComment:\n\n\n\nSocial Studies\nComment:",
+    "crumbs": [
+      "Standardized Scores",
+      "<span class='chapter-number'>4</span>  <span class='chapter-title'>STAAR Scores by Subject</span>"
+    ]
+  },
+  {
+    "objectID": "STAAR Scores by Subject.html#level-achieved-meets-or-above",
+    "href": "STAAR Scores by Subject.html#level-achieved-meets-or-above",
+    "title": "STAAR Scores by Subject",
+    "section": "Level Achieved: Meets or Above",
+    "text": "Level Achieved: Meets or Above\n\nAll Subjects Combined\nComment:\n\n\n\nReading/ELA\nComment:\n\n\n\nWriting\nComment:\n\n\n\nMathematics\nComment:\n\n\n\nScience\nComment:\n\n\n\nSocial Studies\nComment:",
+    "crumbs": [
+      "Standardized Scores",
+      "<span class='chapter-number'>4</span>  <span class='chapter-title'>STAAR Scores by Subject</span>"
+    ]
+  },
+  {
+    "objectID": "STAAR Scores by Subject.html#level-achieved-masters",
+    "href": "STAAR Scores by Subject.html#level-achieved-masters",
+    "title": "STAAR Scores by Subject",
+    "section": "Level Achieved: Masters",
+    "text": "Level Achieved: Masters\n\nAll Subjects Combined\nComment:\n\n\n\nReading/ELA\nComment:\n\n\n\nWriting\nComment:\n\n\n\nMathematics\nComment:\n\n\n\nScience\nComment:\n\n\n\nSocial Studies\nComment:",
+    "crumbs": [
+      "Standardized Scores",
+      "<span class='chapter-number'>4</span>  <span class='chapter-title'>STAAR Scores by Subject</span>"
+    ]
+  },
+  {
+    "objectID": "STAAR Scores by Student Grouping.html",
+    "href": "STAAR Scores by Student Grouping.html",
+    "title": "STAAR Scores by Student Grouping",
+    "section": "",
+    "text": "Level Achieved: Approaches and Higher",
+    "crumbs": [
+      "Standardized Scores",
+      "<span class='chapter-number'>5</span>  <span class='chapter-title'>STAAR Scores by Student Grouping</span>"
+    ]
+  },
+  {
+    "objectID": "STAAR Scores by Student Grouping.html#level-achieved-approaches-and-higher",
+    "href": "STAAR Scores by Student Grouping.html#level-achieved-approaches-and-higher",
+    "title": "STAAR Scores by Student Grouping",
+    "section": "",
+    "text": "Students Classified as White\nComment:\n\n\n\nStudents Classified as Hispanic\nComment:\n\n\n\nStudents Classified as African American\nComment:\n\n\n\nStudents Classified as American Indian\nComment:\n\n\n\nStudents Classified as Asian\nComment:\n\n\n\nStudents Classified as Pacific Islander\nComment:\n\n\n\nStudents Classified as 2 or More Races\nComment:",
+    "crumbs": [
+      "Standardized Scores",
+      "<span class='chapter-number'>5</span>  <span class='chapter-title'>STAAR Scores by Student Grouping</span>"
+    ]
+  },
+  {
+    "objectID": "STAAR Scores by Student Grouping.html#level-achieved-failing",
+    "href": "STAAR Scores by Student Grouping.html#level-achieved-failing",
+    "title": "STAAR Scores by Student Grouping",
+    "section": "Level Achieved: Failing",
+    "text": "Level Achieved: Failing\n\nStudents Classified as White\nComment:\n\n\n\nStudents Classified as Hispanic\nComment:\n\n\n\nStudents Classified as African American\nComment:\n\n\n\nStudents Classified as American Indian\nComment:\n\n\n\nStudents Classified as Asian\nComment:\n\n\n\nStudents Classified as Pacific Islander\nComment:\n\n\n\nStudents Classified as 2 or More Races\nComment:",
+    "crumbs": [
+      "Standardized Scores",
+      "<span class='chapter-number'>5</span>  <span class='chapter-title'>STAAR Scores by Student Grouping</span>"
+    ]
+  },
+  {
+    "objectID": "STAAR Scores by Student Grouping.html#level-achieved-meets-or-above",
+    "href": "STAAR Scores by Student Grouping.html#level-achieved-meets-or-above",
+    "title": "STAAR Scores by Student Grouping",
+    "section": "Level Achieved: Meets or Above",
+    "text": "Level Achieved: Meets or Above\n\nStudents Classified as White\nComment:\n\n\n\nStudents Classified as Hispanic\nComment:\n\n\n\nStudents Classified as African American\nComment:\n\n\n\nStudents Classified as American Indian\nComment:\n\n\n\nStudents Classified as Asian\nComment:\n\n\n\nStudents Classified as Pacific Islander\nComment:\n\n\n\nStudents Classified as 2 or More Races\nComment:",
+    "crumbs": [
+      "Standardized Scores",
+      "<span class='chapter-number'>5</span>  <span class='chapter-title'>STAAR Scores by Student Grouping</span>"
+    ]
+  },
+  {
+    "objectID": "STAAR Scores by Student Grouping.html#level-achieved-masters",
+    "href": "STAAR Scores by Student Grouping.html#level-achieved-masters",
+    "title": "STAAR Scores by Student Grouping",
+    "section": "Level Achieved: Masters",
+    "text": "Level Achieved: Masters\n\nStudents Classified as White\nComment:\n\n\n\nStudents Classified as Hispanic\nComment:\n\n\n\nStudents Classified as African American\nComment:\n\n\n\nStudents Classified as American Indian\nComment:\n\n\n\nStudents Classified as Asian\nComment:\n\n\n\nStudents Classified as Pacific Islander\nComment:\n\n\n\nStudents Classified as 2 or More Races\nComment:",
+    "crumbs": [
+      "Standardized Scores",
+      "<span class='chapter-number'>5</span>  <span class='chapter-title'>STAAR Scores by Student Grouping</span>"
+    ]
+  },
+  {
+    "objectID": "sat_act.html",
+    "href": "sat_act.html",
+    "title": "SAT and ACT Testing",
+    "section": "",
+    "text": "Let your eyes wander over these plots and get a sense of the growth and development of the district over the last 28 years. Using just your eyes you will gain an appreciation for the accomplishments and growth of the district.\nEnjoy!\n\n\n\n\n\n\nComment:   \n\nComment:   \n\nComment:   \n\nComment:",
+    "crumbs": [
+      "Standardized Scores",
+      "<span class='chapter-number'>6</span>  <span class='chapter-title'>SAT and ACT Testing</span>"
+    ]
+  },
+  {
+    "objectID": "teachers.html",
+    "href": "teachers.html",
+    "title": "Teachers",
+    "section": "",
+    "text": "Let your eyes wander over these plots and get a sense of the growth and development of the district over the last 28 years. Using just your eyes you will gain an appreciation for the accomplishments and growth of the district.\nEnjoy!\n\n\n\n\n\n\nComment:   \n\nComment:   \n\nComment:   \n\nComment:   \n\nComment:   \n\nComment:   \n\nComment:   \n\nComment:   \n\nComment:   \n\nComment:   \n\nComment:   \n\nComment:   \n\nComment:   \n\nComment:   \n\nComment:   \n\nComment:   \n\nComment:",
+    "crumbs": [
+      "Personnel",
+      "<span class='chapter-number'>7</span>  <span class='chapter-title'>Teachers</span>"
+    ]
+  },
+  {
+    "objectID": "staff.html",
+    "href": "staff.html",
+    "title": "Staff",
+    "section": "",
+    "text": "Let your eyes wander over these plots and get a sense of the growth and development of the district over the last 28 years. Using just your eyes you will gain an appreciation for the accomplishments and growth of the district.\nEnjoy!\n\n\n\n\n\n\nComment:   \n\nComment:   \n\nComment:   \n\nComment:   \n\nComment:   \n\nComment:   \n\nComment:   \n\nComment:   \n\nComment:   \n\nComment:   \n\nComment:   \n\nComment:   \n\nComment:   \n\nComment:   \n\nComment:",
+    "crumbs": [
+      "Personnel",
+      "<span class='chapter-number'>8</span>  <span class='chapter-title'>Staff</span>"
+    ]
+  },
+  {
+    "objectID": "taxes_and_revenues.html",
+    "href": "taxes_and_revenues.html",
+    "title": "Taxes and Revenues",
+    "section": "",
+    "text": "Let your eyes wander over these plots and get a sense of the growth and development of the district over the last 28 years. Using just your eyes you will gain an appreciation for the accomplishments and growth of the district.\nEnjoy!\n\n\n\n\n\n\nComment:   \n\nComment:   \n\nComment:   \n\nComment:   \n\nComment:   \n\nComment:   \n\nComment:   \n\nComment:   \n\nComment:",
+    "crumbs": [
+      "Finances",
+      "<span class='chapter-number'>9</span>  <span class='chapter-title'>Taxes and Revenues</span>"
+    ]
+  },
+  {
+    "objectID": "expenses.html",
+    "href": "expenses.html",
+    "title": "District Expenses",
+    "section": "",
+    "text": "Let your eyes wander over these plots and get a sense of the growth and development of the district over the last 28 years. Using just your eyes you will gain an appreciation for the accomplishments and growth of the district.\nEnjoy!\n\n\n\n\n\n\nComment:   \n\nComment:   \n\nComment:   \n\nComment:   \n\nComment:   \n\nComment:   \n\nComment:   \n\nComment:   \n\nComment:   \n\nComment:   \n\nComment:   \n\nComment:   \n\nComment:   \n\nComment:   \n\nComment:   \n\nComment:   \n\nComment:   \n\nComment:   \n\nComment:   \n\nComment:   \n\nComment:",
+    "crumbs": [
+      "Finances",
+      "<span class='chapter-number'>10</span>  <span class='chapter-title'>District Expenses</span>"
+    ]
+  },
+  {
+    "objectID": "summary.html",
+    "href": "summary.html",
+    "title": "Summary",
+    "section": "",
+    "t

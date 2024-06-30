@@ -1,0 +1,499 @@
+---
+title: "Standardized Scores"
+author: "Dan Swart, Trustee, Seat 6"
+editor: 
+  markdown: 
+    wrap: 72
+---
+
+# Standardized Scores
+
+Welcome to the chapter on standardized scores.
+
+<br>
+<br>
+<br>
+
+Let your eyes wander over these plots and get a sense of the growth and
+development of the district over the last 28 years. Using just your eyes
+you will gain an appreciation for the accomplishments and growth of the
+district.
+
+Enjoy!
+
+
+
+
+
+<!-- CONSIDER PREPARING THEM AS PLOT_LY PLOTS TO SEE IF THAT WORKS BETTER! -->
+
+
+```{r echo=FALSE, warning=FALSE, message=FALSE}
+
+# Load Libraries
+library(tidyverse)
+library(qicharts2)
+library(haven)
+library(readxl)
+library(skimr)
+library(visdat)
+library(gghighlight)
+library(dplyr)
+library(stringr)
+library(ggtext)
+library(gganimate)
+library(ggplot2)
+library(purrr)
+library(scales)
+library(ggrepel)
+library(glue)
+library(plotly)
+library(htmlwidgets)
+library(readr)
+
+options(scipen = 999)
+
+# Define a custom label formatting function
+custom_label_func <- function(x) {
+  # For values greater than or equal to 1 million, format without exponential notation and with commas
+  if (any(abs(x[!is.na(x)]) >= 1e6)) {
+    # For other values, use the default formatting with commas
+    return(format(x, big.mark = ",",
+                  scientific = FALSE)
+           )
+  } else {
+    # For other values, use the default formatting with commas
+    return(format(x, big.mark = ",")
+           )
+  }
+}
+
+# Load the data
+df2 <- read_csv(file = here::here("data", 
+                                  "SCUC Snapshots 1995 to 2022-LONG.csv"
+                                  )
+                )
+
+# Specify the desired section
+desired_section <- "Standardized_Scores"
+
+png_folder <- paste0("png_", 
+                     desired_section
+                     )
+
+
+# Filter data frame to include only those rows specified by section
+first_df <- df2 %>%
+  filter(section == desired_section) %>%
+  arrange(sort)
+
+# Specify desired grouping categories
+desired_groupings <- unique(first_df$grouping
+                            )
+
+# Specify desired units of measurement
+desired_units <- unique(first_df$units
+                        )
+
+# Specify desired years
+desired_years <- unique(first_df$year
+                        )
+
+# Specify desired grade level
+desired_grades <- unique(first_df$grade
+                         )
+
+# Specify desired achievement level
+# desired_levels <- unique(first_df$level_achieved)
+
+# Specify desired sorting order
+desired_order <- unique(first_df$sort
+                        )
+
+# Specify the caption for the plots
+caption <- c("Source:  https://tea.texas.gov/reports-and-data"
+             )
+
+# Group the data frame and sort by the desired sorting column
+first_df_grouped <- first_df %>%
+  filter((sort %in% desired_order)) %>% 
+         # (grouping %in% desired_groupings) &
+         # (year %in% desired_years)) &
+         # (units %in% desired_units) &
+         # (grade %in% desired_grades)) %>%
+  group_by(sort,
+          grouping,
+          grade
+          ) %>%
+  group_split()
+         
+         
+  # Define the function with arguments for desired parameters
+  generate_run_chart <- function(df_group, 
+                                 desired_years,
+                                 desired_grades) 
+    {
+ # Check if the group has more than one observation
+ if (nrow(df_group) > 1) {
+   
+ # Access the unique values for the variables
+ group_category <- unique(df_group$grouping)
+ group_grade <- unique(df_group$grade)
+ group_units <- unique(df_group$units)
+ group_level <- unique(df_group$level_achieved)
+ 
+ # Calculate the y-axis range based on the minimum and maximum values of the 'value' column
+  y_min <- min(df_group$value, na.rm = TRUE)
+  y_max <- max(df_group$value, na.rm = TRUE)
+  y_range <- y_max - y_min
+  
+  # Set the desired maximum range for the y-axis
+  max_y_range <- y_range + .50  # You can adjust this value based on your preference
+ 
+ # Set the desired expansion factor
+ expansion_factor <- ifelse(y_range < max_y_range,
+                            max_y_range - y_range,
+                            0
+                            )
+ 
+ # Calculate the y.expand value to set the y-axis limits dynamically
+ y_expand <- y_max + expansion_factor
+ 
+ # Create dynamic title and subtitle
+ title <- paste0(desired_section,
+                 "\n",
+                 group_category,
+                             " (",
+                             group_units,
+                             ")",
+                             ",")
+             subtitle <- paste0("for Grades - ",
+                                group_grade,
+                                ", ",
+                                "for the Years Ended ",
+                                paste(min(desired_years), " - ", max(desired_years)))
+             
+ # Create the chart with qicharts2
+ plot <- qic(
+   x = df_group$year,
+   y = df_group$value,
+   chart = "run",
+   decimals = 0,
+   point.size = 2.5,
+   y.expand = y_expand,
+   scales = "free_y",
+   show.grid = TRUE,
+   ylab = df_group$units,
+   title = title,
+   subtitle = subtitle,
+   caption = caption,
+   show.labels = TRUE,
+   xlab = 'Academic Year-Ended'
+ )
+
+# Customize features using ggplot2 functions
+plot <- plot +
+ scale_y_continuous(labels = custom_label_func
+                    ) +  # Customize y-axis labels
+ annotate(
+   "text",
+   x = Inf,
+   y = median(df_group$value
+              ),
+   label = "Median",
+   hjust = 2.0,
+   vjust = 1.5
+   ) +
+ theme(
+   plot.title = element_text(face = "bold"),
+    # Make title bold
+    plot.subtitle = element_text(face = "bold"),
+    # Make subtitle bold
+    plot.caption = element_text(face = "bold"),
+    # Make caption bold
+    axis.title.x = element_text(face = "bold"),
+    # Make x-axis label bold
+    axis.title.y = element_text(face = "bold"),
+    # Make y-axis label bold
+    plot.margin = margin(2, 0, 2, 2, "cm")  # Adjust plot margins to prevent truncation
+   )
+ 
+ 
+ # Display the plot
+ # print(plot)
+ 
+ # Define the filename
+ filename <- paste0(png_folder,
+                    "/", 
+                    gsub(
+                      " ",
+                      "",
+                      paste0(
+                        desired_section,
+                                    group_category,
+                                    group_units,
+                                    group_grade,
+                                    min(desired_years),
+                                    max(desired_years)  
+                                    )
+                                  ),
+                                ".png"
+                                )
+ 
+ # Return both the plot and the filename
+ return(list(plot = plot,
+             filename = filename
+             )
+        )
+ 
+    } else {
+      # Return NULL for groups with only one observation
+      return(NULL)
+    }
+  }
+  
+  # Apply the function with desired parameters for each category
+         plots <- map(
+           first_df_grouped,
+           generate_run_chart,
+           desired_years = desired_years,
+           desired_grades = desired_grades
+           )
+ 
+ 
+ # Save each plot as a PNG file
+ walk(
+   plots,
+   ~ ggsave(
+     .$filename,
+     .$plot,
+     width = 9,
+     height = 7,
+     units = 'in',
+     bg = 'white',
+     scaling = 1,
+     dpi = 300,
+     create.dir = TRUE
+           )
+       )
+ 
+ # Print the plots
+ # walk(plots, ~ print(.$plot))
+ 
+ #  CREATE MULTIPLE STATIC PLOTS
+ 
+ 
+ 
+```
+
+
+<!-- Create Rmarkdown syntax to display all png files generated without examining the png directory.  The list is generated independently from the ggsave function -->
+
+```{r echo=FALSE, warning=FALSE, message=FALSE}
+
+# CREATE RMARKDOWN TEXT TO CALL THE PNG FILES GENERATED ABOVE
+
+# Load Libraries
+
+# library(tidyverse)
+# library(qicharts2)
+# library(haven)
+# library(readxl)
+# library(skimr)
+# library(visdat)
+# library(gghighlight)
+# library(dplyr)
+# library(stringr)
+# library(ggtext)
+# library(gganimate)
+# library(ggplot2)
+# library(purrr)
+# library(scales)
+# library(ggrepel)
+# library(glue)
+# library(plotly)
+# library(htmlwidgets)
+# library(readr)
+# 
+# options(scipen = 999)
+# 
+# # Load the data
+# df2 <- read_csv(file = here::here("data",
+#                                   "SCUC Snapshots 1995 to 2022-LONG.csv")
+#                 )
+# 
+# # Specify the desired section
+# desired_section <- "Standardized_Scores"
+# 
+# 
+# png_folder <- paste0("png_",
+#                      desired_section
+#                      )
+# 
+# # Filter data frame to include only those rows specified by section
+# first_df <- df2 %>%
+#   filter(section == desired_section) %>%
+#   mutate(sort = as.numeric(sort)) %>%
+#   arrange(sort)
+# 
+# 
+# # Create a unique identifier for each combination of grouping, units, and grade
+# first_df <- first_df %>%
+#   mutate(id = paste(grouping,
+#                     units,
+#                     grade
+#                     )
+#          )
+# 
+# # Get the unique combinations of grouping, units, and grade
+# unique_combinations <- unique(first_df$id)
+# 
+# # Create a vector of filenames for the unique combinations
+# filenames <- paste0(png_folder, "/",
+#                     gsub(" ",
+#                          "",
+#                          paste0(desired_section,
+#                                          unique_combinations,
+#                                          min(first_df$year),
+#                                          max(first_df$year)
+#                                 )
+#                          ),
+#                     ".png"
+#                     )
+# 
+# 
+# # Loop through each filename and create the RMarkdown syntax
+# for (file in filenames) {
+#   # Create the RMarkdown syntax with the comment and the image
+#   rmd_syntax <- paste0("\n",
+#                        "\n",
+#                        "Comment:\n",
+#                        "\n",
+#                        "![](",
+#                        file,
+#                        ")",
+#                        "\n"
+#   )
+# 
+#   # Print the RMarkdown syntax to the console
+#   cat(rmd_syntax)
+# }
+
+##### USE THIS ONE
+
+```
+
+## Standardized Scores Level 1
+
+This section covers Level 1 standardized scores.
+
+
+Comment:
+
+![](png_Standardized_Scores/Standardized_ScoresAllSubjectsscoreAll19952022.png)
+
+
+Comment:
+
+![](png_Standardized_Scores/Standardized_ScoresReading-ELAscoreAll19952022.png)
+
+
+Comment:
+
+![](png_Standardized_Scores/Standardized_ScoresWritingscoreAll19952022.png)
+
+
+Comment:
+
+![](png_Standardized_Scores/Standardized_ScoresMathematicsscoreAll19952022.png)
+
+
+Comment:
+
+![](png_Standardized_Scores/Standardized_ScoresSciencescoreAll19952022.png)
+
+
+Comment:
+
+![](png_Standardized_Scores/Standardized_ScoresSocialStudiesscoreAll19952022.png)
+
+
+
+
+### Subtopic under Level 1
+
+Details about a specific aspect of Level 1.
+
+
+
+
+## Standardized Scores Level 2
+
+This section covers Level 2 standardized scores.
+
+
+Comment:
+
+![](png_Standardized_Scores/Standardized_ScoresAfricanAmericanscoreAll19952022.png)
+
+
+Comment:
+
+![](png_Standardized_Scores/Standardized_ScoresHispanicscoreAll19952022.png)
+
+
+Comment:
+
+![](png_Standardized_Scores/Standardized_ScoresWhitescoreAll19952022.png)
+
+
+Comment:
+
+![](png_Standardized_Scores/Standardized_ScoresAmericanIndianscoreAll19952022.png)
+
+
+Comment:
+
+![](png_Standardized_Scores/Standardized_ScoresAsianscoreAll19952022.png)
+
+
+Comment:
+
+![](png_Standardized_Scores/Standardized_ScoresPacificIslanderscoreAll19952022.png)
+
+
+Comment:
+
+![](png_Standardized_Scores/Standardized_Scores2orMoreRacesscoreAll19952022.png)
+
+
+
+
+### Subtopic under Level 2
+
+Details about a specific aspect of Level 2.
+
+
+## Standardized Scores Level 3
+
+This section covers Level 3 standardized scores.
+
+
+Comment:
+
+![](png_Standardized_Scores/Standardized_ScoresEconomicallyDisadvantagedscoreAll19952022.png)
+
+
+Comment:
+
+![](png_Standardized_Scores/Standardized_ScoresSDAAMetARDscoreAll19952022.png)
+
+
+### Subtopic under Level 3
+
+Details about a specific aspect of Level 3.
+
+
+THE PLOTS FOR YOUR REVIEW AND CONSIDERATION
+
+

@@ -1,0 +1,254 @@
+---
+title: "Students2"
+author: "Dan Swart, Trustee"
+editor: 
+  markdown: 
+    wrap: 72
+---
+
+
+```{r echo=FALSE, warning=FALSE, message=FALSE}
+# Load Libraries
+
+library(tidyverse)
+library(qicharts2)
+library(haven)
+library(readxl)
+library(skimr)
+library(visdat)
+library(gghighlight)
+library(dplyr)
+library(stringr)
+library(ggtext)
+library(gganimate)
+library(ggplot2)
+library(purrr)
+library(scales)
+library(ggrepel)
+library(glue)
+library(plotly)
+library(htmlwidgets)
+library(readr)
+
+
+# FIND OUT WHAT'S IN THE STUDENTS SECTION OF DF2
+
+df2 <- read_csv(file = here::here("data",
+                                  "SCUC Snapshots 1995 to 2022-LONG.csv")
+                )
+
+# Filter the dataframe to only include rows where section == "teachers"
+df2_students <- df2 %>% filter(section == "students")
+
+# Get the unique values in the "grouping" column
+unique_groupings <- unique(df2_students$grouping)
+
+# Print the unique values
+print(unique_groupings)
+
+```
+
+ [1] "African American"                "Hispanic"                       
+ [3] "White"                           "American Indian"                
+ [5] "Asian"                           "Pacific Islander"               
+ [7] "2 or More Races"                 "Economically Disadvantaged"     
+ [9] "English Language Learners (ELL)" "Special Education"              
+[11] "Bilingual-ESL Education"         "Career and Technology Ed"       
+[13] "Gifted and Talented Ed"
+
+
+```{r echo=FALSE, warning=FALSE, message=FALSE}
+
+knitr::include_graphics("student_body_animation.gif")
+
+```
+
+
+
+
+
+```{r echo=FALSE, warning=FALSE, message=FALSE, fig.width=8, fig.height=6}
+
+# UN-COMMENT THIS CODE CHUNK TO
+# BUILD AND SAVE A GIF OF A RACING BAR CHART
+# SHOWING THE CHANGE IN ETHNIC COMPOSITION
+# OF SCUC-ISD FROM 1995 - 2022
+
+
+ # library(tidyverse)
+ # library(gganimate)
+ # library(paletteer)
+ # library(ggrepel)
+ # library(plotly)
+ # library(readr)
+ # 
+ # # Read in data
+ # snapshots <- read_csv(file = here::here("data",
+ #                                   "SCUC Snapshots 1995 to 2022-LONG.csv")
+ #                 )
+ # 
+ # 
+ #  # Start a pipeline with the input data from the TEA Snapshots
+ #  snapshots_formatted <- snapshots %>%
+ #    filter(section == "students") %>%
+ #    filter(
+ #      grouping %in% c(
+ #        "White",
+ #        "African American",
+ #        "Hispanic",
+ #        "Asian",
+ #        "American Indian",
+ #        "Pacific Islander",
+ #        "2 or More Races"
+ #      )
+ #    ) %>%
+ #    group_by(year) %>%
+ #    mutate(rank = dense_rank(-value)) %>%
+ #    mutate(value_lbl = paste0(" ",
+ #                              round(value),
+ #                              "%")
+ #           ) %>%
+ #    ungroup() %>%
+ #    # Replace NAs with zeros
+ #    mutate(value = replace_na(value, 0))
+ #  
+ #  # Filter out grouping categories with values <= 0
+ #  snapshots_filtered <- snapshots_formatted %>%
+ #    group_by(grouping) %>%
+ #    filter(sum(value) > 0) %>%
+ #    ungroup()
+ #  
+ #  # Create an animation plot using ggplot2
+ #  student_body <- ggplot(snapshots_filtered,
+ #                         aes(
+ #                           rank,
+ #                           group = grouping,
+ #                           fill = as.factor(grouping),
+ #                           color = as.factor(grouping)
+ #                         )
+ #                         ) +
+ #    geom_tile(aes(
+ #      y = value / 2,
+ #      height = value,
+ #      width = 0.9
+ #    ),
+ #    alpha = 0.8,
+ #    color = NA) +
+ #    geom_text(
+ #      aes(y = 0, label = paste(grouping, " ")
+ #          ),
+ #      size = 8,
+ #      fontface = "bold",
+ #      vjust = 0.2,
+ #      hjust = 1,
+ #      color = "black"
+ #    ) +
+ #    geom_text(
+ #      aes(y = value,
+ #          label = value_lbl,
+ #          hjust = 0
+ #          ),
+ #      size = 8,
+ #      fontface = "bold",
+ #      color = "black"
+ #    ) +
+ #    coord_flip(clip = "off") +
+ #    scale_y_continuous(
+ #      labels = scales::comma,
+ #      expand = c(0, 0),
+ #      limits = c(0, NA)
+ #    ) + # Ensure bars start at the bottom of the plot
+ #    scale_x_reverse() +
+ #    guides(color = "none") +
+ #    theme(
+ #      axis.line = element_blank(),
+ #      axis.text.x = element_text(size = 16, 
+ #                                 hjust = 1
+ #                                 ), 
+ #      axis.text.y = element_blank(),
+ #      axis.ticks = element_blank(),
+ #      axis.ticks.x = element_blank(),
+ #      axis.title.x = element_blank(),
+ #      axis.title.y = element_blank(),
+ #      legend.position = "none",
+ #      panel.background = element_blank(),
+ #      panel.border = element_blank(),
+ #      panel.grid.major = element_blank(),
+ #      panel.grid.minor = element_blank(),
+ #      panel.grid.major.x = element_line(linewidth = .1,
+ #                                        color = "black"
+ #                                        ),
+ #      panel.grid.minor.x = element_line(linewidth = .1,
+ #                                        color = "black"
+ #                                        ),
+ #      plot.title = element_text(
+ #        size = 35,
+ #        hjust = 0.5,
+ #        face = "bold",
+ #        colour = "black",
+ #        vjust = -1
+ #      ),
+ #      plot.subtitle = element_text(
+ #        size = 30,
+ #        hjust = 0.5,
+ #        face = "italic",
+ #        color = "black"
+ #      ),
+ #      plot.caption = element_text(
+ #        size = 30,
+ #        hjust = 0.5,
+ #        face = "italic",
+ #        color = "black"
+ #      ),  # Increase caption size
+ #      plot.background = element_blank(),
+ #      plot.margin = margin(2, # top
+ #                           2, # right
+ #                           2, # bottom
+ #                           8, # left
+ #                           "cm"
+ #                           )
+ #    ) +
+ #    transition_states(
+ #      year,
+ #      transition_length = 5,
+ #      state_length = 21,
+ #      wrap = FALSE
+ #    ) +
+ #    view_follow(fixed_x = TRUE)  +
+ #    labs(title = 'Proportions by Year: {closest_state}',
+ #         subtitle  =  "Composition of Student Body by Ethnicity",
+ #         caption  = "This animation will repeat in 12 seconds"
+ #         ) +
+ #    scale_fill_manual(values = paletteer_d("awtools::bpalette")
+ #                      )
+ #  
+ #  
+ # student_body
+ # 
+ # # animate(student_body,
+ # #          nframes = 300, 
+ # #          fps = 30, 
+ # #          duration = 28, 
+ # #          end_pause = 400, 
+ # #          width = 1200,
+ # #          height = 800,
+ # #          rewind = FALSE)
+ # 
+ # 
+ # # Save the animation as a GIF with three loops
+ #  gganimate::anim_save(
+ #    "student_body_animation.gif",
+ #    student_body,
+ #    nframes = 300,
+ #          fps = 30,
+ #          duration = 28,
+ #          end_pause = 400,
+ #          width = 1500,
+ #          height = 1000,
+ #          rewind = FALSE
+ #  )
+ 
+# BUILD A RACING BAR CHART GIF
+ 
+ 
+```
