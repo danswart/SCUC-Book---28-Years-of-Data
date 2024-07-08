@@ -1,12 +1,21 @@
 /* AS OF 2024-01-03
 /*
 
-* Format basic font size for all bookdown chapters
+/* Format basic font size for all bookdown chapters
 /* Adjust the size as needed */
 
 body {
   font-size: 18px;
   max-width: 80ch; /* Adjust the width as needed */
+}
+
+/* Format for quarto book dedication*/
+
+.dedication {
+  text-align: center;
+  font-style: italic;
+  font-size: 1.2em;
+  margin-top: 20%;
 }
 
 

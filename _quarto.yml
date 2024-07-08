@@ -7,14 +7,14 @@ bibliography: references.bib
 highlight-style: pygments
 
 book:
-  title: "The Amazing Story of 28 Years of Growth & Accomplishment at SCUC-ISD"
-  subtitle: "4,255 Observations Summarized in 152 Charts"
+  title: "***THE ROLE OF CONTEXT IN DISTRICT LEADERSHIP***"
+  subtitle: "*28 Years of Growth and Accomplishment at SCUC-ISD as Context for Today's Decisions*"
   author: "Dan Swart, Trustee, Seat 6"
   date: "today"
   reader-mode: true
   search: true
   downloads: [pdf, docx, epub]
-  description: "A guiding reference for currrent and future SCUC-ISD Boards of Trustees."
+  description: "A guiding reference for currrent and future Boards of Trustees at the Schertz-Cibolo-Universal City - Independent School District"
   keyword: Schertz, Cibolo, Universal City, ISD, performance, run chart, history
   url: https://danswart.quarto.pub/scuc28yearsofdata/
   sidebar: 
@@ -43,6 +43,10 @@ book:
   
   chapters:
     - index.qmd
+    
+    - dedication.qmd
+    
+    - acknowledgements.qmd
     
     - reviewer_notes.qmd
     
