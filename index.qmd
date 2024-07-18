@@ -1,0 +1,187 @@
+# Preface {.unnumbered}
+
+
+```{r, echo=FALSE, eval=knitr::is_html_output(), results='asis'}
+
+# HTML output
+
+cat('
+<div style="margin-top: 200px;"></div> <!-- Adjust height as needed -->
+<blockquote class="my-quote" style="font-size: 18px;">
+  <p>
+<strong>"My aim here is to contribute something to the improvement of learning in our school district; or any school district.  My goal with this book is to create a reference work that our Trustees can use in preparation for all meetings where data is to be discussed (which is <i>every</i> meeting). It provides the critical <b>local</b> context needed to understand the meaning and limitations of today&apos;s local data."</strong>
+
+</p>
+  <p class="quote-author">          — Dan Swart</p>
+  <p class="quote-description" style="text-align: right; font-style: italic;"></p>
+</blockquote>
+')
+
+```
+
+
+
+```{r, echo=FALSE, eval=knitr::is_latex_output(), results='asis'}
+
+# PDF quote code (LaTeX)
+
+cat('
+\\begin{tcolorbox}[colback=white, colframe=teal, boxrule=2pt, arc=4pt]
+  \\begin{minipage}{0.95\\textwidth}
+    \\raggedright
+    \\Large{"My aim here is to contribute something to the improvement of learning in our school district; or any school district.  My goal with this book is to create a reference work that our Trustees can use in preparation for all meetings where data is to be discussed (which is \textit{every} meeting). It provides the critical textbf{local} context needed to understand the meaning and limitations of today&apos;s local data."}
+  \\end{minipage}\\\\[5pt]
+  \\begin{minipage}{0.95\\textwidth}
+    \\raggedleft
+    \\Large{Dan Swart}\\\\
+    \\emph{}
+  \\end{minipage}
+\\end{tcolorbox}
+')
+
+```
+
+\vspace{0.75in}
+
+
+***Why I Wrote This Book***  
+
+The journey to create this book has been long and crazy difficult.  The task so far has consumed more than 500 hours!  The primary reason for this difficulty is the historical data needed is *nearly inaccessible*.  
+
+Each process in a school system is capable of producing data for us. In fact, we are awash in data with no one who can explain the proper data analysis to use.  Trustees review many statistical summaries, scores, 'metrics', and other numbers in their normal monthly work that represent the outputs of various processes in the district.  Judgments must be made such as: 'Are we in trouble in this area?', 'Are we doing well in this area?', 'Have our efforts produced the results we hoped for?', 'Can we afford this?'  
+
+The Texas Education Agency (TEA), the primary repository for all school district data in Texas, is siloed in ways that make sufficient multi-period data retrieval so difficult virtually no one does it!  If the measurement period is in years, even two to five years is insufficient to establish the capability of a process.
+
+Like most districts, our district is facing challenging times.  Resources are scarce and we cannot affort to be misled by our data analysis.  Accordingly, I felt compelled to break open those TEA silos and bring our district the historical data required to understand the context of our current measurements and goals, as well as the simple charting tools to properly interpret the numbers we see.  
+
+The charts simply display the data presented in the order of occurrence, with a line connecting the dots.  As it turns out, the order of occurance contains vital information not available in any other format.  In quality control work we call this 'plotting the dots.'
+
+***It is not important that any of the Trustees understand any mathematics that go into the process charts; only the very simple rules of how to interpret what they see.***
+
+\vspace{0.75in}
+
+
+***Why I Wrote This Book NOW***  
+
+So, why do we need all this historical data?  
+
+Because an ongoing process *CANNOT* be improved without understanding the existing capability of the process.  In sound data analysis 'Capability' (what TEA calls a 'baseline') has a specific mathematical meaning.  To know the capability of a process you need to include at least 12 - 24 measurement periods.  In contrast, the TEA advises boards to establish a 'baseline' representing the 'current state' for comparing and monitoring growth.  They give examples of establishing a 'baseline' with a small handful of measurements.  This is extremely poor practice and Trustees should not settle for it.  Trustees need not learn the mathematical meaning; just accept sound advice NOW to understand the signals their processes are sending.
+
+The cold hard fact is the 'current state' ***CANNOT be characterized using only a few points of data!***  
+
+Although not widely practiced in America, it has been known since 1929 that the **ONLY** way to rationally create a 'baseline' for an ongoing process requires that we know 4 things about the process:
+
+1. **Is the process that produced the figures stable over time (consistent over a range of values)?**  
+
+This requires period-by-period history for at least 12 - 25 time periods.  The more time periods the better.  The time periods need not be annual.  Some processes can be measured monthly, weekly, daily or even hourly.
+
+If the process is stable the output will vary up and down within a limited range.  A chart will reveal this.  The range can be calculated and is the actual capability of the process, whether you like the values produced or not.
+
+If the process is stable, the average represents the proper 'baseline' for evaluating future performance.
+
+>Examples:
+
+- Is elementary reading instruction producing stable, ***consistent*** STAAR scores in an acceptable range for 3rd graders? A simple chart will tell you.
+
+- Is elementary math instruction producing stable, ***consistent*** STAAR scores in an acceptable range for 5th graders?  A simple chart will tell you.
+
+- Are attendance rates (which result in per student state funding) stable, and consistent within an acceptable range?  A simple chart will tell you.
+
+WHY do we need to know this?  Because the appropriate Team of 8 action to be taken ***is completely different if a process is stable (consistent) versus unstable (inconsistent).***
+  
+<br>
+2. **What is the likely output of the process** ***in the future?***  
+
+This also requires period-by-period history for at least 12 - 25 time periods.  
+
+For monitoring progress, TEA recommends spending most of your time examining the past to establish a baseline, then about 1/4 of your time focusing on the future.  That is like trying to drive your car by staring in the rear view mirror!
+
+WHY do we need to know this?  Because if the process is stable it is predictable (within limits).  That means you can attempt to improve future performance and judge the results with confidence.    If the process is inconsistant ***no rational prediction for the future is possible.***
+
+A word about goals:  ***Any goal placed outside the existing capability of the process will fail, unless significant changes are made to the process itself.***  Without a demonstrated capability (baseline) any goal for a process is arbitrary and fruitless.  They are just wishes and hopes.
+
+
+<br>
+3.  **Do the data reveal trends (good, or bad) that the Team of 8 can leverage?**
+
+This analysis requires period-by-period history for at least 12 - 25 time periods.
+
+In proper data analysis 'trends' have a specific mathematical meaning.  If you learn a few simple rules a chronological plot of the measurements can reveal them.  Understanding true trends is a powerful force multiplier!
+
+Note:  ***You cannot detect most trends in your data with fewer than 8 points.***  
+
+<br>
+4. **If there has been a jolt to the process, has the process recovered to** ***acceptable*** **levels?**
+
+This also requires longitudinal history for at least 12 - 25 time periods.
+
+A jolt may come from COVID-19, or from new federal or state mandates, or any number of sources.
+  
+WHY do we need to know this?  ***Because resources are scarce and remedial measures and policies that are no longer needed should be discontinued as soon as possible.***
+
+
+Lack of Exposure to Appropriate Data Analysis Methods
+
+Few Trustees (if any) bring with them a background in the proper use of data to improve quality in their districts.  Once they become Trustees they receive no meaningful training in how to interpret the results generated by the systems of their district such as district goals, targets, standardized scores, etc.  In fact, the standard training offered, and the received 'wisdom' from current education academia, often leads to wrong answers when it comes to performance data.
+
+
+To understand what their district has produced, and WILL produce in the future, Trustees must be able to see the context in which these numbers arise.  The primary context needed are the outputs from prior periods presented as a running record, in order of occurance.    And, the more prior-periods the better.
+
+
+
+
+I felt compelled to make this information available to our district.  It's the only way to justify the obscene amount of time required to wrangle the data from the TEA website and compile that data into plots that are useful for planning and governance.
+
+The charts are the starting point for defining goals and improvement efforts that have practical meaning - not the jargon or euphemisms that are currently en vogue.  
+
+Each chart tells a real story about real things.  Taken together they tell a story of how one school district met the challenges successive school boards faced.  The time frames involved provide the context needed to understand the outputs of the systems of learning in our District.
+While being a reference work, this book also chronicles the amazing story of the growth and accomplishments of the SCUC-ISD over the past 28 years.  More than 152 charts visually illustrate the steady improvement of students, teachers, administration and facilities even as successive challenges arose.  The demographics of the district changed; the legislative environment changed; the district continues to become stronger.
+
+Over the 28-year span, successive boards and superintendents navigated myriad challenges while raising most standardized scores, addressing staffing needs, and constructing new schools all while maintaining favorable student-teacher ratios, balancing administrative costs with instructional resources, and building adequate financial reserves.  All without the so-called 'good governance' rubrik so popular in today's academic circles.
+
+A note about the accompanying run charts.  A run chart is a simple plot of observations (results of some process) sequentially over time.  The longer the time plotted the more informative the plot becomes.  They are the starting point to gain predictive insight into instructional and administrative practices.
+
+The centerline is the median; the point where half the points lie above the line and half below it.  It is not the average, and except under specific circumstances it is not a predictor of future results.  It simply helps your eye understand the overall shape of the results.  Sometimes Upward is the 'good' direction, sometimes Downward is the 'good' direction.  Decide which direction is 'good' for any metric and see how the district has fared in that area.
+
+\vspace{0.25in}
+
+In case you're worried about understanding run charts, here's a photo of a run chart created by 4th graders at Leander ISD with magic markers and newsprint.  This simple chart enabled students to dramatically reduce the number of 'loss of control' incidents during the day.  The chart tells this story simply, and clearly.
+
+\vspace{0.5in}
+
+![](leander-grade-4-run-chart.png)
+
+
+If 4th graders can do it; so can we all!
+
+
+
+The online book is available at:
+
+
+https://danswart.quarto.pub/scuc28yearsofdata/
+
+
+
+
+
+
+<!-- My Quarto Pub site: -->
+
+<!-- https://quartopub.com/sites/f2b9bd70-85b1-4b19-9670-f8fa66542c74 -->
+
+<!-- Settings -->
+<!-- Title -->
+<!-- The Amazing Story of 28 Years of Growth & Accomplishment at SCUC-ISD -->
+
+<!-- Identifier -->
+<!-- f2b9bd70-85b1-4b19-9670-f8fa66542c74 -->
+
+<!-- Last updated -->
+<!-- 7 seconds ago -->
+
+<!-- Slug -->
+<!-- scuc28yearsofdata -->
+
+<!-- Options -->
+<!-- Default site -->
