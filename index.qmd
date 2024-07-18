@@ -48,28 +48,32 @@ cat('
 
 The journey to create this book has been long and crazy difficult.  The task so far has consumed more than 500 hours!  The primary reason for this difficulty is the historical data needed is *nearly inaccessible*.  
 
-Each process in a school system is capable of producing data for us. In fact, we are awash in data with no one who can explain the proper data analysis to use.  Trustees review many statistical summaries, scores, 'metrics', and other numbers in their normal monthly work that represent the outputs of various processes in the district.  Judgments must be made such as: 'Are we in trouble in this area?', 'Are we doing well in this area?', 'Have our efforts produced the results we hoped for?', 'Can we afford this?'  
+Each process in a school system is capable of producing data for us. In fact, we are awash in data with no one who can explain the proper data analysis to use.  The Texas Education Agency (TEA), the primary repository for all school district data in Texas, is composed of educators, political staffers, and data scientists with no experience in process improvement methods.  The same is true of the Texas Association of School Boards (TASB).  Both TEA and TASB provide training and advice that is just plain wrong, leaving Trustees to struggle on their own.
 
-The Texas Education Agency (TEA), the primary repository for all school district data in Texas, is siloed in ways that make sufficient multi-period data retrieval so difficult virtually no one does it!  If the measurement period is in years, even two to five years is insufficient to establish the capability of a process.
+Trustees review many statistical summaries, scores, 'metrics', and other numbers in their normal monthly work that represent the outputs of various processes in the district.  Judgments must be made such as: 'Are we in trouble in this area?', 'Are we doing well in this area?', 'Have our efforts produced the results we hoped for?', 'Can we afford this?'  
 
-Like most districts, our district is facing challenging times.  Resources are scarce and we cannot affort to be misled by our data analysis.  Accordingly, I felt compelled to break open those TEA silos and bring our district the historical data required to understand the context of our current measurements and goals, as well as the simple charting tools to properly interpret the numbers we see.  
+The Texas Education Agency (TEA) silos their data in ways that make sufficient multi-period data retrieval so difficult virtually no one does it!  If the measurement period is in years, even two to five years is insufficient to establish a reliable capability estimate of a process.
 
-The charts simply display the data presented in the order of occurrence, with a line connecting the dots.  As it turns out, the order of occurance contains vital information not available in any other format.  In quality control work we call this 'plotting the dots.'
+Like most districts, our district is facing challenging times.  Resources are scarce and we cannot affort to waste time or to be misled by inferior data analysis.  Accordingly, I felt compelled to break open those TEA silos and bring our district the historical data required to understand the capability of our processes in light of our current measurements and goals.  Many (many) examples are provided of the simple charting tool called a run chart to properly interpret the numbers we see.  
 
-***It is not important that any of the Trustees understand any mathematics that go into the process charts; only the very simple rules of how to interpret what they see.***
+The charts simply display the data, presented in the order of occurrence, with a line connecting the dots.  As it turns out, the order of occurance contains vital information not available in any other format.  In quality control work we call this 'plotting the dots.'
+
+***It is not important that any of the Trustees or other users understand any mathematics that go into preparing the charts; only the very simple rules of how to interpret what they see.***
 
 \vspace{0.75in}
 
-
-***Why I Wrote This Book NOW***  
+<br>
+***Why You Need This Book NOW***  
 
 So, why do we need all this historical data?  
 
-Because an ongoing process *CANNOT* be improved without understanding the existing capability of the process.  In sound data analysis 'Capability' (what TEA calls a 'baseline') has a specific mathematical meaning.  To know the capability of a process you need to include at least 12 - 24 measurement periods.  In contrast, the TEA advises boards to establish a 'baseline' representing the 'current state' for comparing and monitoring growth.  They give examples of establishing a 'baseline' with a small handful of measurements.  This is extremely poor practice and Trustees should not settle for it.  Trustees need not learn the mathematical meaning; just accept sound advice NOW to understand the signals their processes are sending.
+Because an ongoing process ***CANNOT*** be improved without understanding the existing capability of the process.  In sound data analysis 'Capability' (what TEA calls a 'baseline') has a specific mathematical meaning.  
 
-The cold hard fact is the 'current state' ***CANNOT be characterized using only a few points of data!***  
+To know the capability of a process you need to include at least 12 - 24 measurement periods.  In contrast, the TEA and TASB advise boards to establish a 'baseline' representing the 'current state' for comparing and monitoring growth.  They give examples of establishing a 'baseline' with a very small handful of measurements.  This is extremely poor practice and Trustees should not settle for it.  Again, Trustees need not learn the arithmetic involved; just learn the simple rules NOW to understand the signals their processes are sending.
 
-Although not widely practiced in America, it has been known since 1929 that the **ONLY** way to rationally create a 'baseline' for an ongoing process requires that we know 4 things about the process:
+The cold hard fact is the 'current state' of an operating process ***CANNOT be characterized using only a few points of data!***  
+
+Although not widely practiced in America, it has been known since 1929 that the **ONLY** way to rationally create a 'baseline' for an ongoing process requires that we plot the data, period by period, in the order of occurance.  This allows us to calculate 4 critical things about the process:
 
 1. **Is the process that produced the figures stable over time (consistent over a range of values)?**  
 
@@ -87,10 +91,10 @@ If the process is stable, the average represents the proper 'baseline' for evalu
 
 - Are attendance rates (which result in per student state funding) stable, and consistent within an acceptable range?  A simple chart will tell you.
 
-WHY do we need to know this?  Because the appropriate Team of 8 action to be taken ***is completely different if a process is stable (consistent) versus unstable (inconsistent).***
+***WHY*** do we need to know this?  Because the appropriate Team of 8 improvement action ***is completely different if a process is stable (consistent) versus unstable (inconsistent).***
   
 <br>
-2. **What is the likely output of the process** ***in the future?***  
+  2. **What is the likely output of the process** ***in the future?***  
 
 This also requires period-by-period history for at least 12 - 25 time periods.  
 
@@ -98,48 +102,30 @@ For monitoring progress, TEA recommends spending most of your time examining the
 
 WHY do we need to know this?  Because if the process is stable it is predictable (within limits).  That means you can attempt to improve future performance and judge the results with confidence.    If the process is inconsistant ***no rational prediction for the future is possible.***
 
-A word about goals:  ***Any goal placed outside the existing capability of the process will fail, unless significant changes are made to the process itself.***  Without a demonstrated capability (baseline) any goal for a process is arbitrary and fruitless.  They are just wishes and hopes.
+A word about goals:  ***Any goal placed outside the existing capability of the process will fail, unless significant changes are made to the process itself.***   Without a demonstrated capability any goal for a process is arbitrary and fruitless.  They are just wishes and hopes.
 
 
 <br>
-3.  **Do the data reveal trends (good, or bad) that the Team of 8 can leverage?**
+  3.  **Do the data reveal trends (good, or bad) that the Team of 8 can leverage?**
 
 This analysis requires period-by-period history for at least 12 - 25 time periods.
 
-In proper data analysis 'trends' have a specific mathematical meaning.  If you learn a few simple rules a chronological plot of the measurements can reveal them.  Understanding true trends is a powerful force multiplier!
+In proper data analysis, 'trends' have a specific mathematical meaning.  If you learn a few simple rules a chronological plot of the measurements can reveal them.  Understanding true trends is a powerful force multiplier!
 
 Note:  ***You cannot detect most trends in your data with fewer than 8 points.***  
 
 <br>
-4. **If there has been a jolt to the process, has the process recovered to** ***acceptable*** **levels?**
+  4. **If there has been a jolt to the process, has the process recovered to** ***acceptable*** **levels?**
 
 This also requires longitudinal history for at least 12 - 25 time periods.
 
 A jolt may come from COVID-19, or from new federal or state mandates, or any number of sources.
   
-WHY do we need to know this?  ***Because resources are scarce and remedial measures and policies that are no longer needed should be discontinued as soon as possible.***
+***WHY*** do we need to know this?  ***Because resources are scarce and remedial measures and policies that are no longer needed should be discontinued as soon as possible.***
 
 
-Lack of Exposure to Appropriate Data Analysis Methods
-
-Few Trustees (if any) bring with them a background in the proper use of data to improve quality in their districts.  Once they become Trustees they receive no meaningful training in how to interpret the results generated by the systems of their district such as district goals, targets, standardized scores, etc.  In fact, the standard training offered, and the received 'wisdom' from current education academia, often leads to wrong answers when it comes to performance data.
-
-
-To understand what their district has produced, and WILL produce in the future, Trustees must be able to see the context in which these numbers arise.  The primary context needed are the outputs from prior periods presented as a running record, in order of occurance.    And, the more prior-periods the better.
-
-
-
-
-I felt compelled to make this information available to our district.  It's the only way to justify the obscene amount of time required to wrangle the data from the TEA website and compile that data into plots that are useful for planning and governance.
-
-The charts are the starting point for defining goals and improvement efforts that have practical meaning - not the jargon or euphemisms that are currently en vogue.  
-
-Each chart tells a real story about real things.  Taken together they tell a story of how one school district met the challenges successive school boards faced.  The time frames involved provide the context needed to understand the outputs of the systems of learning in our District.
-While being a reference work, this book also chronicles the amazing story of the growth and accomplishments of the SCUC-ISD over the past 28 years.  More than 152 charts visually illustrate the steady improvement of students, teachers, administration and facilities even as successive challenges arose.  The demographics of the district changed; the legislative environment changed; the district continues to become stronger.
-
-Over the 28-year span, successive boards and superintendents navigated myriad challenges while raising most standardized scores, addressing staffing needs, and constructing new schools all while maintaining favorable student-teacher ratios, balancing administrative costs with instructional resources, and building adequate financial reserves.  All without the so-called 'good governance' rubrik so popular in today's academic circles.
-
-A note about the accompanying run charts.  A run chart is a simple plot of observations (results of some process) sequentially over time.  The longer the time plotted the more informative the plot becomes.  They are the starting point to gain predictive insight into instructional and administrative practices.
+<br>
+A quick note about the accompanying run charts.  A run chart is a simple plot of observations (results of some process) shown sequentially over time.  The longer the time plotted the more informative the plot becomes.  They are the starting point to gain predictive insight into instructional and administrative practices.
 
 The centerline is the median; the point where half the points lie above the line and half below it.  It is not the average, and except under specific circumstances it is not a predictor of future results.  It simply helps your eye understand the overall shape of the results.  Sometimes Upward is the 'good' direction, sometimes Downward is the 'good' direction.  Decide which direction is 'good' for any metric and see how the district has fared in that area.
 
@@ -152,10 +138,11 @@ In case you're worried about understanding run charts, here's a photo of a run c
 ![](leander-grade-4-run-chart.png)
 
 
-If 4th graders can do it; so can we all!
+If 4th graders can do it; so can we!
 
 
-
+<br>
+<br>
 The online book is available at:
 
 

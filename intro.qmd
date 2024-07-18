@@ -61,6 +61,16 @@ cat('
 \vspace{0.75in}
 
 
+I felt compelled to make this information available to our district.  It's the only way to justify the obscene amount of time required to wrangle the data from the TEA website and compile that data into plots that are useful for planning and governance.
+
+The charts are the starting point for defining goals and improvement efforts that have practical meaning - not the jargon or euphemisms that are currently en vogue.  
+
+Each chart tells a real story about real things.  Taken together they tell a story of how one school district met the challenges successive school boards faced.  The time frames involved provide the context needed to understand the outputs of the systems of learning in our District.
+
+While being a reference work, this book also chronicles the amazing story of the growth and accomplishments of the SCUC-ISD over the past 28 years.  More than 152 charts visually illustrate the steady improvement of students, teachers, administration and facilities even as successive challenges arose.  The demographics of the district changed; the legislative environment changed; the district continues to become stronger.
+
+Over the 28-year span, successive boards and superintendents navigated myriad challenges while raising most standardized scores, addressing staffing needs, and constructing new schools all while maintaining favorable student-teacher ratios, balancing administrative costs with instructional resources, and building adequate financial reserves.  All without the so-called 'good governance' rubrik so popular in today's academic circles.
+
 A WORD ABOUT THE DATA
 
 The Texas Education Agency defines, and often re-defines the metrics and categories supplied.  When a new metric is introduced you will see measurements begin in the year introduced.  Measurements cease when discontinued by TEA.  No Standardized Scores were issued for the year 2020 and, accordingly, some charts show a gap for that year.
