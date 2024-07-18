@@ -1,7 +1,0 @@
-# Summary
-
-In summary, this chapter has no content whatsoever.
-
-```{r}
-1 + 1
-```
