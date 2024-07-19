@@ -76,10 +76,7 @@ book:
        - taxes_and_revenues.qmd
        - expenses.qmd
   
-    - summary.qmd
-  
-    - references.qmd
-  
+ 
   
 format:
   html:

@@ -30,18 +30,19 @@ cat('
     \\raggedright
     \\vspace{12pt}  % Add vertical space here
   
-     \\Large{The important question is never, Did a method work somewhere? but always, Does it work here (and why)?}
+    \\Large{The important question is never, Did a method work somewhere? but always, Does it work here (and why)?}
 
     \\vspace{12pt}  % Add vertical space here
 
-  \\end{minipage}\\\\[5pt]
+  \\end{minipage}\\par
   \\begin{minipage}{0.95\\textwidth}
     \\raggedleft
-    \\Large{Dan Swart}\\\\
+    \\Large{Dan Swart}\\par
     \\emph{}
   \\end{minipage}
 \\end{tcolorbox}
 ')
+
 
 ```
 
@@ -63,7 +64,7 @@ This requires period-by-period history for at least 12 - 25 time periods.  The m
 
 If the process is stable the output will vary up and down within a limited range.  A chart will reveal this.  The range can be calculated and is the actual capability of the process, whether you like the values produced or not.
 
-If the process is stable, the average represents the proper 'baseline' for evaluating future performance.
+***If the process is stable, the average represents the proper 'baseline' for evaluating future performance.***
 
 >Examples:
 
@@ -74,7 +75,10 @@ If the process is stable, the average represents the proper 'baseline' for evalu
 - Are attendance rates (which result in per student state funding) stable, and consistent within an acceptable range?  A simple chart will tell you.
 
 ***WHY*** do we need to know this?  Because the appropriate Team of 8 improvement action ***is completely different if a process is stable (consistent) versus unstable (inconsistent).***
+
   
+\vspace{0.50in}
+
 <br>
   2. **What is the likely output of the process** ***in the future?***  
 
@@ -87,6 +91,8 @@ WHY do we need to know this?  Because if the process is stable it is predictable
 A word about goals:  ***Any goal placed outside the existing capability of the process will fail, unless significant changes are made to the process itself.***   Without a demonstrated capability any goal for a process is arbitrary and fruitless.  They are just wishes and hopes.
 
 
+\vspace{0.50in}
+
 <br>
   3.  **Do the data reveal trends (good, or bad) that the Team of 8 can leverage?**
 
@@ -95,6 +101,8 @@ This analysis requires period-by-period history for at least 12 - 25 time period
 In proper data analysis, 'trends' have a specific mathematical meaning.  If you learn a few simple rules a chronological plot of the measurements can reveal them.  Understanding true trends is a powerful force multiplier!
 
 Note:  ***You cannot detect most trends in your data with fewer than 8 points.***  
+
+\vspace{0.50in}
 
 <br>
   4. **If there has been a jolt to the process, has the process recovered to** ***acceptable*** **levels?**
@@ -106,13 +114,3 @@ A jolt may come from COVID-19, or from new federal or state mandates, or any num
 ***WHY*** do we need to know this?  ***Because resources are scarce and remedial measures and policies that are no longer needed should be discontinued as soon as possible.***
 
 
-
-
-
-
-
-
-
-
-A citation [@example2023].
-<br> <br> <br>
