@@ -43,91 +43,85 @@ cat('
 
 \vspace{0.75in}
 
+***The Problem***  
 
-***Why I Wrote This Book***  
-
-The journey to create this book has been long and crazy difficult.  The task so far has consumed more than 500 hours!  The primary reason for this difficulty is the historical data needed is *nearly inaccessible*.  
-
-Each process in a school system is capable of producing data for us. In fact, we are awash in data with no one who can explain the proper data analysis to use.  The Texas Education Agency (TEA), the primary repository for all school district data in Texas, is composed of educators, political staffers, and data scientists with no experience in process improvement methods.  The same is true of the Texas Association of School Boards (TASB).  Both TEA and TASB provide training and advice that is just plain wrong, leaving Trustees to struggle on their own.
+The journey to create this book has been long and difficult.  The task so far has consumed more than 500 hours!  The primary reason for this difficulty is the historical data we need is *nearly inaccessible*.
 
 Trustees review many statistical summaries, scores, 'metrics', and other numbers in their normal monthly work that represent the outputs of various processes in the district.  Judgments must be made such as: 'Are we in trouble in this area?', 'Are we doing well in this area?', 'Have our efforts produced the results we hoped for?', 'Can we afford this?'  
 
-The Texas Education Agency (TEA) silos their data in ways that make sufficient multi-period data retrieval so difficult virtually no one does it!  If the measurement period is in years, even two to five years is insufficient to establish a reliable capability estimate of a process.
+It began for me as I watched the Board of Trustees make every effort each month to understand the source of the data provided, the historical context of the data, and the theory behind the changes proposed.  We have a dynamite team tackling these issues, but it could still be a struggle.   Absent any formal process analysis, in the end we all rely on the intuition and experience of the subject-matter experts presenting the data and proposing future action.  
 
-Like most districts, our district is facing challenging times.  Resources are scarce and we cannot affort to waste time or to be misled by inferior data analysis.  Accordingly, I felt compelled to break open those TEA silos and bring our district the historical data required to understand the capability of our processes in light of our current measurements and goals.  Many (many) examples are provided of the simple charting tool called a run chart to properly interpret the numbers we see.  
+We know that each process in a school system is capable of producing data for us. In fact, we are awash in data ***with no one who can explain the proper data analysis to use.***  The Texas Education Agency (TEA), the primary repository for all school district data in Texas, is composed of educators, political staffers, and data scientists with no experience in process improvement methods.  The same is true of the Texas Association of School Boards (TASB).  Accordingly, both TEA and TASB provide training and advice that is just plain wrong, leaving Trustees to struggle on their own.
 
-The charts simply display the data, presented in the order of occurrence, with a line connecting the dots.  As it turns out, the order of occurance contains vital information not available in any other format.  In quality control work we call this 'plotting the dots.'
+In addition, the Texas Education Agency (TEA) silos their data in ways that make it nearly impossible to retrieve all our prior period data - **so virtually no one does it!**  If the measurement period is in years, even two to five years is insufficient to establish a reliable capability estimate of a process.
 
-***It is not important that any of the Trustees or other users understand any mathematics that go into preparing the charts; only the very simple rules of how to interpret what they see.***
+Like most districts, our district is facing challenging times.  Resources are scarce and we cannot afford to waste time or to be misled by inferior data analysis.  
+
+\vspace{0.5in}
+
+***A Much Better Approach***
+
+Knowing how powerful two simple charting techniques can be in process improvement, I felt compelled to break open those TEA silos by brute force and bring to our district the historical data required to understand the data we have.  We can now assess the capability of our processes in light of our current measurements and goals.  In this book, many (many) examples are provided of the simple charting tool called a run chart to properly interpret the numbers we see.  
+
+Run charts are the preliminary (Level One) visualization of the process under study.  It is simply a display of the data, presented in the order of occurrence, with a line connecting the dots.  As it turns out, the order of occurance contains vital information not available in any other format.  In quality control work we call this 'plotting the dots.'
+
+\vspace{0.5in}
+
+***Historical Context***
+
+Say we're interested in looking at our STAAR Scores for Mathematics for All Grade Levels at the 'Approaches and Higher' Level.  We'd like to know if there are lingering effects of the COVID-19 jolt, and how current scores compare to historical scores.  Here's an actual run chart using actual SCUC-ISD data:
+
+\vspace{0.5in}
+
+![](Run_Chart_Std_Test_Results_for_Math_at_the_Approaches_and_Higher_Level_for_all_Grade_Levels_1995-2022.png)
+
+\vspace{0.5in}
+
+<br>
+It is amazing how much information a Run Chart reveals using just your eyes.  There is no mathematical analysis present in this chart! 
+
+Just by visual inspection the chart reveals instantly the years when changes were made in the testing instruments, and the district's steady improvement between those changes.  The continuing drop in percentage with passing scores in 2021 and 2022 indicates that we have not fully recovered from the COVID-19 jolt for Mathematics as a whole.  Finally, the stability (predictability) of this process leading up to the COVID-19 jolt implies that the ups and downs after 2008 are likely due to non-traceable random forces (they don't mean anything).
+
+\vspace{0.5in}
+
+***Goal Setting***
+
+A Run Chart alone lacks the arithmetic to calculate the actual capability of a process.  We need an 'Individuals Chart' (Level 2) visualization to set upper and lower bounds on the capability.  When specific district processes are chosen for improvement or goal setting an Individuals Chart must be prepared to provide us with the upper and lower bounds of performance we can expect in the future (if nothing changes).
+
+Here is an example of an Individuals Chart using the same actual SCUC-ISD data:
+
+\vspace{0.5in}
+
+![](Individuals_Chart_Std_Test_Results_for_Math_at_the_Approaches_and_Higher_Level_for_all_Grade_Levels_2006-2022.png)
+
+We see right away that the last two dots are ***completely outside the range of expected performance*** (the upper and lower red lines).  If we were to set a goal ***prior*** to the COVID-19 jolt, we could (for example) attempt to raise the average pass rate from 85 to 86, or 87.  Any goal set beyond 88 would fail.  It is beyond the capability of the existing system.
+
+However, setting a reasonable goal ***after*** the COVID-19 jolt should focus on returning the pass rates back into the previous operating range between 82 - 85.  Since the last two dots are outside the expected range we will have to do something special to the system to return it to pre-COVID performance.  It is not likely to do so spontaneously.
+
+\vspace{0.5in}
+
+***In Summary***
+
+A **Run Chart** is the ***minimum*** data visualization the Team of 8 should receive when assessing a district process, setting goals, or evaluating improvement plans.  This book contains more than 152 Run Charts to get us started.
+
+An **Individuals Chart** is the gold standard for establishing a 'baseline' for a process (usually the average) and which always includes a *range* of values for the process capability, not just a single point value, from which to judge future results.
+
+Bar charts are for comparing *different* things and should **NOT** be used to analyze an operating process (period-by-period).  Run Charts and Individuals Charts are for visualizing the *same* process over time.
+
+***EVERY PERSON CAN LEARN TO INTERPRET THESE CHARTS IN VERY SHORT ORDER.***  Probably 10-20 minutes of explanation.
+
+Failure to use either of these tools keeps the Team of 8 in the dark about the actual range of district performance capability, risks poor decisions, and makes every improvement effort essentially a roll of the dice.  It is my heartfelt hope that our Team of 8 can begin the tradition of using these two tools to guide our continuos improvement efforts.
+
 
 \vspace{0.75in}
-
-<br>
-***Why You Need This Book NOW***  
-
-So, why do we need all this historical data?  
-
-Because an ongoing process ***CANNOT*** be improved without understanding the existing capability of the process.  In sound data analysis 'Capability' (what TEA calls a 'baseline') has a specific mathematical meaning.  
-
-To know the capability of a process you need to include at least 12 - 24 measurement periods.  In contrast, the TEA and TASB advise boards to establish a 'baseline' representing the 'current state' for comparing and monitoring growth.  They give examples of establishing a 'baseline' with a very small handful of measurements.  This is extremely poor practice and Trustees should not settle for it.  Again, Trustees need not learn the arithmetic involved; just learn the simple rules NOW to understand the signals their processes are sending.
-
-The cold hard fact is the 'current state' of an operating process ***CANNOT be characterized using only a few points of data!***  
-
-Although not widely practiced in America, it has been known since 1929 that the **ONLY** way to rationally create a 'baseline' for an ongoing process requires that we plot the data, period by period, in the order of occurance.  This allows us to calculate 4 critical things about the process:
-
-1. **Is the process that produced the figures stable over time (consistent over a range of values)?**  
-
-This requires period-by-period history for at least 12 - 25 time periods.  The more time periods the better.  The time periods need not be annual.  Some processes can be measured monthly, weekly, daily or even hourly.
-
-If the process is stable the output will vary up and down within a limited range.  A chart will reveal this.  The range can be calculated and is the actual capability of the process, whether you like the values produced or not.
-
-If the process is stable, the average represents the proper 'baseline' for evaluating future performance.
-
->Examples:
-
-- Is elementary reading instruction producing stable, ***consistent*** STAAR scores in an acceptable range for 3rd graders? A simple chart will tell you.
-
-- Is elementary math instruction producing stable, ***consistent*** STAAR scores in an acceptable range for 5th graders?  A simple chart will tell you.
-
-- Are attendance rates (which result in per student state funding) stable, and consistent within an acceptable range?  A simple chart will tell you.
-
-***WHY*** do we need to know this?  Because the appropriate Team of 8 improvement action ***is completely different if a process is stable (consistent) versus unstable (inconsistent).***
-  
-<br>
-  2. **What is the likely output of the process** ***in the future?***  
-
-This also requires period-by-period history for at least 12 - 25 time periods.  
-
-For monitoring progress, TEA recommends spending most of your time examining the past to establish a baseline, then about 1/4 of your time focusing on the future.  That is like trying to drive your car by staring in the rear view mirror!
-
-WHY do we need to know this?  Because if the process is stable it is predictable (within limits).  That means you can attempt to improve future performance and judge the results with confidence.    If the process is inconsistant ***no rational prediction for the future is possible.***
-
-A word about goals:  ***Any goal placed outside the existing capability of the process will fail, unless significant changes are made to the process itself.***   Without a demonstrated capability any goal for a process is arbitrary and fruitless.  They are just wishes and hopes.
-
-
-<br>
-  3.  **Do the data reveal trends (good, or bad) that the Team of 8 can leverage?**
-
-This analysis requires period-by-period history for at least 12 - 25 time periods.
-
-In proper data analysis, 'trends' have a specific mathematical meaning.  If you learn a few simple rules a chronological plot of the measurements can reveal them.  Understanding true trends is a powerful force multiplier!
-
-Note:  ***You cannot detect most trends in your data with fewer than 8 points.***  
-
-<br>
-  4. **If there has been a jolt to the process, has the process recovered to** ***acceptable*** **levels?**
-
-This also requires longitudinal history for at least 12 - 25 time periods.
-
-A jolt may come from COVID-19, or from new federal or state mandates, or any number of sources.
-  
-***WHY*** do we need to know this?  ***Because resources are scarce and remedial measures and policies that are no longer needed should be discontinued as soon as possible.***
-
 
 <br>
 A quick note about the accompanying run charts.  A run chart is a simple plot of observations (results of some process) shown sequentially over time.  The longer the time plotted the more informative the plot becomes.  They are the starting point to gain predictive insight into instructional and administrative practices.
 
 The centerline is the median; the point where half the points lie above the line and half below it.  It is not the average, and except under specific circumstances it is not a predictor of future results.  It simply helps your eye understand the overall shape of the results.  Sometimes Upward is the 'good' direction, sometimes Downward is the 'good' direction.  Decide which direction is 'good' for any metric and see how the district has fared in that area.
+
+***It is not important that any of the Trustees or other users understand any of the mathematics that go into preparing the charts; only the very simple rules of how to interpret what they see.***
+
 
 \vspace{0.25in}
 
@@ -140,6 +134,15 @@ In case you're worried about understanding run charts, here's a photo of a run c
 
 If 4th graders can do it; so can we!
 
+\vspace{0.5in}
+
+**A WORD ABOUT THE DATA**
+
+The Texas Education Agency defines, and often re-defines the metrics and categories supplied.  When a new metric is introduced you will see measurements begin in the year introduced.  Measurements cease when discontinued by TEA.  No Standardized Scores were issued for the year 2020 and, accordingly, some charts show a gap for that year.
+
+\vspace{0.5in}
+
+This book was created from Quarto and executable code.
 
 <br>
 <br>

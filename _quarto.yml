@@ -7,7 +7,7 @@ bibliography: references.bib
 highlight-style: pygments
 
 book:
-  title: "***THE ROLE OF DATA CONTEXT IN DISTRICT LEADERSHIP***"
+  title: "***THE ROLE OF DATA ANALYSIS IN DISTRICT LEADERSHIP***"
   subtitle: "*28 Years of Growth and Accomplishment at SCUC-ISD as Context for Today's Decisions*"
   author: "Dan Swart, Trustee, Seat 6"
   date: "today"
@@ -50,7 +50,7 @@ book:
     
     - how_to_use.qmd
     
-    - intro.qmd
+    - forthestatisticallycurious.qmd
  
     - part: "District Performance"
       chapters:
