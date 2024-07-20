@@ -9,7 +9,7 @@ cat('
 <div style="margin-top: 200px;"></div> <!-- Adjust height as needed -->
 <blockquote class="my-quote" style="font-size: 18px;">
   <p>
-<strong>"My aim here is to contribute something to the improvement of learning in our school district; or any school district.  My goal with this book is to create a reference work that our Trustees can use in preparation for all meetings where data is to be discussed (which is <i>every</i> meeting). It provides the critical <b>local</b> context needed to understand the meaning and limitations of today&apos;s local data."</strong>
+<strong>"My aim here is to contribute something to the improvement of learning in our school district; or any school district.  My goal with this book is to create a reference work that our Trustees can use in preparation for all meetings where data is to be discussed (which is <i>every</i> meeting), and to introduce a superior way to analyze school district data for improvement. The book provides the critical <b>local</b> context needed to understand the meaning and limitations of today&apos;s local data."</strong>
 
 </p>
   <p class="quote-author">          — Dan Swart</p>
@@ -29,7 +29,7 @@ cat('
 \\begin{tcolorbox}[colback=white, colframe=teal, boxrule=2pt, arc=4pt]
   \\begin{minipage}{0.95\\textwidth}
     \\raggedright
-    \\Large{"My aim here is to contribute something to the improvement of learning in our school district; or any school district.  My goal with this book is to create a reference work that our Trustees can use in preparation for all meetings where data is to be discussed (which is \textit{every} meeting). It provides the critical textbf{local} context needed to understand the meaning and limitations of our current local data."}
+    \\Large{"My aim here is to contribute something to the improvement of learning in our school district; or any school district.  My goal with this book is to create a reference work that our Trustees can use in preparation for all meetings where data is to be discussed (which is every meeting), and to introduce a superior way to analyze school district data for improvement. The book provides the critical local context needed to understand the meaning and limitations of our current local data."}
   \\end{minipage}\\\\[5pt]
   \\begin{minipage}{0.95\\textwidth}
     \\raggedleft
