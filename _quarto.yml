@@ -35,7 +35,7 @@ book:
     description: A compilation of 28 years of TEA data for the SCUC-ISD.
   page-footer:
     left: |
-      This book was written by Dan Swart, Trustee 6, SCUC-ISD
+      This book was written by Dan Swart, CPA (ret) while serving as Trustee (Place 6), SCUC-ISD
     right: |
       This book was built with <a href="https://quarto.org/">Quarto</a>.
   cover-image: unique-1-yellow-locker.jpg
