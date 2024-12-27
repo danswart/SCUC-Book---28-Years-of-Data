@@ -29,8 +29,8 @@ Enjoy!
 
 ```{r echo=FALSE, warning=FALSE, message=FALSE, fig.width=8, fig.height=7}
 
-# Load Libraries
-# 
+# # Load Libraries
+# # 
 # library(tidyverse)
 # library(qicharts2)
 # library(haven)
@@ -65,6 +65,7 @@ Enjoy!
 # #   dpi = 300
 # # )
 # 
+# 
 # # # Define a custom label formatting function
 # custom_label_func <- function(x) {
 #   # For values greater than or equal to 1 million, format without exponential notation and with commas
@@ -77,10 +78,27 @@ Enjoy!
 #   }
 # }
 # 
+# 
 # # # Load the data
 # df2 <- read_csv(file = here::here("data",
 #                                   "SCUC Snapshots 1995 to 2022-LONG.csv")
 #                 )
+# 
+# 
+# 
+# # # Correct unit column for 1 category if you have old .csv file
+# # 
+# # df2 <- df2 %>%
+# #   mutate(units = ifelse(sort == 13 & grouping == "Exit-Level Cumulative Pass Rate",
+# #                         "rate",
+# #                         units
+# #                         )
+# #          )
+# # 
+# # 
+# # # Write the original data frame with updated data
+# # write.csv(df2, file = here::here("data", "SCUC Snapshots 1995 to 2022-LONG.csv"), row.names = FALSE)
+# 
 # 
 # 
 # 
@@ -114,8 +132,8 @@ Enjoy!
 # # Specify the caption for the plots
 # caption <- c("\n Source:  https://tea.texas.gov/reports-and-data")
 # 
-# # Specify the png folder name
-# png_folder <- paste0("png_",
+# # Specify the svg folder name
+# svg_folder <- paste0("svg_",
 #                      desired_section)
 # 
 # # Replace zeros in the value column with NA
@@ -166,12 +184,9 @@ Enjoy!
 # # Create dynamic title and subtitle
 # title <- paste0(
 #                 "<span style='color:darkorchid1'>",
+#                 "Run Chart: ",
 #                 group_category,
 #                 "</span>"
-#                 # " (",
-#                 # group_units,
-#                 # ")",
-#                 # ","
 #                 )
 # 
 # subtitle <- paste0("In Grades - ",
@@ -184,6 +199,7 @@ Enjoy!
 #                            max(desired_years)
 #                            )
 #                      )
+# 
 # 
 # # Create the chart with qicharts2
 # plot <- qic(
@@ -267,12 +283,10 @@ Enjoy!
 #        plot.background = element_rect(fill = "white", color = NA)
 #   )
 # 
-# # Display the plot during testing
-# # print(plot)
 # 
 # 
 # # Define the filename
-# filename <- paste0(png_folder,
+# filename <- paste0(svg_folder,
 #                   "/",
 #                   gsub(" ",
 #                        "",
@@ -285,7 +299,7 @@ Enjoy!
 #                               max(desired_years)
 #                               )
 #                        ),
-#                   ".png"
+#                   ".svg"
 #                   )
 # 
 #  # Return both the plot and the filename
@@ -307,42 +321,45 @@ Enjoy!
 # )
 # 
 # 
-# # Save each plot as a PNG file
-# walk(plots, ~ ggsave(
-#   .$filename,
-#   .$plot,
-#   width = 8,
-#   height = 7,
-#   units = 'in',
-#   # bg = 'white',
-#   # scaling = 1,
-#   dpi = 300,
-#   create.dir = TRUE
-#   )
-# )
 # 
-
-# Stop recording
-# gg_stop_recording()
-
-# Print the plots
+# 
+# 
+# # # Save each plot as a SVG file
+# # walk(plots, ~ ggsave(
+# #   .$filename,
+# #   .$plot,
+# #   width = 12,
+# #   height = 9,
+# #   units = 'in',
+# #   # bg = 'white',
+# #   # scaling = 1,
+# #   dpi = 300,
+# #   create.dir = TRUE
+# #   )
+# # )
+# 
+# 
+# # # Stop recording
+# # gg_stop_recording()
+# 
+# # Print the plots
 # walk(plots, ~ print(.$plot))
-
-#  CREATE MULTIPLE STATIC PLOTS
+# 
+# #  END OF CREATE MULTIPLE STATIC PLOTS
 
 
 ```
 
 <!-- UNCOMMENT THIS SECTION AND RUN IT TO  PRINT LIST OF-->
-<!-- THE PNG FILES (INDEPENDENTLY OF WHAT IS IN THE  -->
-<!-- SPECIFIED PNG STORAGE FOLDER) INTO THE CONSOLE -->
+<!-- THE svg FILES (INDEPENDENTLY OF WHAT IS IN THE  -->
+<!-- SPECIFIED svg STORAGE FOLDER) INTO THE CONSOLE -->
 <!-- FOR COPY AND PASTE -->
 
-<!-- Create Rmarkdown syntax to display all png files in specified directory -->
+<!-- Create Rmarkdown syntax to display all svg files in specified directory -->
 
 ```{r echo=FALSE, warning=FALSE, message=FALSE}
 
-## START FROM SCRATCH AND CREATE LIST OF PNG FILES GENERATED ABOVE
+## START FROM SCRATCH AND CREATE LIST OF svg FILES GENERATED ABOVE
 ## FOR COPY AND PASTE FROM CONSOLE TO BODY OF QUARTO DOC
 
 # Load Libraries
@@ -405,8 +422,8 @@ Enjoy!
 # desired_order <- unique(first_df$sort)
 # 
 # 
-# # Specify the png folder name
-# png_folder <- paste0("png_",
+# # Specify the svg folder name
+# svg_folder <- paste0("svg_",
 #                      desired_section)
 # 
 # 
@@ -425,7 +442,7 @@ Enjoy!
 # 
 # # Create a vector of file names for each unique combination
 # 
-# filenames <- paste0(png_folder,
+# filenames <- paste0(svg_folder,
 #                      "/",
 #                      gsub(" ",
 #                           "",
@@ -435,7 +452,7 @@ Enjoy!
 #                                           max(first_df$year)
 #                                  )
 #                           ),
-#                      ".png"
+#                      ".svg"
 #                      )
 #  
 #  
@@ -495,7 +512,7 @@ Comment:
 
 \vspace{1.0in}
 
-![](png_District_Perform/District_PerformTotalStudentsinDistrictcountAllNA19952022.png)
+![](svg_District_Perform/District_PerformTotalStudentsinDistrictcountAllNA19952022.svg)
 
 <br><br>
 
@@ -506,7 +523,7 @@ Comment:
 
 \vspace{1.0in}
 
-![](png_District_Perform/District_PerformTotalNumberofSchoolscountAllNA19952022.png)
+![](svg_District_Perform/District_PerformTotalNumberofSchoolscountAllNA19952022.svg)
 
 <br><br>
 
@@ -517,7 +534,7 @@ Comment:
 
 \vspace{1.0in}
 
-![](png_District_Perform/District_PerformAttendanceRaterateAllNA19952022.png)
+![](svg_District_Perform/District_PerformAttendanceRaterateAllNA19952022.svg)
 
 <br><br>
 
@@ -528,7 +545,7 @@ Comment:
 
 \vspace{1.0in}
 
-![](png_District_Perform/District_PerformCompletionRaterateAllNA19952022.png)
+![](svg_District_Perform/District_PerformCompletionRaterateAllNA19952022.svg)
 
 <br><br>
 
@@ -539,7 +556,7 @@ Comment:
 
 \vspace{1.0in}
 
-![](png_District_Perform/District_PerformAnnualGraduateCountcountAllNA19952022.png)
+![](svg_District_Perform/District_PerformAnnualGraduateCountcountAllNA19952022.svg)
 
 <br><br>
 
@@ -550,7 +567,7 @@ Comment:
 
 \vspace{1.0in}
 
-![](png_District_Perform/District_PerformAnnualRHSP-DAP-FHSP-E-FHSP-DLAGraduateCountcountAllNA19952022.png)
+![](svg_District_Perform/District_PerformAnnualRHSP-DAP-FHSP-E-FHSP-DLAGraduateCountcountAllNA19952022.svg)
 <br><br>
 
 \clearpage
@@ -560,7 +577,7 @@ Comment:
 
 \vspace{1.0in}
 
-![](png_District_Perform/District_Perform4-YearLongitudinalGraduationRaterateAllNA19952022.png)
+![](svg_District_Perform/District_Perform4-YearLongitudinalGraduationRaterateAllNA19952022.svg)
 <br><br>
 
 \clearpage
@@ -570,7 +587,7 @@ Comment:
 
 \vspace{1.0in}
 
-![](png_District_Perform/District_Perform5-YearLongitudinalGraduationRaterateAllNA19952022.png)
+![](svg_District_Perform/District_Perform5-YearLongitudinalGraduationRaterateAllNA19952022.svg)
 <br><br>
 
 \clearpage
@@ -580,7 +597,7 @@ Comment:
 
 \vspace{1.0in}
 
-![](png_District_Perform/District_Perform6-YearLongitudinalGraduationRaterateAllNA19952022.png)
+![](svg_District_Perform/District_Perform6-YearLongitudinalGraduationRaterateAllNA19952022.svg)
 <br><br>
 
 \clearpage
@@ -590,7 +607,7 @@ Comment:
 
 \vspace{1.0in}
 
-![](png_District_Perform/District_PerformAnnualDropoutRaterateAllNA19952022.png)
+![](svg_District_Perform/District_PerformAnnualDropoutRaterateAllNA19952022.svg)
 <br><br>
 
 \clearpage
@@ -600,7 +617,7 @@ Comment:
 
 \vspace{1.0in}
 
-![](png_District_Perform/District_PerformAnnualDropoutRateGr9-12rateAllNA19952022.png)
+![](svg_District_Perform/District_PerformAnnualDropoutRateGr9-12rateAllNA19952022.svg)
 <br><br>
 
 \clearpage
@@ -610,7 +627,7 @@ Comment:
 
 \vspace{1.0in}
 
-![](png_District_Perform/District_PerformFour-yearDropoutRaterateAllNA19952022.png)
+![](svg_District_Perform/District_PerformFour-yearDropoutRaterateAllNA19952022.svg)
 <br><br>
 
 \clearpage
@@ -620,6 +637,6 @@ Comment:
 
 \vspace{1.0in}
 
-![](png_District_Perform/District_PerformExit-LevelCumulativePassRatescoreAllNA19952022.png)
+![](svg_District_Perform/District_PerformExit-LevelCumulativePassRaterateAllNA19952022.svg)
 <br><br>
 
