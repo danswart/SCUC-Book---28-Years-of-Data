@@ -355,6 +355,7 @@ Enjoy!
 <!-- SPECIFIED svg STORAGE FOLDER) INTO THE CONSOLE -->
 <!-- FOR COPY AND PASTE -->
 
+
 <!-- Create Rmarkdown syntax to display all svg files in specified directory -->
 
 ```{r echo=FALSE, warning=FALSE, message=FALSE}
