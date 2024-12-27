@@ -180,6 +180,8 @@ https://danswart.quarto.pub/scuc28yearsofdata/
 
 <!-- My Quarto Pub site: -->
 
+<!-- To publish, and re-publish book type "quarto publish quarto-pub" in the terminal -->
+
 <!-- https://quartopub.com/sites/f2b9bd70-85b1-4b19-9670-f8fa66542c74 -->
 
 <!-- Settings -->
