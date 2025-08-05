@@ -1,0 +1,239 @@
+[
+  {
+    "objectID": "index.html",
+    "href": "index.html",
+    "title": "THE ROLE OF DATA ANALYSIS IN SCHOOL DISTRICT LEADERSHIP",
+    "section": "",
+    "text": "Preface\n\n\n\n\n\n\n“My aim here is to contribute to the improvement of learning in our school district; or any school district. My goal with this book is to introduce a new way to analyze school district data for improvement (far superior to current practice), and to create a reference work that illustrates the power of the new methods. Study each chart and think for just a moment what each one is telling us about what is happening in our district. Trustees, and others, can use this book in preparation for all meetings where data is to be discussed (which is every meeting). The book provides the critical local historical context needed to understand the meaning and limitations of today's local data.”\n\n\n— Dan Swart\n\n\n\n\nThe Book\nThis is not a textbook or a technical book created for researchers. It is designed for ordinary people, doing serious work, and tackling serious issues for a school district. This SCUC-ISD data has, literally, never been seen before in this format. It will help any school district leader who gives it serious attention and reflection.\nThe Problem\nIf a different analysis of the same process leads you to different conclusions about what is happening in your school district, you better be using the best analysis available.\nTrustees review many statistical summaries, scores, ‘metrics’, and other numbers in their normal monthly work that represent the outputs of various processes in the district. Judgments must be made such as: ‘Are we in trouble in this area?’, ‘Are we doing well in this area?’, ‘Have our efforts produced the results we hoped for?’, ‘Can we afford this?’\nIt began for me as I watched my fellow members of the Board of Trustees make every effort each month to understand the source of the data provided, the historical context of the data, and the theory behind the changes proposed. We have a dynamite team tackling these issues, but it could still be a struggle for everyone. Absent any formal process analysis, in the end we all rely on the intuition and experience of the subject-matter experts presenting the data and proposing future action.\nWe know that each process in a school system is capable of producing data for us. In fact, we are awash in data with no one who can explain the proper data analysis to use. The Texas Education Agency (TEA), the primary repository for all school district data in Texas, is composed of educators, political staffers, and data scientists with no experience in process improvement methods.\nThe same is true of the Texas Association of School Boards (TASB). Accordingly, both TEA and TASB provide training and advice on data and process analysis that is just plain wrong, leaving Trustees to struggle on their own.\nIn addition, the Texas Education Agency (TEA) silos their data in ways that make it nearly impossible to retrieve all our prior period data - so virtually no one does it! If the measurement period is in years, even two to five years is insufficient to establish a reliable capability estimate of a process.\nLike most districts, our district is facing challenging times. Resources are scarce and we cannot afford to waste time or to be misled by inferior data analysis.\nKnowing a better way, I have an obligation to inform those working with data within the district of these simple, but powerful tools. They require only Excel, and an open mind.\n\nA Much Better Approach\nTwo simple charting techniques are powerful tools in process improvement. Finding no readily available historical data, I felt compelled to break open those TEA silos by brute force and bring to our district the historical data required to understand our learning and administrative processes. With just these two simple tools we can now assess the capability of our processes in light of our current measurements and goals. In this book, many (many) examples are provided of the simple charting tool called a Run Chart to help us properly interpret the numbers we see.\nRun charts are the preliminary (Level One) visualization of the process under study. It is simply a display of the data, presented in the order of occurrence, with a line connecting the dots. As it turns out, the order of occurance contains vital information not available in any other format. In quality control work we call this ‘plotting the dots.’\nHistorical Context\nSay we’re interested in looking at our STAAR Scores for Mathematics for All Grade Levels at the ‘Approaches and Higher’ Level. We’d like to know if there are lingering effects of the COVID-19 jolt, and how current scores compare to historical scores. Here’s an actual run chart using actual SCUC-ISD data:\n\n It is amazing how much information a Run Chart reveals using just your eyes. There is no mathematical analysis present in this chart!\nJust by visual inspection the chart reveals instantly the years when changes were made in the testing instruments, and the district’s steady improvement between those changes. The continuing drop in percentage with passing scores in 2021 and 2022 indicates that we have not fully recovered from the COVID-19 jolt for Mathematics as a whole. Finally, the stability (predictability) of this process leading up to the COVID-19 jolt implies that the ups and downs after 2008 are likely due to non-traceable random forces (they don’t mean anything).\nGoal Setting\nA Run Chart alone lacks the arithmetic to calculate the actual capability of a process. We need an ‘Individuals Chart’ (Level 2) visualization to set upper and lower bounds on the capability. When specific district processes are chosen for improvement or goal setting an Individuals Chart must be prepared to provide us with the upper and lower bounds of performance we can expect in the future (if nothing changes).\nHere is an example of an Individuals Chart using the same actual SCUC-ISD data:\n\nWe see right away that the last two dots are completely outside the range of expected performance (the upper and lower red lines). If we were to set a goal prior to the COVID-19 jolt, we could (for example) attempt to raise the average pass rate from 85 to 86, or 87. Any goal set beyond 88 would fail. It is beyond the capability of the existing system.\nHowever, setting a reasonable goal after the COVID-19 jolt should focus on returning the pass rates back into the previous operating range between 82 - 85. Since the last two dots are outside the expected range we will have to do something special to the system to return it to pre-COVID performance. It is not likely to do so spontaneously.\nIn Summary\nA Run Chart is the minimum data visualization the Team of 8 should receive when assessing a district process, setting goals, or evaluating improvement plans. This book contains more than 152 Run Charts to get us started.\nAn Individuals Chart is the gold standard for establishing a ‘baseline’ for a process (usually the average). It always includes a range of values for the process capability, not just a single point value. From this you can judge expected future results and the results of today’s interventions.\nBar charts are for comparing different things and should NOT be used to analyze an operating process (period-by-period). Run Charts and Individuals Charts are for visualizing the same process over time.\nEVERY PERSON CAN LEARN TO INTERPRET THESE CHARTS IN VERY SHORT ORDER. Probably 10-20 minutes of explanation.\nFailure to use either of these tools keeps the Team of 8 in the dark about the actual range of district performance capability, risks poor decisions, and makes every improvement effort essentially a roll of the dice. It is my heartfelt hope that our Team of 8 can begin the tradition of using these two tools to guide our continuos improvement efforts.\n A quick note about the accompanying run charts. A run chart is a simple plot of observations (results of some process) shown sequentially over time. The longer the time plotted the more informative the plot becomes. They are the starting point to gain predictive insight into instructional and administrative practices.\nThe centerline is the median; the point where half the points lie above the line and half below it. It is not the average, and except under specific circumstances it is not a predictor of future results. It simply helps your eye understand the overall shape of the results. Sometimes Upward is the ‘good’ direction, sometimes Downward is the ‘good’ direction. Decide which direction is ‘good’ for any metric and see how the district has fared in that area.\nIt is not important that any of the Trustees or other users understand any of the mathematics that go into preparing the charts; only the very simple rules of how to interpret what they see.\nIn case you’re worried about understanding run charts, here’s a photo of a run chart created by 4th graders at Leander ISD with magic markers and newsprint. This simple chart enabled students to dramatically reduce the number of ‘loss of control’ incidents during the day. The chart tells this story simply, and clearly.\n\nIf 4th graders can do it; so can we!\nA WORD ABOUT THE DATA\nThe Texas Education Agency defines, and often re-defines the metrics and categories supplied. When a new metric is introduced you will see measurements begin in the year introduced. Measurements cease when discontinued by TEA. No Standardized Scores were issued for the year 2020 and, accordingly, some charts show a gap for that year.\nDisclaimer\nThis book is not an official publication of the Schertz-Cibolo-Universal City ISD. It is the work of the author as an interested private citizen. The contents of this book are intended for informational and educational purposes only and does not represent the official position or policies of any school board or school district. The views and opinions, if any are expressed, are solely those of the author and do not reflect the official stance of any educational institution or governing body. All data presented is public information found on the Texas Education Association website. No confidential information is included. While every effort has been made to ensure the accuracy of the information presented, the author assumes no responsibility for any errors or omissions, nor for any consequences arising from the use of this information. Readers are encouraged to verify any information and seek professional advice as necessary.\nThis book was created from Quarto and executable code.\nSuggestions and corrections welcome!\n  The online book is available at:\nhttps://danswart.quarto.pub/scuc28yearsofdata/",
+    "crumbs": [
+      "Preface"
+    ]
+  },
+  {
+    "objectID": "dedication.html",
+    "href": "dedication.html",
+    "title": "Dedication",
+    "section": "",
+    "text": "To Rose Mary,\nwho endured the many, many long hours required to compile this work. Thank you for your patience and love.",
+    "crumbs": [
+      "Dedication"
+    ]
+  },
+  {
+    "objectID": "acknowledgements.html",
+    "href": "acknowledgements.html",
+    "title": "Acknowledgements",
+    "section": "",
+    "text": "To the Trustees Who Came Before… who as volunteers met the many challenges unafraid - listed in no particular order:\nMalford E. Brehm Jr. (1980, 1982, 1985, 1988) Frank P. Leuck (1983, 1986, resigned 04/87) Tom DeKunder (1984, 1987, 1990, resigned 11/19/92) Ollie G. Burkett (1985, 1988, 1991, 1994, 1997) Sylvia Schlather (1980, 1983, 1986, 1989, resigned 1/22/90) Gordon Davis (1983, 1984) Roy Richard, Jr. (1984, 1987, resigned 9/87) Bill Paschal (1987, 1990, 1993, 1996) Darwin Peek (1987 - appointed 6/87, 1988, 1989, 1992, 1995, 1998, resigned 6/1/99) Byron Nichols (1987 - appointed 9/87, 1988, 1990, 1993, 1996) Helen Rook (1990 5/90, 1992, 1994, resigned 6/20/94) Stephen Springer (1991, 1994) Pat Sassman (1993 appointed 1/93, elected 1993, 1996) Hector Leal (8/18/94 appointed, elected 5/95, resigned 6/95) Richard G. Power (10/19/95 appointed) James J. Davidson (1996 (2 yr.unexpired), 1998, 2001, 2004) Kenneth Ratcliff (1997, 2000) Henry Hagen (1999) Rodger Olson (1999) George Ricks (1999 - special election 8/14/99 - 2 yr., 2001) Gary Inmon (2000, 2003, 2006, 2009, 2017) Timothy McClellan (2002) Gregory Coolidge (2002) Malford E. Brehm Jr. (2003) Joyce Briscoe (2004) Joe Trevino (appointed 12/2004) Scott Harrod (2005, 2006, 2007, 2008, 2009, 2010, 2011, 2012, 2013, 2014, 2015) Katherine Peel (2005, 2006, 2007, 2008, 2009, 2010) Edward Finley, Jr. (2005, 2006, 2007, 2008, 2009, 2010, 2011, 2012, 2013, 2014, 2015, 2017, 2021, 2023) Terry Hinze (1999, 2000, 2001, 2002, 2003, 2004, 2007, 2008) David Pevoto (2007, 2008, 2009, 2010, 2011, 2012 , 2013, 2014, 2015, 2017) George Ricks (1999, 2007 , 2008, 2009, 2010, 2011, 2012, 2013, 2014, 2015 resigned November 2015) Mark Wilson (2009, 2010, 2011, 2012, 2013, 2014, 2015, retired in October 2017) Robert Westbrook (2011, 2012, 2013, 2014, 2015, 2019) Gerald “Jerry” Perkins (2015, 2019, 2023) John C. Correu (2015, resigned Sept. 22, 2018) Amy Driesbach (2015-special election, 2017) - Letticia Sever (2018 - appointed to replace John Correu Sept. 24, 2018, 2019, 2023) - Amy Thomas (2021) - Dan Swart (2021) - Belinda Evans (2021) - Margaret Carlin (2023)",
+    "crumbs": [
+      "Acknowledgements"
+    ]
+  },
+  {
+    "objectID": "how_to_use.html",
+    "href": "how_to_use.html",
+    "title": "How to Use This Book",
+    "section": "",
+    "text": "The charts are the starting point for defining goals and improvement efforts that have practical meaning - not the jargon or euphemisms that are currently en vogue.\nEach chart tells a real story about real things. Taken together they tell a story of how one school district met the challenges successive school boards faced. The time frames involved provide the context needed to understand the outputs of the systems of learning in our District.\nAll categories and definitions are those of the Texas Education Agency and not of the author.\nThere are a LOT of charts contained in these chapters. I suggest that you browse the Table of Contents and start with a chapter, or topic, you are particularly interested in and move outward from there. To view them in order might invite a nap!\nMore than 152 charts visually illustrate the steady improvement of students, teachers, administration and facilities even as successive challenges arose. The demographics of the district changed; the legislative environment changed; the district continues to become stronger.\nOver the 28-year span, successive boards and superintendents navigated myriad challenges while raising most standardized scores, addressing staffing needs, and constructing new schools all while maintaining favorable student-teacher ratios, balancing administrative costs with instructional resources, and building adequate financial reserves. All without the so-called ‘good governance’ rubrik so popular in today’s academic circles.\nSome may be interested in scholastic performance, some in financial performance, some in general demographic information, some in budgetary matters.\nThe Table of Contents has links to the various chapters. Once you are in a Chapter, the sidebar on the right side has links to the various charts within the chapter.\nNearly all the plots are run charts. With a Run Chart the exact numbers on a chart are not as important as gaining the overall range of values and any trends present in the measurements. Is it trending up, down, or stable at a given level? Is an upward trend good news, or bad?\nOnce you find a chart, or group of charts, that represent an area you feel might be important for district improvement further analysis and study can guide you to deeper insights.",
+    "crumbs": [
+      "How to Use This Book"
+    ]
+  },
+  {
+    "objectID": "forthestatisticallycurious.html",
+    "href": "forthestatisticallycurious.html",
+    "title": "For the Statistically Curious",
+    "section": "",
+    "text": "“The important question is never:  ”Did a method work somewhere?”  but always: “Does it work here (and why)?” \n\n\n — Dan Swart\n\n\n\n\nSo, why do we need all this historical data?\nBecause an ongoing process CANNOT be improved without understanding the existing stability and capability of the process. In sound data analysis ‘Capability’ (what TEA calls a ‘baseline’) has a specific mathematical meaning.\nTo know the capability of a process you need to include at least 12 - 24 measurement periods. In contrast, the TEA and TASB advise boards to establish a ‘baseline’ representing the ‘current state’ for comparing and monitoring growth. They give examples of establishing a ‘baseline’ with a very small handful of measurements. This is extremely poor practice and Trustees should not settle for it. Again, Trustees need not learn the arithmetic involved; just learn the simple rules NOW to understand the signals their processes are sending.\nThe cold hard fact is the ‘current state’ of an operating process CANNOT be characterized using only a few points of data!\nAlthough not widely practiced in America, it has been known since 1929 that the ONLY way to rationally create a ‘baseline’ for an ongoing process requires that we plot the data, period by period, in the order of occurance. This allows us to calculate 4 critical things about the process:\n\nIs the process that produced the figures stable over time (consistent over a range of values)?\n\nThis requires period-by-period history for at least 12 - 25 time periods. The more time periods the better. The time periods need not be annual. Some processes can be measured monthly, weekly, daily or even hourly.\nIf the process is stable the output will vary up and down within a limited range. A chart will reveal this. The range can be calculated and is the actual capability of the process, whether you like the values produced or not.\nIf the process is stable, the average represents the proper ‘baseline’ for evaluating future performance.\n\nExamples:\n\n\nIs elementary reading instruction producing stable, consistent STAAR scores in an acceptable range for 3rd graders? A simple chart will tell you.\nIs elementary math instruction producing stable, consistent STAAR scores in an acceptable range for 5th graders? A simple chart will tell you.\nAre attendance rates (which result in per student state funding) stable, and consistent within an acceptable range? A simple chart will tell you.\n\nWHY do we need to know this? Because the appropriate Team of 8 improvement action is completely different if a process is stable (consistent) versus unstable (inconsistent).\n 2. What is the likely output of the process in the future?\nThis also requires period-by-period history for at least 12 - 25 time periods.\nFor monitoring progress, TEA recommends spending most of your time examining the past to establish a baseline, then about 1/4 of your time focusing on the future. That is like trying to drive your car by staring in the rear view mirror!\nWHY do we need to know this? Because if the process is stable it is predictable (within limits). That means you can attempt to improve future performance and judge the results with confidence. If the process is inconsistant no rational prediction for the future is possible.\nA word about goals: Any goal placed outside the existing capability of the process will fail, unless significant changes are made to the process itself. Without a demonstrated capability any goal for a process is arbitrary and fruitless. They are just wishes and hopes.\n 3. Do the data reveal trends (good, or bad) that the Team of 8 can leverage?\nThis analysis requires period-by-period history for at least 12 - 25 time periods.\nIn proper data analysis, ‘trends’ have a specific mathematical meaning. If you learn a few simple rules a chronological plot of the measurements can reveal them. Understanding true trends is a powerful force multiplier!\nNote: You cannot detect most trends in your data with fewer than 8 points.\n 4. If there has been a jolt to the process, has the process recovered to acceptable levels?\nThis also requires longitudinal history for at least 12 - 25 time periods.\nA jolt may come from COVID-19, or from new federal or state mandates, or any number of sources.\nWHY do we need to know this? Because resources are scarce and any remedial measures and policies put in place during a crises that are no longer needed should be discontinued as soon as possible. They consume valuable time and money needed elsewhere.",
+    "crumbs": [
+      "<span class='chapter-number'>1</span>  <span class='chapter-title'>For the Statistically Curious</span>"
+    ]
+  },
+  {
+    "objectID": "district_perform.html",
+    "href": "district_perform.html",
+    "title": "Growth, Attendance, Attrition",
+    "section": "",
+    "text": "Let your eyes wander over these plots and get a sense of the growth and development of the district over the last 28 years. Using just your eyes you will gain an appreciation for the accomplishments and growth of the district.\n  \nEnjoy!\n\n\n\n\n\n\n\n\nComment: \n\n\nComment: \n\n\nComment: \n\n\nComment: \n\n\nComment: \n\n\nComment: \n \nComment: \n \nComment: \n \nComment: \n \nComment: \n \nComment: \n \nComment: \n \nComment:",
+    "crumbs": [
+      "District Performance",
+      "<span class='chapter-number'>2</span>  <span class='chapter-title'>Growth, Attendance, Attrition</span>"
+    ]
+  },
+  {
+    "objectID": "student_demo.html",
+    "href": "student_demo.html",
+    "title": "Changes in Composition",
+    "section": "",
+    "text": "Let your eyes wander over these plots and get a sense of the growth and development of the district over the last 28 years. Using just your eyes you will gain an appreciation for the accomplishments and growth of the district.\n  \nEnjoy!\n \n\n\n\n\n\n\n\n\n\nComment: For those who prefer static charts   \n\nComment:",
+    "crumbs": [
+      "Students",
+      "<span class='chapter-number'>3</span>  <span class='chapter-title'>Changes in Composition</span>"
+    ]
+  },
+  {
+    "objectID": "STAAR Scores by Subject.html",
+    "href": "STAAR Scores by Subject.html",
+    "title": "STAAR Scores by Subject",
+    "section": "",
+    "text": "Level Achieved: Approaches and Higher\nLet your eyes wander over these plots and get a sense of the growth and development of the district over the last 28 years. Using just your eyes you will gain an appreciation for the accomplishments and growth of the district.",
+    "crumbs": [
+      "Standardized Scores",
+      "<span class='chapter-number'>4</span>  <span class='chapter-title'>STAAR Scores by Subject</span>"
+    ]
+  },
+  {
+    "objectID": "STAAR Scores by Subject.html#level-achieved-approaches-and-higher",
+    "href": "STAAR Scores by Subject.html#level-achieved-approaches-and-higher",
+    "title": "STAAR Scores by Subject",
+    "section": "",
+    "text": "All Subjects Combined\nComment:\n\n\n\n\nReading/ELA\nComment:\n\n\n\n\nWriting\nComment:\n\n\n\n\nMathematics\nComment:\n\n\n\nScience\nComment:\n\n\n\nSocial Studies\nComment:",
+    "crumbs": [
+      "Standardized Scores",
+      "<span class='chapter-number'>4</span>  <span class='chapter-title'>STAAR Scores by Subject</span>"
+    ]
+  },
+  {
+    "objectID": "STAAR Scores by Subject.html#level-achieved-failing",
+    "href": "STAAR Scores by Subject.html#level-achieved-failing",
+    "title": "STAAR Scores by Subject",
+    "section": "Level Achieved: Failing",
+    "text": "Level Achieved: Failing\n\nAll Subjects Combined\nComment:\n\n\n\nReading/ELA\nComment:\n\n\n\nWriting\nComment:\n\n\n\nMathematics\nComment:\n\n\n\nScience\nComment:\n\n\n\nSocial Studies\nComment:",
+    "crumbs": [
+      "Standardized Scores",
+      "<span class='chapter-number'>4</span>  <span class='chapter-title'>STAAR Scores by Subject</span>"
+    ]
+  },
+  {
+    "objectID": "STAAR Scores by Subject.html#level-achieved-meets-or-above",
+    "href": "STAAR Scores by Subject.html#level-achieved-meets-or-above",
+    "title": "STAAR Scores by Subject",
+    "section": "Level Achieved: Meets or Above",
+    "text": "Level Achieved: Meets or Above\n\nAll Subjects Combined\nComment:\n\n\n\nReading/ELA\nComment:\n\n\n\nWriting\nComment:\n\n\n\nMathematics\nComment:\n\n\n\nScience\nComment:\n\n\n\nSocial Studies\nComment:",
+    "crumbs": [
+      "Standardized Scores",
+      "<span class='chapter-number'>4</span>  <span class='chapter-title'>STAAR Scores by Subject</span>"
+    ]
+  },
+  {
+    "objectID": "STAAR Scores by Subject.html#level-achieved-masters",
+    "href": "STAAR Scores by Subject.html#level-achieved-masters",
+    "title": "STAAR Scores by Subject",
+    "section": "Level Achieved: Masters",
+    "text": "Level Achieved: Masters\n\nAll Subjects Combined\nComment:\n\n\n\nReading/ELA\nComment:\n\n\n\nWriting\nComment:\n\n\n\nMathematics\nComment:\n\n\n\nScience\nComment:\n\n\n\nSocial Studies\nComment:",
+    "crumbs": [
+      "Standardized Scores",
+      "<span class='chapter-number'>4</span>  <span class='chapter-title'>STAAR Scores by Subject</span>"
+    ]
+  },
+  {
+    "objectID": "STAAR Scores by Student Grouping.html",
+    "href": "STAAR Scores by Student Grouping.html",
+    "title": "STAAR Scores by Student Grouping",
+    "section": "",
+    "text": "Level Achieved: Approaches and Higher\nSummarizing performance by skin color, ethnicity, sex, economic level, etc. was mandated years ago by federal law. While the drafters of the law meant well, the results are a distraction at best, and destructive and devisive at worst. The practice presupposes that the groups are ‘all alike’ within the group. Ethnic groups labeled as ‘black’ are no more ‘all alike’ than all Hispanics, Asians, Whites or Pacific Islanders are ‘all alike.’\nYet, comparing groups this way assumes all members of the groups ARE all alike within the group and that the meaningful differences are between the groups. Time and time again the studies show that most meaningful differences are within the groups, not between them.\nLed by academia, it has become popular to seize upon any ‘differences’ between groups, re-label the differences as ‘disparaties’, and claim that those differences reflect differences in treatment of the groups by ‘someone’, usually the ‘system.’\nThis practice violates statistical principles, as well as moral and ethical principles. Accordingly, I steadfastly refuse to present data in a manner that invites comparisons that divide us and distract us from the fundamental goal of helping ALL students gain knowledge and skills helpful for living a fruitful and happy life.\nEnjoy!",
+    "crumbs": [
+      "Standardized Scores",
+      "<span class='chapter-number'>5</span>  <span class='chapter-title'>STAAR Scores by Student Grouping</span>"
+    ]
+  },
+  {
+    "objectID": "STAAR Scores by Student Grouping.html#level-achieved-approaches-and-higher",
+    "href": "STAAR Scores by Student Grouping.html#level-achieved-approaches-and-higher",
+    "title": "STAAR Scores by Student Grouping",
+    "section": "",
+    "text": "Students Classified as White\nComment:\n\n\n\nStudents Classified as Hispanic\nComment:\n\n\n\nStudents Classified as African American\nComment:\n\n\n\nStudents Classified as American Indian\nComment:\n\n\n\nStudents Classified as Asian\nComment:\n\n\n\nStudents Classified as Pacific Islander\nComment:\n\n\n\nStudents Classified as 2 or More Races\nComment:",
+    "crumbs": [
+      "Standardized Scores",
+      "<span class='chapter-number'>5</span>  <span class='chapter-title'>STAAR Scores by Student Grouping</span>"
+    ]
+  },
+  {
+    "objectID": "STAAR Scores by Student Grouping.html#level-achieved-failing",
+    "href": "STAAR Scores by Student Grouping.html#level-achieved-failing",
+    "title": "STAAR Scores by Student Grouping",
+    "section": "Level Achieved: Failing",
+    "text": "Level Achieved: Failing\n\nStudents Classified as White\nComment:\n\n\n\nStudents Classified as Hispanic\nComment:\n\n\n\nStudents Classified as African American\nComment:\n\n\n\nStudents Classified as American Indian\nComment:\n\n\n\nStudents Classified as Asian\nComment:\n\n\n\nStudents Classified as Pacific Islander\nComment:\n\n\n\nStudents Classified as 2 or More Races\nComment:",
+    "crumbs": [
+      "Standardized Scores",
+      "<span class='chapter-number'>5</span>  <span class='chapter-title'>STAAR Scores by Student Grouping</span>"
+    ]
+  },
+  {
+    "objectID": "STAAR Scores by Student Grouping.html#level-achieved-meets-or-above",
+    "href": "STAAR Scores by Student Grouping.html#level-achieved-meets-or-above",
+    "title": "STAAR Scores by Student Grouping",
+    "section": "Level Achieved: Meets or Above",
+    "text": "Level Achieved: Meets or Above\n\nStudents Classified as White\nComment:\n\n\n\nStudents Classified as Hispanic\nComment:\n\n\n\nStudents Classified as African American\nComment:\n\n\n\nStudents Classified as American Indian\nComment:\n\n\n\nStudents Classified as Asian\nComment:\n\n\n\nStudents Classified as Pacific Islander\nComment:\n\n\n\nStudents Classified as 2 or More Races\nComment:",
+    "crumbs": [
+      "Standardized Scores",
+      "<span class='chapter-number'>5</span>  <span class='chapter-title'>STAAR Scores by Student Grouping</span>"
+    ]
+  },
+  {
+    "objectID": "STAAR Scores by Student Grouping.html#level-achieved-masters",
+    "href": "STAAR Scores by Student Grouping.html#level-achieved-masters",
+    "title": "STAAR Scores by Student Grouping",
+    "section": "Level Achieved: Masters",
+    "text": "Level Achieved: Masters\n\nStudents Classified as White\nComment:\n\n\n\nStudents Classified as Hispanic\nComment:\n\n\n\nStudents Classified as African American\nComment:\n\n\n\nStudents Classified as American Indian\nComment:\n\n\n\nStudents Classified as Asian\nComment:\n\n\n\nStudents Classified as Pacific Islander\nComment:\n\n\n\nStudents Classified as 2 or More Races\nComment:",
+    "crumbs": [
+      "Standardized Scores",
+      "<span class='chapter-number'>5</span>  <span class='chapter-title'>STAAR Scores by Student Grouping</span>"
+    ]
+  },
+  {
+    "objectID": "sat_act.html",
+    "href": "sat_act.html",
+    "title": "SAT and ACT Testing",
+    "section": "",
+    "text": "Let your eyes wander over these plots and get a sense of the growth and development of the district over the last 28 years. Using just your eyes you will gain an appreciation for the accomplishments and growth of the district.\nEnjoy!\n\n\n\n\n\n\nComment:   \n\nComment:   \n\nComment:   \n\nComment:",
+    "crumbs": [
+      "Standardized Scores",
+      "<span class='chapter-number'>6</span>  <span class='chapter-title'>SAT and ACT Testing</span>"
+    ]
+  },
+  {
+    "objectID": "teachers.html",
+    "href": "teachers.html",
+    "title": "Teachers",
+    "section": "",
+    "text": "Let your eyes wander over these plots and get a sense of the growth and development of the district over the last 28 years. Using just your eyes you will gain an appreciation for the accomplishments and growth of the district.\nEnjoy!\n\n\n\n\n\n\nComment:   \n\nComment:   \n\nComment:   \n\nComment:   \n\nComment:   \n\nComment:   \n\nComment:   \n\nComment:   \n\nComment:   \n\nComment:   \n\nComment:   \n\nComment:   \n\nComment:   \n\nComment:   \n\nComment:   \n\nComment:   \n\nComment:",
+    "crumbs": [
+      "Personnel",
+      "<span class='chapter-number'>7</span>  <span class='chapter-title'>Teachers</span>"
+    ]
+  },
+  {
+    "objectID": "staff.html",
+    "href": "staff.html",
+    "title": "Staff",
+    "section": "",
+    "text": "Let your eyes wander over these plots and get a sense of the growth and development of the district over the last 28 years. Using just your eyes you will gain an appreciation for the accomplishments and growth of the district.\nEnjoy!\n\n\n\n\n\n\nComment:   \n\nComment:   \n\nComment:   \n\nComment:   \n\nComment:   \n\nComment:   \n\nComment:   \n\nComment:   \n\nComment:   \n\nComment:   \n\nComment:   \n\nComment:   \n\nComment:   \n\nComment:   \n\nComment:",
+    "crumbs": [
+      "Personnel",
+      "<span class='chapter-number'>8</span>  <span class='chapter-title'>Staff</span>"
+    ]
+  },
+  {
+    "objectID": "taxes_and_revenues.html",
+    "href": "taxes_and_revenues.html",
+    "title": "Taxes and Revenues",
+    "section": "",
+    "text": "Let your eyes wander over these plots and get a sense of the growth and development of the district over the last 28 years. Using just your eyes you will gain an appreciation for the accomplishments and growth of the district.\nEnjoy!\n\n\n\n\n\n\nComment:   \n\nComment:   \n\nComment:   \n\nComment:   \n\nComment:   \n\nComment:   \n\nComment:   \n\nComment:   \n\nComment:",
+    "crumbs": [
+      "Finances",
+      "<span class='chapter-number'>9</span>  <span class='chapter-title'>Taxes and Revenues</span>"
+    ]
+  },
+  {
+    "objectID": "expenses.html",
+    "href": "expenses.html",
+    "title": "District Expenses",
+    "section": "",
+    "text": "Let your eyes wander over these plots and get a sense of the growth and development of the district over the last 28 years. Using just your eyes you will gain an appreciation for the accomplishments and growth of the district.\nEnjoy!\n\n\n\n\n\n\nComment:   \n\nComment:   \n\nComment:   \n\nComment:   \n\nComment:   \n\nComment:   \n\nComment:   \n\nComment:   \n\nComment:   \n\nComment:   \n\nComment:   \n\nComment:   \n\nComment:   \n\nComment:   \n\nComment:   \n\nComment:   \n\nComment:   \n\nComment:   \n\nComment:   \n\nComment:   \n\nComment:",
+    "crumbs": [
+      "Finances",
+      "<span class='chapter-number'>10</span>  <span class='chapter-title'>District Expenses</span>"
+    ]
+  }
+]

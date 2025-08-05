@@ -1,0 +1,277 @@
+---
+title: "STAAR Scores by Student Grouping"
+author: "Dan Swart, Trustee, Seat 6"
+editor: 
+  markdown: 
+    wrap: 72
+---
+
+Summarizing performance by skin color, ethnicity, sex, economic level, etc. was mandated years ago by federal law.  While the drafters of the law meant well, the results are a distraction at best, and destructive and devisive at worst.  The practice presupposes that the groups are 'all alike' within the group.  Ethnic groups labeled as 'black' are no more 'all alike' than all Hispanics, Asians, Whites or Pacific Islanders are 'all alike.'  
+
+Yet, comparing groups this way assumes all members of the groups ARE all alike within the group and that the meaningful differences are between the groups.  Time and time again the studies show that most meaningful differences are within the groups, not between them.  
+
+Led by academia, it has become popular to seize upon any 'differences' between groups, re-label the differences as 'disparaties', and claim that those differences reflect differences in treatment of the groups by 'someone', usually the 'system.'
+
+This practice violates statistical principles, as well as moral and ethical principles.  Accordingly, I steadfastly refuse to present data in a manner that invites comparisons that divide us and distract us from the fundamental goal of helping ALL students gain knowledge and skills helpful for living a fruitful and happy life.
+
+
+\vspace{0.5in}
+
+<br>
+Enjoy!
+
+
+
+\clearpage
+
+## Level Achieved:  Approaches and Higher
+
+### Students Classified as White
+
+
+
+Comment:
+
+![](png_Standardized_Scores/Standardized_ScoresWhitescoreAllApproaches_or_Above19952022.png)
+
+\clearpage
+
+### Students Classified as Hispanic
+
+Comment:
+
+![](png_Standardized_Scores/Standardized_ScoresHispanicscoreAllApproaches_or_Above19952022.png)
+
+\clearpage
+
+### Students Classified as African American
+
+Comment:
+
+![](png_Standardized_Scores/Standardized_ScoresAfricanAmericanscoreAllApproaches_or_Above19952022.png)
+
+\clearpage
+
+### Students Classified as American Indian
+
+Comment:
+
+![](png_Standardized_Scores/Standardized_ScoresAmericanIndianscoreAllApproaches_or_Above19952022.png)
+
+\clearpage
+
+### Students Classified as Asian
+
+Comment:
+
+![](png_Standardized_Scores/Standardized_ScoresAsianscoreAllApproaches_or_Above19952022.png)
+
+\clearpage
+
+### Students Classified as Pacific Islander
+
+Comment:
+
+![](png_Standardized_Scores/Standardized_ScoresPacificIslanderscoreAllApproaches_or_Above19952022.png)
+
+
+
+\clearpage
+
+### Students Classified as 2 or More Races
+
+Comment:
+
+![](png_Standardized_Scores/Standardized_Scores2orMoreRacesscoreAllApproaches_or_Above19952022.png)
+
+
+
+
+\clearpage
+
+## Level Achieved:  Failing
+
+### Students Classified as White
+
+
+
+Comment:
+
+![](png_Standardized_Scores/Standardized_ScoresWhitescoreAllFailing19952022.png)
+
+\clearpage
+
+### Students Classified as Hispanic
+
+Comment:
+
+![](png_Standardized_Scores/Standardized_ScoresHispanicscoreAllFailing19952022.png)
+
+\clearpage
+
+### Students Classified as African American
+
+Comment:
+
+![](png_Standardized_Scores/Standardized_ScoresAfricanAmericanscoreAllFailing19952022.png)
+
+\clearpage
+
+### Students Classified as American Indian
+
+Comment:
+
+![](png_Standardized_Scores/Standardized_ScoresAmericanIndianscoreAllFailing19952022.png)
+
+\clearpage
+
+### Students Classified as Asian
+
+Comment:
+
+![](png_Standardized_Scores/Standardized_ScoresAsianscoreAllFailing19952022.png)
+
+\clearpage
+
+### Students Classified as Pacific Islander
+
+Comment:
+
+![](png_Standardized_Scores/Standardized_ScoresPacificIslanderscoreAllFailing19952022.png)
+
+
+\clearpage
+
+### Students Classified as 2 or More Races
+
+Comment:
+
+![](png_Standardized_Scores/Standardized_Scores2orMoreRacesscoreAllFailing19952022.png)
+
+
+
+
+\clearpage
+
+## Level Achieved: Meets or Above
+
+### Students Classified as White
+
+
+
+Comment:
+
+![](png_Standardized_Scores/Standardized_ScoresWhitescoreAllMeets_or_Above19952022.png)
+
+\clearpage
+
+### Students Classified as Hispanic
+
+Comment:
+
+![](png_Standardized_Scores/Standardized_ScoresHispanicscoreAllMeets_or_Above19952022.png)
+
+\clearpage
+
+### Students Classified as African American
+
+Comment:
+
+![](png_Standardized_Scores/Standardized_ScoresAfricanAmericanscoreAllMeets_or_Above19952022.png)
+
+\clearpage
+
+### Students Classified as American Indian
+
+Comment:
+
+![](png_Standardized_Scores/Standardized_ScoresAmericanIndianscoreAllMeets_or_Above19952022.png)
+
+\clearpage
+
+### Students Classified as Asian
+
+Comment:
+
+![](png_Standardized_Scores/Standardized_ScoresAsianscoreAllMeets_or_Above19952022.png)
+
+\clearpage
+
+### Students Classified as Pacific Islander
+
+Comment:
+
+![](png_Standardized_Scores/Standardized_ScoresPacificIslanderscoreAllMeets_or_Above19952022.png)
+
+\clearpage
+
+### Students Classified as 2 or More Races
+
+Comment:
+
+![](png_Standardized_Scores/Standardized_Scores2orMoreRacesscoreAllMeets_or_Above19952022.png)
+
+
+
+
+\clearpage
+
+## Level Achieved: Masters
+
+
+### Students Classified as White
+
+
+
+Comment:
+
+![](png_Standardized_Scores/Standardized_ScoresWhitescoreAllMasters19952022.png)
+
+\clearpage
+
+### Students Classified as Hispanic
+
+Comment:
+
+![](png_Standardized_Scores/Standardized_ScoresHispanicscoreAllMasters19952022.png)
+
+\clearpage
+
+### Students Classified as African American
+
+Comment:
+
+![](png_Standardized_Scores/Standardized_ScoresAfricanAmericanscoreAllMasters19952022.png)
+
+\clearpage
+
+### Students Classified as American Indian
+
+Comment:
+
+![](png_Standardized_Scores/Standardized_ScoresAmericanIndianscoreAllMasters19952022.png)
+
+\clearpage
+
+### Students Classified as Asian
+
+Comment:
+
+![](png_Standardized_Scores/Standardized_ScoresAsianscoreAllMasters19952022.png)
+
+\clearpage
+
+### Students Classified as Pacific Islander
+
+Comment:
+
+![](png_Standardized_Scores/Standardized_ScoresPacificIslanderscoreAllMasters19952022.png)
+
+\clearpage
+
+### Students Classified as 2 or More Races
+
+Comment:
+
+![](png_Standardized_Scores/Standardized_Scores2orMoreRacesscoreAllMasters19952022.png)
+

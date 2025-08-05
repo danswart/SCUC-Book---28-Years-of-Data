@@ -1,0 +1,41 @@
+# Note to Reviewers {.unnumbered}
+
+
+
+If you are helping to review this book, please keep the following in mind:
+
+Consider anything that might make the book more useful, such as:
+
+Can the title be improved?
+
+Can the chapters have better names?
+
+Is there a better order for the chapters?
+
+Is it clear which direction on the chart is 'good' and which direction is the 'bad' direction?
+
+Are there any charts that would be better seen as a group?
+
+Verify some of your beliefs.  For instance, if you feel attendence has been dropping, find that run chart and verify that the data supports that conclusion.  Likewise, say you feel that SpEd takes up more of the student body than ever before.  Check out the plot that covers the relative segments of the student body.
+
+
+NOTE:  I will never produce a chart, or group of charts, that invite the reader to compare performance by skin color or ethnic group.  That is a VERY BAD, and VERY DESTRUCTIVE thing to do.  There are technical, moral and ethical objections to classifying performance by skin color or heredity.
+
+
+You may find it easier to review the book in pdf or Word format.  There is a download button on the left side of the screen where you can download a version of the book more convenient for you.
+
+There is currently very little narrative - on purpose.  My notions should not influence your review of the information.
+
+That being said, my general observation is that whenever an upward trend signifies improvement, the District shows an upward trend.  Whenever a downward trend signifies improvement, the District shows a downward trend.  Over time, most metrics become stable - which make them predictable and the process can be seen as reliable.  This observation inspired the superlatives found in the title.
+
+
+Please make notes, make corrections, or otherwise let me know your ideas for improving this book.
+
+Thank you for taking the time to collaborate with me on the project!
+
+Dan
+
+
+
+
+

@@ -1,0 +1,9 @@
+
+# Introduction
+
+This is a book created from markdown and executable code.
+
+See @knuth84 for additional discussion of literate programming.
+
+All TEA Snapshot data is publicly available at https://tea.texas.gov/texas-schools/accountability/academic-accountability/performance-reporting/snapshot-school-district-profiles
+

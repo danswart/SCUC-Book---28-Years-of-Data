@@ -1,0 +1,7 @@
+# Dedication {#dedication .unnumbered .unlisted}
+
+::: {.dedication}
+To Rose Mary,
+
+who endured the many, many long hours required to compile this work.  Thank you for your patience and love.
+:::

@@ -1,0 +1,201 @@
+# Preface {.unnumbered}
+
+
+```{r, echo=FALSE, eval=knitr::is_html_output(), results='asis'}
+
+# HTML output
+
+cat('
+<div style="margin-top: 200px;"></div> <!-- Adjust height as needed -->
+<blockquote class="my-quote" style="font-size: 18px;">
+  <p>
+<strong>"My aim here is to contribute to the improvement of learning in our school district; or any school district.  My goal with this book is to introduce a new way to analyze school district data for improvement (far superior to current practice), and to create a reference work that illustrates the power of the new methods.  Study each chart and think for just a moment what each one is telling us about what is happening in our district.  Trustees, and others, can use this book in preparation for all meetings where data is to be discussed (which is <i>every</i> meeting). The book provides the critical <b>local</b> historical context needed to understand the meaning and limitations of today&apos;s local data."</strong>
+
+</p>
+  <p class="quote-author">          — Dan Swart</p>
+  <p class="quote-description" style="text-align: right; font-style: italic;"></p>
+</blockquote>
+')
+
+```
+
+
+
+```{r, echo=FALSE, eval=knitr::is_latex_output(), results='asis'}
+
+# PDF quote code (LaTeX)
+
+cat('
+\\begin{tcolorbox}[colback=white, colframe=teal, boxrule=2pt, arc=4pt]
+  \\begin{minipage}{0.95\\textwidth}
+    \\raggedright
+    \\Large{"My aim here is to contribute to the improvement of learning in our school district; or any school district.  My goal with this book is to introduce a new way to analyze school district data for improvement (far superior to current practice), and to create a reference work that illustrates the power of the new methods. Study each chart and think for just a moment what each one is telling us about what is happening in our district.  Trustees, and others, can use this book in preparation for all meetings where data is to be discussed (which is every meeting). The book provides the critical local historical context needed to understand the meaning and limitations of our current local data."}
+  \\end{minipage}\\\\[5pt]
+  \\begin{minipage}{0.95\\textwidth}
+    \\raggedleft
+    \\Large{Dan Swart}\\\\
+    \\emph{}
+  \\end{minipage}
+\\end{tcolorbox}
+')
+
+```
+
+\vspace{0.75in}
+
+***The Book***  
+
+This is not a textbook or a technical book created for researchers.  It is designed for ordinary people, doing serious work, and tackling serious issues for a school district.  This SCUC-ISD data has, literally, never been seen before in this format.  It will help any school district leader who gives it serious attention and reflection.
+
+\vspace{0.75in}
+
+***The Problem***  
+
+***If a different analysis of the same process leads you to different conclusions about what is happening in your school district, you better be using the best analysis available.***  
+
+Trustees review many statistical summaries, scores, 'metrics', and other numbers in their normal monthly work that represent the outputs of various processes in the district.  Judgments must be made such as: 'Are we in trouble in this area?', 'Are we doing well in this area?', 'Have our efforts produced the results we hoped for?', 'Can we afford this?'  
+
+It began for me as I watched my fellow members of the Board of Trustees make every effort each month to understand the source of the data provided, the historical context of the data, and the theory behind the changes proposed.  We have a dynamite team tackling these issues, but it could still be a struggle for everyone.   Absent any formal process analysis, in the end we all rely on the intuition and experience of the subject-matter experts presenting the data and proposing future action.
+
+We know that each process in a school system is capable of producing data for us. In fact, we are awash in data ***with no one who can explain the proper data analysis to use.***  The Texas Education Agency (TEA), the primary repository for all school district data in Texas, is composed of educators, political staffers, and data scientists with no experience in process improvement methods.  
+
+The same is true of the Texas Association of School Boards (TASB).  Accordingly, both TEA and TASB provide training and advice on data and process analysis that is just plain wrong, leaving Trustees to struggle on their own.
+
+In addition, the Texas Education Agency (TEA) silos their data in ways that make it nearly impossible to retrieve all our prior period data - **so virtually no one does it!**  If the measurement period is in years, even two to five years is insufficient to establish a reliable capability estimate of a process.
+
+Like most districts, our district is facing challenging times.  Resources are scarce and we cannot afford to waste time or to be misled by inferior data analysis.
+
+***Knowing a better way, I have an obligation to inform those working with data within the district of these simple, but powerful tools.  They require only Excel, and an open mind.***
+
+\vspace{0.75in}
+
+<br>
+
+***A Much Better Approach***
+
+Two simple charting techniques are powerful tools in process improvement.  Finding no readily available historical data, I felt compelled to break open those TEA silos by brute force and bring to our district the historical data required to understand our learning and administrative processes.  With just these two simple tools we can now assess the capability of our processes in light of our current measurements and goals.  In this book, many (many) examples are provided of the simple charting tool called a Run Chart to help us properly interpret the numbers we see.
+
+Run charts are the preliminary (Level One) visualization of the process under study.  It is simply a display of the data, presented in the order of occurrence, with a line connecting the dots.  As it turns out, the order of occurance contains vital information not available in any other format.  In quality control work we call this 'plotting the dots.'
+
+\vspace{0.5in}
+
+***Historical Context***
+
+Say we're interested in looking at our STAAR Scores for Mathematics for All Grade Levels at the 'Approaches and Higher' Level.  We'd like to know if there are lingering effects of the COVID-19 jolt, and how current scores compare to historical scores.  Here's an actual run chart using actual SCUC-ISD data:
+
+\vspace{0.5in}
+
+![](Run_Chart_Std_Test_Results_for_Math_at_the_Approaches_and_Higher_Level_for_all_Grade_Levels_1995-2022.png)
+
+\vspace{0.5in}
+
+<br>
+It is amazing how much information a Run Chart reveals using just your eyes.  There is no mathematical analysis present in this chart! 
+
+Just by visual inspection the chart reveals instantly the years when changes were made in the testing instruments, and the district's steady improvement between those changes.  The continuing drop in percentage with passing scores in 2021 and 2022 indicates that we have not fully recovered from the COVID-19 jolt for Mathematics as a whole.  Finally, the stability (predictability) of this process leading up to the COVID-19 jolt implies that the ups and downs after 2008 are likely due to non-traceable random forces (they don't mean anything).
+
+\vspace{0.5in}
+
+***Goal Setting***
+
+A Run Chart alone lacks the arithmetic to calculate the actual capability of a process.  We need an 'Individuals Chart' (Level 2) visualization to set upper and lower bounds on the capability.  When specific district processes are chosen for improvement or goal setting an Individuals Chart must be prepared to provide us with the upper and lower bounds of performance we can expect in the future (if nothing changes).
+
+Here is an example of an Individuals Chart using the same actual SCUC-ISD data:
+
+\vspace{0.5in}
+
+![](Individuals_Chart_Std_Test_Results_for_Math_at_the_Approaches_and_Higher_Level_for_all_Grade_Levels_2006-2022.png)
+
+We see right away that the last two dots are ***completely outside the range of expected performance*** (the upper and lower red lines).  If we were to set a goal ***prior*** to the COVID-19 jolt, we could (for example) attempt to raise the average pass rate from 85 to 86, or 87.  Any goal set beyond 88 would fail.  It is beyond the capability of the existing system.
+
+However, setting a reasonable goal ***after*** the COVID-19 jolt should focus on returning the pass rates back into the previous operating range between 82 - 85.  Since the last two dots are outside the expected range we will have to do something special to the system to return it to pre-COVID performance.  It is not likely to do so spontaneously.
+
+\vspace{0.5in}
+
+***In Summary***
+
+A **Run Chart** is the ***minimum*** data visualization the Team of 8 should receive when assessing a district process, setting goals, or evaluating improvement plans.  This book contains more than 152 Run Charts to get us started.
+
+An **Individuals Chart** is the ***gold standard*** for establishing a 'baseline' for a process (usually the average).  It  always includes a *range* of values for the process capability, not just a single point value.  From this you can judge expected future results and the results of today's interventions.
+
+Bar charts are for comparing *different* things and should **NOT** be used to analyze an operating process (period-by-period).  Run Charts and Individuals Charts are for visualizing the *same* process over time.
+
+***EVERY PERSON CAN LEARN TO INTERPRET THESE CHARTS IN VERY SHORT ORDER.***  Probably 10-20 minutes of explanation.
+
+Failure to use either of these tools keeps the Team of 8 in the dark about the actual range of district performance capability, risks poor decisions, and makes every improvement effort essentially a roll of the dice.  It is my heartfelt hope that our Team of 8 can begin the tradition of using these two tools to guide our continuos improvement efforts.
+
+
+\vspace{0.75in}
+
+<br>
+A quick note about the accompanying run charts.  A run chart is a simple plot of observations (results of some process) shown sequentially over time.  The longer the time plotted the more informative the plot becomes.  They are the starting point to gain predictive insight into instructional and administrative practices.
+
+The centerline is the median; the point where half the points lie above the line and half below it.  It is not the average, and except under specific circumstances it is not a predictor of future results.  It simply helps your eye understand the overall shape of the results.  Sometimes Upward is the 'good' direction, sometimes Downward is the 'good' direction.  Decide which direction is 'good' for any metric and see how the district has fared in that area.
+
+***It is not important that any of the Trustees or other users understand any of the mathematics that go into preparing the charts; only the very simple rules of how to interpret what they see.***
+
+
+\vspace{0.25in}
+
+In case you're worried about understanding run charts, here's a photo of a run chart created by 4th graders at Leander ISD with magic markers and newsprint.  This simple chart enabled students to dramatically reduce the number of 'loss of control' incidents during the day.  The chart tells this story simply, and clearly.
+
+\vspace{0.5in}
+
+![](leander-grade-4-run-chart.png)
+
+
+If 4th graders can do it; so can we!
+
+\vspace{0.5in}
+
+**A WORD ABOUT THE DATA**
+
+The Texas Education Agency defines, and often re-defines the metrics and categories supplied.  When a new metric is introduced you will see measurements begin in the year introduced.  Measurements cease when discontinued by TEA.  No Standardized Scores were issued for the year 2020 and, accordingly, some charts show a gap for that year.
+
+\vspace{0.5in}
+
+***Disclaimer***
+
+***This book is not an official publication of the Schertz-Cibolo-Universal City ISD.  It is the work of the author as an interested private citizen.  The contents of this book are intended for informational and educational purposes only and does not represent the official position or policies of any school board or school district.  The views and opinions, if any are expressed, are solely those of the author and do not reflect the official stance of any educational institution or governing body. All data presented is public information found on the Texas Education Association website.  No confidential information is included.  While every effort has been made to ensure the accuracy of the information presented, the author assumes no responsibility for any errors or omissions, nor for any consequences arising from the use of this information.  Readers are encouraged to verify any information and seek professional advice as necessary.***
+
+\vspace{0.5in}
+
+This book was created from Quarto and executable code.
+
+Suggestions and corrections welcome!
+
+\vspace{0.5in}
+
+<br>
+<br>
+The online book is available at:
+
+
+https://danswart.quarto.pub/scuc28yearsofdata/
+
+
+
+
+
+
+<!-- My Quarto Pub site: -->
+
+<!-- To publish, and re-publish book type "quarto publish quarto-pub" in the terminal -->
+
+<!-- https://quartopub.com/sites/f2b9bd70-85b1-4b19-9670-f8fa66542c74 -->
+
+<!-- Settings -->
+<!-- Title -->
+<!-- The Amazing Story of 28 Years of Growth & Accomplishment at SCUC-ISD -->
+
+<!-- Identifier -->
+<!-- f2b9bd70-85b1-4b19-9670-f8fa66542c74 -->
+
+<!-- Last updated -->
+<!-- 7 seconds ago -->
+
+<!-- Slug -->
+<!-- scuc28yearsofdata -->
+
+<!-- Options -->
+<!-- Default site -->

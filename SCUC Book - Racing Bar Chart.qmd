@@ -1,0 +1,395 @@
+---
+title: "SCUC Book - Racing Bar Chart"
+author: "Dan Swart"
+format: html
+---
+
+## Quarto
+
+Quarto enables you to weave together content and executable code into a finished document. To learn more about Quarto see <https://quarto.org>.
+
+
+This is how I will represent changing proportions
+
+```{r echo = FALSE, message = FALSE, warning = FALSE}
+
+library(tidyverse)
+library(gganimate)
+library(paletteer)
+library(ggrepel)
+
+
+gdp_tidy <- read_csv("data/gdp_tidy.csv")
+
+# Start a pipeline with the input data frame `gdp_tidy`
+gdp_formatted <- gdp_tidy %>%
+  # Group the data by the `year` column
+  dplyr::group_by(year) %>%
+  # Create new columns: rank, Value_rel, and Value_lbl
+  # rank: Rank values within each year group, descending
+  # Value_rel: Value relative to the top value within the same year
+  # Value_lbl: Formatted value string in billions
+  dplyr::mutate(
+    rank = rank(-value),
+    Value_rel = value / value[rank == 1],
+    Value_lbl = paste0(" ", round(value / 1e9))
+  ) %>%
+  # Group the data by the `country_name` column
+  dplyr::group_by(country_name) %>%
+  # Filter to keep only the top 10 ranked entries within each country group
+  dplyr::filter(rank <= 10) %>%
+  # Remove grouping
+  dplyr::ungroup()
+
+# Create an animation plot using ggplot2
+anim <- ggplot2::ggplot(gdp_formatted,
+               ggplot2::aes(
+                 rank,
+                 group = country_name,
+                 fill = as.factor(country_name),
+                 color = as.factor(country_name)
+               )) +
+  # Add tiles to the plot, with y based on half the value and height based on the value
+  ggplot2::geom_tile(ggplot2::aes(
+    y = value / 2,
+    height = value,
+    width = 0.9
+  ),
+  alpha = 0.8,
+  color = NA) +
+  # Add text labels for country names and color them black
+  ggplot2::geom_text(ggplot2::aes(y = 0,
+                                  label = paste(country_name, 
+                                                " ")
+                                  ), 
+                     vjust = 0.2,
+                     hjust = 1, 
+                     color = "black"
+                     ) +
+  # Add text labels for the value and color them black
+  ggplot2::geom_text(ggplot2::aes(y = value, 
+                                  label = Value_lbl, 
+                                  hjust = 0
+                                  ),
+                     color = "black"
+                     ) +
+  # Flip coordinates for better visualization
+  ggplot2::coord_flip(clip = "off", expand = FALSE) +
+  # Customize y-axis to show values in comma format
+  ggplot2::scale_y_continuous(labels = scales::comma) +
+  # Reverse the x-axis for ranking
+  ggplot2::scale_x_reverse() +
+  # Remove the color guide (legend)
+  ggplot2::guides(color = "none") + 
+  # Customize theme elements
+  ggplot2::theme(
+    axis.line = ggplot2::element_blank(),
+    axis.text.x = ggplot2::element_blank(),
+    axis.text.y = ggplot2::element_blank(),
+    axis.ticks = ggplot2::element_blank(),
+    axis.title.x = ggplot2::element_blank(),
+    axis.title.y = ggplot2::element_blank(),
+    legend.position = "none",
+    panel.background = ggplot2::element_blank(),
+    panel.border = ggplot2::element_blank(),
+    panel.grid.major = ggplot2::element_blank(),
+    panel.grid.minor = ggplot2::element_blank(),
+    panel.grid.major.x = ggplot2::element_line(linewidth = .1, color = "black"),
+    panel.grid.minor.x = ggplot2::element_line(linewidth = .1, color = "black"),
+    plot.title = ggplot2::element_text(
+      size = 25,
+      hjust = 0.5,
+      face = "bold",
+      colour = "black",
+      vjust = -1
+    ),
+    plot.subtitle = ggplot2::element_text(
+      size = 18,
+      hjust = 0.5,
+      face = "italic",
+      color = "black"
+    ),
+    plot.caption = ggplot2::element_text(
+      size = 8,
+      hjust = 0.5,
+      face = "italic",
+      color = "black"
+    ),
+    plot.background = ggplot2::element_blank(),
+    plot.margin = ggplot2::margin(2, 2, 2, 4, "cm")
+  ) +
+  # Define the animation transitions
+  gganimate::transition_states(
+    year,
+    transition_length = 4,
+    state_length = 1,
+    wrap = FALSE
+  ) +
+  # Ensure the x-axis remains fixed during transitions
+  gganimate::view_follow(fixed_x = TRUE)  +
+  # Add titles and captions
+  ggplot2::labs(title = 'GDP per Year : {closest_state}',
+       subtitle  =  "Top 10 Countries",
+       caption  = "GDP in Billions USD | Data Source: World Bank Data") +
+  # Add final value as label at end of line
+  # ggrepel::geom_label_repel(
+  #   data = gdp_formatted %>% tail(1),
+  #   aes(x = year, y = value, label = value),
+  #   nudge_x = 1,
+  #   color = "black",
+  #   fill = "white",
+  #   size = 3,
+  #   fontface = 'bold',
+  #   show.legend = FALSE
+  # )
+
+  # Customize the fill colors for the bars using ColorBrewer
+   ggplot2::scale_fill_manual(values = paletteer_d("ggsci::springfield_simpsons"))
+ 
+
+anim
+
+# # Save as GIF
+#
+# animate(anim, 200, fps = 20,  width = 1200, height = 1000,
+#         renderer = gifski_renderer("gganim.gif"), end_pause = 15, start_pause =  15)
+#
+#
+#
+# # Save as MP4
+#
+# animate(anim, 200, fps = 20,  width = 1200, height = 1000,
+#         renderer = ffmpeg_renderer()) -> for_mp4
+#
+# anim_save("animation.mp4", animation = for_mp4 )
+
+
+```
+
+THIS CODE DOES NOT WORK WELL - FIX IT
+CHANGES IN COMPOSITION OF STUDENT BODY 1995-2022
+
+```{r echo = FALSE, message = FALSE, warning = FALSE}
+
+# library(tidyverse)
+# library(gganimate)
+# library(paletteer)
+# library(ggrepel)
+# 
+# 
+# snapshots <- read_csv("data/SCUC Snapshots 1995 to 2022-LONG.csv")
+# 
+# # Start a pipeline with the input data frame `gdp_tidy`
+# snapshots_formatted <- snapshots %>%
+#   filter(section == "students") %>% 
+#   filter(grouping %in% c("White", "African American", "Hispanic", "Asian", "American Indian", "Pacific Islander", "2 or More Races")) %>% 
+# 
+#   # Group the data by the `year` column
+#   dplyr::group_by(year) %>%
+#   # Create new columns: rank, Value_rel, and Value_lbl
+#   # rank: Rank values within each year group, descending
+#   # Value_rel: Value relative to the top value within the same year
+#   mutate(rank = dense_rank(-value)) %>%
+#   dplyr::ungroup() %>% 
+# # Replace NAs with zeros
+#   mutate(value = replace_na(value, 0))
+# 
+# # Create an animation plot using ggplot2
+# anim <- ggplot2::ggplot(snapshots_formatted,
+#                ggplot2::aes(
+#                  rank,
+#                  group = grouping,
+#                  fill = as.factor(grouping),
+#                  color = as.factor(grouping)
+#                )) +
+#   # Add tiles to the plot, with y based on half the value and height based on the value
+#   ggplot2::geom_tile(ggplot2::aes(
+#     y = value,
+#     height = value,
+#     width = 0.9
+#   ),
+#   alpha = 0.8,
+#   color = NA) +
+#   # Add text labels for country names and color them black
+#   ggplot2::geom_text(ggplot2::aes(y = 0,
+#                                   label = paste(grouping, 
+#                                                 " ")
+#                                   ), 
+#                      vjust = 0.2,
+#                      hjust = 1, 
+#                      color = "black"
+#                      ) +
+#   # Add text labels for the value and color them black
+#   ggplot2::geom_text(ggplot2::aes(y = value, 
+#                                   label = value, 
+#                                   hjust = 0
+#                                   ),
+#                      color = "black"
+#                      ) +
+#   # Flip coordinates for better visualization
+#   ggplot2::coord_flip(clip = "off", expand = FALSE) +
+#   # Customize y-axis to show values in comma format
+#   ggplot2::scale_y_continuous(labels = scales::comma) +
+#   # Reverse the x-axis for ranking
+#   ggplot2::scale_x_reverse() +
+#   # Remove the color guide (legend)
+#   ggplot2::guides(color = "none") + 
+#   # Customize theme elements
+#   ggplot2::theme(
+#     axis.line = ggplot2::element_blank(),
+#     axis.text.x = ggplot2::element_blank(),
+#     axis.text.y = ggplot2::element_blank(),
+#     axis.ticks = ggplot2::element_blank(),
+#     axis.title.x = ggplot2::element_blank(),
+#     axis.title.y = ggplot2::element_blank(),
+#     legend.position = "none",
+#     panel.background = ggplot2::element_blank(),
+#     panel.border = ggplot2::element_blank(),
+#     panel.grid.major = ggplot2::element_blank(),
+#     panel.grid.minor = ggplot2::element_blank(),
+#     panel.grid.major.x = ggplot2::element_line(linewidth = .1, color = "black"),
+#     panel.grid.minor.x = ggplot2::element_line(linewidth = .1, color = "black"),
+#     plot.title = ggplot2::element_text(
+#       size = 25,
+#       hjust = 0.5,
+#       face = "bold",
+#       colour = "black",
+#       vjust = -1
+#     ),
+#     plot.subtitle = ggplot2::element_text(
+#       size = 18,
+#       hjust = 0.5,
+#       face = "italic",
+#       color = "black"
+#     ),
+#     plot.caption = ggplot2::element_text(
+#       size = 8,
+#       hjust = 0.5,
+#       face = "italic",
+#       color = "black"
+#     ),
+#     plot.background = ggplot2::element_blank(),
+#     plot.margin = ggplot2::margin(2, 2, 2, 4, "cm")
+#   ) +
+#   # Define the animation transitions
+#   gganimate::transition_states(
+#     year,
+#     transition_length = 4,
+#     state_length = 1,
+#     wrap = FALSE
+#   ) +
+#   # Ensure the x-axis remains fixed during transitions
+#   gganimate::view_follow(fixed_x = TRUE)  +
+#   # Add titles and captions
+#   ggplot2::labs(title = 'Year: {closest_state}',
+#        subtitle  =  "Composition of Student Body by Ethnicity",
+#        caption  = "This is a caption") +
+#   # Add final value as label at end of line
+#   # ggrepel::geom_label_repel(
+#   #   data = gdp_formatted %>% tail(1),
+#   #   aes(x = year, y = value, label = value),
+#   #   nudge_x = 1,
+#   #   color = "black",
+#   #   fill = "white",
+#   #   size = 3,
+#   #   fontface = 'bold',
+#   #   show.legend = FALSE
+#   # )
+# 
+#   # Customize the fill colors for the bars using ColorBrewer
+#    ggplot2::scale_fill_manual(values = paletteer_d("ggsci::springfield_simpsons"))
+#  
+# 
+# anim
+
+# # Save as GIF
+#
+# animate(anim, 200, fps = 20,  width = 1200, height = 1000,
+#         renderer = gifski_renderer("gganim.gif"), end_pause = 15, start_pause =  15)
+#
+#
+#
+# # Save as MP4
+#
+# animate(anim, 200, fps = 20,  width = 1200, height = 1000,
+#         renderer = ffmpeg_renderer()) -> for_mp4
+#
+# anim_save("animation.mp4", animation = for_mp4 )
+
+
+```
+ FROM PERPLEXITY - THIS DOES WORK!!!
+
+```{r}
+
+library(tidyverse)
+library(gganimate)
+library(paletteer)
+library(ggrepel)
+library(scales)  # Load the scales package
+
+snapshots <- read_csv("data/SCUC Snapshots 1995 to 2022-LONG.csv")
+
+# Start a pipeline with the input data frame `gdp_tidy`
+snapshots_formatted <- snapshots %>%
+  filter(section == "Students") %>% 
+  filter(grouping %in% c("White", "African American", "Hispanic", "Asian", "American Indian", "Pacific Islander", "2 or More Races")) %>% 
+  group_by(year) %>%
+  mutate(rank = dense_rank(-value)) %>%
+  mutate(value_lbl = paste0(" ", round(value))) %>% 
+  ungroup() %>%
+  # Replace NAs with zeros
+  mutate(value = replace_na(value, 0))
+
+# Filter out grouping categories with values <= 0
+snapshots_filtered <- snapshots_formatted %>%
+  group_by(grouping) %>%
+  filter(sum(value) > 0) %>%
+  ungroup()
+
+# Create an object with rounded labels
+# snapshots_labels <- snapshots_filtered %>%
+#   mutate(rounded_value = round(value),
+#          formatted_value = scales::number_format(rounded_value, big.mark = ",", decimal.mark = "."))
+
+# Create an animation plot using ggplot2
+student_body <- ggplot(snapshots_filtered,
+               aes(rank, group = grouping, fill = as.factor(grouping), color = as.factor(grouping))) +
+  geom_tile(aes(y = value / 2, height = value, width = 0.9), alpha = 0.8, color = NA) +
+  geom_text(aes(y = 0, label = paste(grouping, " ")), vjust = 0.2, hjust = 1, color = "black") +
+  geom_text(aes(y = value, label = value_lbl, hjust = 0), color = "black") +  # Use the new formatted_value column
+  coord_flip(clip = "off", expand = FALSE) +
+  scale_y_continuous(labels = scales::comma, expand = c(0, 0)) + # Ensure bars start at the bottom of the plot
+  scale_x_reverse() +
+  guides(color = "none") + 
+  theme(
+    axis.line = element_blank(),
+    axis.text.x = element_blank(),
+    axis.text.y = element_blank(),
+    axis.ticks = element_blank(),
+    axis.title.x = element_blank(),
+    axis.title.y = element_blank(),
+    legend.position = "none",
+    panel.background = element_blank(),
+    panel.border = element_blank(),
+    panel.grid.major = element_blank(),
+    panel.grid.minor = element_blank(),
+    panel.grid.major.x = element_line(linewidth = .1, color = "black"),
+    panel.grid.minor.x = element_line(linewidth = .1, color = "black"),
+    plot.title = element_text(size = 25, hjust = 0.5, face = "bold", colour = "black", vjust = -1),
+    plot.subtitle = element_text(size = 18, hjust = 0.5, face = "italic", color = "black"),
+    plot.caption = element_text(size = 8, hjust = 0.5, face = "italic", color = "black"),
+    plot.background = element_blank(),
+    plot.margin = margin(2, 2, 2, 4, "cm")
+  ) +
+  transition_states(year, transition_length = 4, state_length = 1, wrap = FALSE) +
+  view_follow(fixed_x = TRUE)  +
+  labs(title = 'Proportions by Year: {closest_state}', subtitle  =  "Composition of Student Body by Ethnicity", caption  = "This is a caption") +
+  scale_fill_manual(values = paletteer_d("ggsci::springfield_simpsons"))
+
+student_body
+
+
+```
+
+

@@ -1,0 +1,116 @@
+# For the Statistically Curious
+
+
+
+```{r, echo=FALSE, eval=knitr::is_html_output(), results='asis'}
+
+# HTML output
+
+cat('
+<blockquote class="my-quote">
+  <p><b>
+"The important question is never:  &nbsp;"Did a method work somewhere?" &nbsp;but always: "Does it work here (and why)?"
+</b></p>
+  <p class="quote-author">         <b> — Dan Swart</b></p>
+  <p class="quote-description" style="text-align: right; font-style: italic;"></p>
+</blockquote>
+')
+
+```
+
+
+
+```{r, echo=FALSE, eval=knitr::is_latex_output(), results='asis'}
+
+# PDF quote code (LaTeX)
+
+cat('
+\\begin{tcolorbox}[colback=white, colframe=teal, boxrule=2pt, arc=4pt]
+  \\begin{minipage}{0.95\\textwidth}
+    \\raggedright
+    \\vspace{12pt}  % Add vertical space here
+  
+    \\Large{The important question is never: Did a method work somewhere? but always: Does it work here (and why)?}
+
+    \\vspace{12pt}  % Add vertical space here
+
+  \\end{minipage}\\par
+  \\begin{minipage}{0.95\\textwidth}
+    \\raggedleft
+    \\Large{Dan Swart}\\par
+    \\emph{}
+  \\end{minipage}
+\\end{tcolorbox}
+')
+
+
+```
+
+\vspace{0.75in}
+
+So, why do we need all this historical data?  
+
+Because an ongoing process ***CANNOT*** be improved without understanding the existing stability and capability of the process.  In sound data analysis 'Capability' (what TEA calls a 'baseline') has a specific mathematical meaning.  
+
+To know the capability of a process you need to include at least 12 - 24 measurement periods.  In contrast, the TEA and TASB advise boards to establish a 'baseline' representing the 'current state' for comparing and monitoring growth.  They give examples of establishing a 'baseline' with a very small handful of measurements.  This is extremely poor practice and Trustees should not settle for it.  Again, Trustees need not learn the arithmetic involved; just learn the simple rules NOW to understand the signals their processes are sending.
+
+The cold hard fact is the 'current state' of an operating process ***CANNOT be characterized using only a few points of data!***  
+
+Although not widely practiced in America, it has been known since 1929 that the **ONLY** way to rationally create a 'baseline' for an ongoing process requires that we plot the data, period by period, in the order of occurance.  This allows us to calculate 4 critical things about the process:
+
+1. **Is the process that produced the figures stable over time (consistent over a range of values)?**  
+
+This requires period-by-period history for at least 12 - 25 time periods.  The more time periods the better.  The time periods need not be annual.  Some processes can be measured monthly, weekly, daily or even hourly.
+
+If the process is stable the output will vary up and down within a limited range.  A chart will reveal this.  The range can be calculated and is the actual capability of the process, whether you like the values produced or not.
+
+***If the process is stable, the average represents the proper 'baseline' for evaluating future performance.***
+
+>Examples:
+
+- Is elementary reading instruction producing stable, ***consistent*** STAAR scores in an acceptable range for 3rd graders? A simple chart will tell you.
+
+- Is elementary math instruction producing stable, ***consistent*** STAAR scores in an acceptable range for 5th graders?  A simple chart will tell you.
+
+- Are attendance rates (which result in per student state funding) stable, and consistent within an acceptable range?  A simple chart will tell you.
+
+***WHY*** do we need to know this?  Because the appropriate Team of 8 improvement action ***is completely different if a process is stable (consistent) versus unstable (inconsistent).***
+
+  
+\vspace{0.50in}
+
+<br>
+  2. **What is the likely output of the process** ***in the future?***  
+
+This also requires period-by-period history for at least 12 - 25 time periods.  
+
+For monitoring progress, TEA recommends spending most of your time examining the past to establish a baseline, then about 1/4 of your time focusing on the future.  That is like trying to drive your car by staring in the rear view mirror!
+
+WHY do we need to know this?  Because if the process is stable it is predictable (within limits).  That means you can attempt to improve future performance and judge the results with confidence.    If the process is inconsistant ***no rational prediction for the future is possible.***
+
+A word about goals:  ***Any goal placed outside the existing capability of the process will fail, unless significant changes are made to the process itself.***   Without a demonstrated capability any goal for a process is arbitrary and fruitless.  They are just wishes and hopes.
+
+
+\vspace{0.50in}
+
+<br>
+  3.  **Do the data reveal trends (good, or bad) that the Team of 8 can leverage?**
+
+This analysis requires period-by-period history for at least 12 - 25 time periods.
+
+In proper data analysis, 'trends' have a specific mathematical meaning.  If you learn a few simple rules a chronological plot of the measurements can reveal them.  Understanding true trends is a powerful force multiplier!
+
+Note:  ***You cannot detect most trends in your data with fewer than 8 points.***  
+
+\vspace{0.50in}
+
+<br>
+  4. **If there has been a jolt to the process, has the process recovered to** ***acceptable*** **levels?**
+
+This also requires longitudinal history for at least 12 - 25 time periods.
+
+A jolt may come from COVID-19, or from new federal or state mandates, or any number of sources.
+  
+***WHY*** do we need to know this?  ***Because resources are scarce and any remedial measures and policies put in place during a crises that are no longer needed should be discontinued as soon as possible.***  They consume valuable time and money needed elsewhere.
+
+
