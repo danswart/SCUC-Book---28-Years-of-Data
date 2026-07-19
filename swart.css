@@ -1,13 +1,210 @@
-/* AS OF 2024-01-03
-/*
+/* Current as of: 2026-07-15 */
+
+
+
+/*-- scss:defaults --*/
+
+/*  // Sass Variables
+/*  // https://quarto.org/docs/output-formats/html-themes.html#sass-variables
+
+
+/* Edit the CSS properties in this file to create a custom
+   Distill theme. Only edit values in the right column
+   for each row; values shown are the CSS defaults.
+   To return any property to the default,
+   you may set its value to: unset                          */
+
+/* Optional: embed custom fonts here with `@import`          */
+/* This must remain at the top of this file.                 */
+
+/* Fonts */
+@import url('https://fonts.googleapis.com/css2?family=Lato');
+@import url('https://fonts.googleapis.com/css2?family=Fira+Mono');
+@import url('https://fonts.googleapis.com/css2?family=Montserrat');
+@import url('https://fonts.googleapis.com/css2?family=Cabin');         /* swart */
+@import url('https://fonts.googleapis.com/css2?family=Roboto+Slab');   /* swart */
+@import url('https://fonts.googleapis.com/css2?family=Schoolbell');    /* swart */
+
+
+/* ── Syntax token overrides for light code backgrounds ───────────── */
+
+code span.dv { color: #005cc5; }   /* decimal integers:  0, 1, 42    */
+code span.fl { color: #005cc5; }   /* floats:  0.947, 3.14           */
+code span.co { color: #6a737d; font-style: italic; }  /* # comments  */
+code span.st { color: #032f62; }   /* "strings"                       */
+code span.kw { color: #d73a49; font-weight: bold; }   /* TRUE FALSE NA */
+code span.fu { color: #6f42c1; }   /* function names                  */
+code span.op { color: #24292e; }   /* operators  <- | + ~ ::         */
+code span.sc { color: #24292e; }   /* special chars                   */
+
+.table {
+  width: 100%;
+  max-width: 100%;
+  margin-bottom: 1rem;
+}
+
+.dataTables_wrapper {
+  width: 100%;
+  max-width: 100%;
+  overflow-x: auto;
+}
+
+.responsive-plot {
+  width: 100%;
+  max-width: 800px;
+  margin: 0 auto;
+}
+
+figure {
+  width: 100%;
+  max-width: 100%;
+}
+
+
+.callout-tip, .callout-caution, .callout-important, .callout-warning {
+  display: block;
+  padding: 1em;
+  margin: 1em 0;
+  border-style: solid;
+  border-width: 4px;
+  border-radius: 10px;
+/*  background-color: #f8f9fa;  background colors set below for each callout */
+}
+
+
+/* Default Markdown blockquotes */
+
+blockquote {
+  border-left: 4px solid orange;
+  padding-left: 1em;
+}
+
+blockquote p {
+  color: blue;
+}
+
+
+
+.callout-tip {
+  display: block;
+  padding: 1em;
+  margin: 1em 0;
+  border-style: solid;
+  border-width: 4px;
+  border-radius: 10px;
+  border-color: royalblue;
+  background-color: #e7f5ff;
+}
+
+
+.callout-caution {
+  display: block;
+  padding: 1em;
+  margin: 1em 0;
+  border-style: solid;
+  border-width: 4px;
+  border-radius: 10px;
+  border-color: red;
+  background-color: #fff5f5;
+}
+
+
+.callout-important {
+  display: block;
+  padding: 1em;
+  margin: 1em 0;
+  border-style: solid;
+  border-width: 4px;
+  border-radius: 10px;
+  border-color: #ff9800;
+  background-color: #fff3e0;
+}
+
+
+.callout-warning {
+  display: block;
+  padding: 1em;
+  margin: 1em 0;
+  border-style: solid;
+  border-width: 4px;
+  border-radius: 10px;
+  border-color: #8A2BE2;
+  background-color: #f3e5f5;
+}
+
+
+/* format html selectors */
+
+body {
+  font-size: 18px;
+  max-width: 100%;      /* Adjust the width as needed */
+  font-family: "Cabin", sans-serif;
+  color: black;
+}
+
+/* Alternative selector that's more specific */
+title {
+    color: #2c3e50;
+    font-weight: bold;
+}
+
+
+h1 {
+  font-family: "Cabin", sans-serif;
+  padding: 10px;
+  color: darkgreen;
+}
+
+h2 {
+  font-family: "Cabin", sans-serif;
+  font-size: 24px;
+  color: darkred;
+}
+
+
+h3 {
+  font-family: "Cabin", sans-serif;
+  font-size: 22px;
+  color: darkred;
+  text-align: left;
+}
+
+
+h4 {
+  font-family: "Cabin", sans-serif;
+  font-size: 20px;
+  color: blue;
+}
+
+
+h5 {
+  font-family: "Cabin", sans-serif;
+  font-size: 20px;
+  color: black;
+}
+
+
+.main-container {
+  padding: 20px;
+}
+
+
+
+/* When using a caption-tag  */
+
+.caption {
+  caption-side: top;
+  text-align: center;
+  padding-bottom: 10px;
+  font-weight: 900;
+  font-size: 26;
+  font-family: "Helvetica Neue", Helvetica, Arial, sans-serif;
+}
+
 
 /* Format basic font size for all bookdown chapters
 /* Adjust the size as needed */
 
-body {
-  font-size: 18px;
-  max-width: 80ch; /* Adjust the width as needed */
-}
 
 /* Format for quarto book dedication*/
 
@@ -20,7 +217,7 @@ body {
 
 
 /* Draw a red circle or red box around a character or a word in Rmarkdown */
-/* Example coding:  
+/* Example coding:
 /* <span class="red-circle"> &nbsp;&nbsp;Revenue</span>*/
 /* <span class="red-box">Revenue</span>*/
 /* <span class="red-circle">R&nbsp;</span>evenue*/
@@ -120,7 +317,7 @@ body {
 }
 
 
-/* Formatting a Quarto callout boxes */
+/* Formatting a Quarto and Rmarkdown callout boxes */
 
 .callout-tip {
   border-width: 4px; /* Adjust this value as needed */
@@ -191,16 +388,16 @@ body {
   font-size: 4rem;
 }
 
-.ul{ 
-  text-decoration: 
-  underline; 
-  
+.ul{
+  text-decoration:
+  underline;
+
 }
 
 .dbl-underline{
   border-bottom:
   4px double;
-  
+
 }
 
 .center-image {
@@ -809,12 +1006,12 @@ body {
 .white {
   color: #FFFFFF;
 }
-  
-  
+
+
 .whitesmoke {
   color: #F5F5F5;
 }
-  
+
 .ivory {
   color: #FFFFF0;
 }
@@ -877,25 +1074,25 @@ body {
 .mistyrose {
   color: #FFE4E1;
 }
-    
+
 .van{
    color: #F5DEB3;
 }
 
 .navajow{
-  color: #FFDEAD; 
+  color: #FFDEAD;
 }
 
 .antiquew{
-  color: #FAEBD7; 
+  color: #FAEBD7;
 }
 
 .bisque{
-  color: #FFE4C4; 
+  color: #FFE4C4;
 }
 
 .moccasin{
-  color: #FFE4B5; 
+  color: #FFE4B5;
 }
 
 .blanchedalmond {
@@ -1051,7 +1248,7 @@ body {
 /* Tachyons Colors Abbreviations, styling outside of Tachyons requires full color name or hex code */
 
 .lc{
-  color: lightcoral; 
+  color: lightcoral;
   font-weight: bold;
 }
 
@@ -1144,6 +1341,7 @@ body {
   min-width: 50%; /* Minimum width for each quadrant */
   max-height: 50%; /* Maximum height for each quadrant */
 }
+
 
 /* Custom styles for each quadrant */
 
@@ -1270,4 +1468,3 @@ body {
   max-width: 400px; /* Adjust the maximum width as needed */
   max-height: 300px; /* Adjust the maximum height as needed */
 }
-
