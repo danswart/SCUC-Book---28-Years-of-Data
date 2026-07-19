@@ -2,3 +2,6 @@
   quarto-pub:
     - id: f2b9bd70-85b1-4b19-9670-f8fa66542c74
       url: https://danswart.quarto.pub/scuc28yearsofdata
+  netlify:
+    - id: 26e7b826-b5aa-4ea1-b2ce-9fb03c9366d2
+      url: https://tubular-kashata-bfb15e.netlify.app
