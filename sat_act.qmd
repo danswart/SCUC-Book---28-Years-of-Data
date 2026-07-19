@@ -24,10 +24,10 @@ Enjoy!
 
 ```{r echo=FALSE, warning=FALSE, message=FALSE}
 
-#####  CREATE MULTIPLE 1-LINE STATIC PLOTS
+#####  STEP 1 - CREATE MULTIPLE 1-LINE STATIC PLOTS
 
-# Load Libraries
-
+# # Load Libraries
+# 
 # library(tidyverse)
 # library(qicharts2)
 # library(haven)
@@ -52,17 +52,7 @@ Enjoy!
 # 
 # options(scipen = 999)
 # 
-# # Start recording
-# # gg_record(
-# #   dir = "recording",
-# #   device = "png",
-# #   width = 8,
-# #   height = 7,
-# #   units = "in",
-# #   dpi = 300
-# # )
-# 
-# # # Define a custom label formatting function
+#  # Define a custom label formatting function
 # custom_label_func <- function(x) {
 #   # For values greater than or equal to 1 million, format without exponential notation and with commas
 #   if (any(abs(x[!is.na(x)]) >= 1e6)) {
@@ -74,7 +64,7 @@ Enjoy!
 #   }
 # }
 # 
-# # # Load the data
+#  # Load the data
 # df2 <- read_csv(file = here::here("data",
 #                                   "SCUC Snapshots 1995 to 2022-LONG.csv")
 #                 )
@@ -96,8 +86,8 @@ Enjoy!
 # # Specify desired units of measurement
 # desired_units <- unique(first_df$units)
 # 
-# # Specify desired years
-# desired_years <- unique(first_df$year)
+# # Specify desired dates (years)
+# desired_years <- unique(first_df$date)
 # 
 # # Specify desired grade level
 # desired_grades <- unique(first_df$grade)
@@ -182,9 +172,10 @@ Enjoy!
 #                            )
 #                      )
 # 
-# # Create the chart with qicharts2
+# # Create the chart with qicharts2, then theme it below
+# #
 # plot <- qic(
-#   x = df_group$year,
+#   x = df_group$date,
 #   y = df_group$value,
 #   chart = "run",
 #   decimals = 0,
@@ -317,33 +308,33 @@ Enjoy!
 #   create.dir = TRUE
 #   )
 # )
-
-
-# Stop recording
-# gg_stop_recording()
-
-# Print the plots
+# 
+# 
+# 
+# # Print the plots
 # walk(plots, ~ print(.$plot))
 
-#####  CREATE MULTIPLE 1-LINE STATIC PLOTS
-
+#####  END OF STEP 1 - CREATE MULTIPLE 1-LINE STATIC PLOTS
 
 ```
 
-<!-- UNCOMMENT THIS SECTION AND RUN IT TO  PRINT LIST OF-->
-<!-- THE PNG FILES (INDEPENDENTLY OF WHAT IS IN THE  -->
-<!-- SPECIFIED PNG STORAGE FOLDER) INTO THE CONSOLE -->
-<!-- FOR COPY AND PASTE -->
+
+<!-- UNCOMMENT THIS SECTION AND RUN IT TO PRINT LIST OF -->
+<!-- THE PNG FILES INTO THE CONSOLE FOR COPY AND PASTE  -->
+<!-- (INDEPENDENTLY OF WHAT IS IN THESPECIFIED PNG STORAGE FOLDER) -->
+<!-- -->
 
 <!-- Create Rmarkdown syntax to display all png files in specified directory -->
 
 ```{r echo=FALSE, warning=FALSE, message=FALSE}
 
-## START FROM SCRATCH AND CREATE LIST OF PNG FILES GENERATED ABOVE
-## FOR COPY AND PASTE FROM CONSOLE TO BODY OF QUARTO DOC
+## STEP 2 - START FROM SCRATCH AND CREATE LIST OF PNG FILES
+## GENERATED ABOVE FOR COPY AND PASTE FROM CONSOLE TO BODY OF QUARTO DOC
+## CLEAR THE CONSOLE, THEN RUN THE CODE BELOW
 
-# Load Libraries
 
+# # Load Libraries
+# 
 # library(tidyverse)
 # library(qicharts2)
 # library(haven)
@@ -389,8 +380,8 @@ Enjoy!
 # # Specify desired units of measurement
 # desired_units <- unique(first_df$units)
 # 
-# # Specify desired years
-# desired_years <- unique(first_df$year)
+# # Specify desired years (column is labeled 'date' in dataframe)
+# desired_years <- unique(first_df$date)
 # 
 # # Specify desired grade level
 # desired_grades <- unique(first_df$grade)
@@ -428,8 +419,8 @@ Enjoy!
 #                           "",
 #                           paste0(desired_section,
 #                                           unique_combinations,
-#                                           min(first_df$year),
-#                                           max(first_df$year)
+#                                           min(first_df$date),
+#                                           max(first_df$date)
 #                                  )
 #                           ),
 #                      ".png"
@@ -467,9 +458,12 @@ Enjoy!
 # cat(rmd_syntax)
 # 
 # }
+# 
+
+##### END OF STEP 2 - START FROM SCRATCH AND CREATE LIST OF PNG FILES
+##### CUT AND PASTE THE CONSOLE OUTPUT INTO THE MARKDOWN TEXT AREA BELOW
 
 ```
-
 
 
 
@@ -485,6 +479,7 @@ Comment:
 ![](png_SAT_ACT/SAT_ACTPercentTestedpercent_of_studentsAllNA19952022.png)
 
 
+
 \clearpage
 
 Comment:
@@ -495,6 +490,7 @@ Comment:
 \vspace{1.0in}
 
 ![](png_SAT_ACT/SAT_ACTPercentAtOrAboveCriterionpercent_of_studentsAllNA19952022.png)
+
 
 
 \clearpage
@@ -509,6 +505,7 @@ Comment:
 ![](png_SAT_ACT/SAT_ACTSAT-MeanTotalScorescoreAllNA19952022.png)
 
 
+
 \clearpage
 
 Comment:
@@ -519,4 +516,9 @@ Comment:
 \vspace{1.0in}
 
 ![](png_SAT_ACT/SAT_ACTACT-MeanCompositeScorescoreAllNA19952022.png)
+
+
+
+
+
 
