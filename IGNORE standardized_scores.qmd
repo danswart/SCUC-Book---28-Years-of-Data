@@ -70,7 +70,7 @@ custom_label_func <- function(x) {
 
 # Load the data
 df2 <- read_csv(file = here::here("data", 
-                                  "SCUC Snapshots 1995 to 2022-LONG.csv"
+                                  "SCUC_Snapshots_1995_to_2022_LONG_CANONICAL.csv"
                                   )
                 )
 
@@ -319,7 +319,7 @@ plot <- plot +
 # 
 # # Load the data
 # df2 <- read_csv(file = here::here("data",
-#                                   "SCUC Snapshots 1995 to 2022-LONG.csv")
+#                                   "SCUC_Snapshots_1995_to_2022_LONG_CANONICAL.csv")
 #                 )
 # 
 # # Specify the desired section

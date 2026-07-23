@@ -177,7 +177,7 @@ CHANGES IN COMPOSITION OF STUDENT BODY 1995-2022
 # library(ggrepel)
 # 
 # 
-# snapshots <- read_csv("data/SCUC Snapshots 1995 to 2022-LONG.csv")
+# snapshots <- read_csv("data/SCUC_Snapshots_1995_to_2022_LONG_CANONICAL.csv")
 # 
 # # Start a pipeline with the input data frame `gdp_tidy`
 # snapshots_formatted <- snapshots %>%
@@ -328,7 +328,7 @@ library(paletteer)
 library(ggrepel)
 library(scales)  # Load the scales package
 
-snapshots <- read_csv("data/SCUC Snapshots 1995 to 2022-LONG.csv")
+snapshots <- read_csv("data/SCUC_Snapshots_1995_to_2022_LONG_CANONICAL.csv")
 
 # Start a pipeline with the input data frame `gdp_tidy`
 snapshots_formatted <- snapshots %>%
